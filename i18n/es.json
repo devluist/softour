@@ -1,0 +1,301 @@
+{
+
+    "COPYRIGHT": "Todos los derechos reservados.",
+    "IDIOMAS": "Idiomas",
+    "ESLOGAN_INICIO": "descubre tu próximo destino, descubre tu próxima experiencia",
+    "CAJA_BUSQUEDA": "Buscar",
+    "TITULO_FILTRO": "Filtrar por",
+    "VER_MAS": "Ver más",
+    "FECHA_FILTRO": "Fecha Inicio - Fin",
+    "PRECIO_FILTRO": "Precio",
+    "SUBTITULO_PRECIO_FILTRO": "Rango de precio",
+    "MONEDA_FILTRO": "Bs.",
+    "BTN_APLICAR_FILTRO": "Aplicar",
+
+    "DESCRIPCION_E": "Explora",
+    "DESCRIPCION_TITULO_E": "Softour cuenta con miles de actividades y sitios que te pueden ayudar a vivir esa nueva experiencia diferente que estas buscando.",
+
+    "DESCRIPCION_V": "Vive",
+    "DESCRIPCION_TITULO_V": "Selecciona tu experiencia por categoría o a través del cuadro de busqueda, puedes disfrutar de las mas variadas aventuras y las hay para todos los gustos.",
+
+    "DESCRIPCION_P": "Promueve",
+    "DESCRIPCION_TITULO_P": "Votar para promover Actividades o Sitios que te gustaron ayuda a que otros usuarios descubran las mejores experiencias a través de tu voto.",
+
+    "TITULO_1": "Disfruta Softour",
+    "TITULO_2": "Busca dentro de nuetras categorías",
+
+    "CATEGORIA_L": "Lugares",
+    "CATEGORIA_P": "Playas",
+    "CATEGORIA_PAR": "Parques",
+    "CATEGORIA_M": "Museos",
+    "CATEGORIA_MO": "Monumentos",
+
+    "CATEGORIA_A": "Alojamientos",
+    "CATEGORIA_H": "Hoteles",
+    "CATEGORIA_PO": "Posadas",
+    "CATEGORIA_C": "Cabañas",
+
+    "CATEGORIA_G": "Gastronomía",
+    "CATEGORIA_CO": "Restaurantes",
+    "CATEGORIA_BE": "Bares",
+
+    "CATEGORIA_EX": "Experiencias",
+    "CATEGORIA_AV": "Aventuras",
+    "CATEGORIA_DE": "Deportivas",
+    "CATEGORIA_DI": "Diversión",
+    "CATEGORIA_NO": "Noches",
+
+    "CATEGORIA_EV": "Eventos",
+    "CATEGORIA_DEP": "Deportivos",
+    "CATEGORIA_CU": "Culturales",
+    "CATEGORIA_AC": "Académicos",
+
+    "CATEGORIA_IT": "Itinerario",
+
+
+
+    "sita1": "El mundo es un libro",
+    "sita2": "y aquellos que no viajan, solo leen una página",
+    "FOOTER_1": "Conocenos",
+    "FOOTER_2": "Únete a nosotros",
+    "FOOTER_3": "Prueba SofTour, una plataforma turística donde puedes publicar tu hotel, posada, evento o actividad relacionada; somos la mejor opción para promocionar  e impulsar tu negocio.",
+    "FOOTER_4": "IDIOMA",
+    "FOOTER_5": "Todos los derechos reservados por",
+
+    "MENU_SUP_CONFIG_CTA": "Configurar cuenta",
+    "MENU_SUP_CERRAR_SESION": "Cerrar sesión",
+    "SESIONARSE": "Iniciar sesión",
+    "REGISTRARSE": "Registrarse",
+    "CAJA_BUSQUEDA_DESTINO": "Destino",
+
+    "TITULO_BUSQUEDA_GENERAL": "BUSCAR",
+    "BUSQUEDA_GENERAL_TITULO": "¿Qué esperas? Comienza la aventura",
+
+
+
+    "TITULO_LUGAR_PAGINA": "Lugares | Softour",
+    "TITULO_LUGAR_GENERAL": "Elige tu destino",
+    "TITULO_LUGAR_DESTACADO_1": "Lugares",
+    "TITULO_LUGAR_DESTACADO_2": "Atrevete a visitar nuevos lugares",
+    "TITULO_LUGAR_DESTACADO_3": "Las ciudades son como libros que se leen con los pies",
+    "TITULO_LUGAR_DESTACADO_4": "Descubre otras opciones",
+    "LUGAR_PLAYAS": "Playas",
+    "VER_PLAYAS": "Ver playas",
+    "LUGAR_PARQUES": "Parques",
+    "VER_PARQUES": "Ver parques",
+    "LUGAR_MONUMENTOS": "Monumentos",
+    "VER_MONUMENTOS": "Ver monumentos",
+    "LUGAR_MUSEOS": "Museos",
+    "VER_MUSEOS": "Ver museos",
+
+    "TITULO_LUGAR_PAGINA_PLAYA": "Lugares-Playas | Softour",
+    "PLAYAS": "Playas",
+    "PLAYAS_DESTACADAS": "Playas",
+
+    "TITULO_LUGAR_PAGINA_MONUMENTOS": "Lugares-Monumentos | Softour",
+    "MONUMENTOS": "Monumentos",
+    "MONUMENTOS_DESTACADOS": "Monumentos",
+
+    "TITULO_LUGAR_PAGINA_PARQUES": "Lugares-Parques | Softour",
+    "PARQUES": "Parques",
+    "PARQUES_DESTACADOS": "Ven y disfruta",
+
+    "TITULO_LUGAR_PAGINA_MUSEOS": "Lugares-Museos | Softour",
+    "MUSEOS": "Museos",
+    "MUSEOS_DESTACADOS": "Museos",
+
+
+    "TITULO_ALOJAMIENTO": "Alojamiento | Softour",
+    "TITULO_ALOJAMIENTO_GENERAL": "Alojamientos",
+    "TITULO_ALOJAMIENTO_DESTACADO_1": "Alojamientos",
+    "TITULO_ALOJAMIENTO_DESTACADO_2": "Encuentra el lugar perfecto para ti",
+    "TITULO_ALOJAMIENTO_DESTACADO_3": "Viajar es de esas cosas que pagas, pero te hacen más rico",
+    "TITULO_ALOJAMIENTO_DESTACADO_4": "Descubre otras opciones",
+    "ALOJAMIENTO_HOTELES": "hoteles",
+    "VER_HOTELES": "Ver hoteles",
+    "ALOJAMIENTO_POSADAS": "posadas",
+    "VER_POSADAS": "Ver posadas",
+    "ALOJAMIENTO_CABANAS": "Cabañas",
+    "VER_CABANAS": "Ver Cabañas",
+
+    "TITULO_ALOJAMIENTO_CABANAS": "Alojamiento-Cabañas | Softour",
+    "CABANAS": "Cabañas",
+    "CABANAS_DESTACADAS": "Cabañas",
+
+    "TITULO_ALOJAMIENTO_HOTELES": "Alojamiento-Hoteles | Softour",
+    "HOTELES": "Hoteles",
+    "HOTELES_DESTACADAS": "Hoteles",
+
+    "TITULO_ALOJAMIENTO_POSADAS": "Alojamiento-Posadas | Softour",
+    "POSADAS": "Posadas",
+    "POSADAS_DESTACADAS": "Posadas",
+
+
+    "TITULO_GASTRONOMIA": "Gastronomía | Softour",
+    "TITULO_GASTRONOMIA_GENERAL": "Gastronomía",
+    "TITULO_GASTRONOMIA_DESTACADO_1": "Gastronomía",
+    "TITULO_GASTRONOMIA_DESTACADO_2": "Visita nuevos restaurantes y dale gusto a tu paladar",
+    "TITULO_GASTRONOMIA_DESTACADO_3": "Una comida bien equilibrada es como un poema al desarrollo de la vida",
+    "TITULO_GASTRONOMIA_DESTACADO_4": "Descubre otras opciones",
+    "GASTRONOMIA_RESTAURANTE": "Restaurantes",
+    "VER_RESTAURANTE": "Ver restaurantes",
+    "GASTRONOMIA_BARES": "Bares",
+    "VER_BARES": "Ver bares",
+
+
+    "TITULO_GASTRONOMIA_BARES": "Gastronomía-Bares | Softour",
+    "BARES": "Bares",
+    "BARES_DESTACADOS": "Bares",
+
+    "TITULO_GASTRONOMIA_RESTAURANTES": "Gastronomía-Restaurantes | Softour",
+    "RESTAURANTES": "Restaurantes",
+    "RESTAURANTES_DESTACADOS": "Restaurantes",
+
+
+    "TITULO_EVENTO": "Eventos | Softour",
+    "TITULO_EVENTO_GENERAL": "Eventos",
+    "TITULO_EVENTO_DESTACADO_1": "Eventos",
+    "TITULO_EVENTO_DESTACADO_2": "Grandes eventos esperan por ti",
+    "TITULO_EVENTO_DESTACADO_3": "Hay que unirse no para estar juntos, sino para hacer algo juntos",
+    "TITULO_EVENTO_DESTACADO_4": "Descubre otras opciones",
+
+    "EVENTO_DEPORTIVOS": "Deportivos",
+    "VER_DEPORTIVOS": "Ver deportivos",
+
+    "EVENTO_CULTURALES": "Culturales",
+    "VER_CULTURALES": "Ver culturales",
+
+    "EVENTO_ACADEMICOS": "Académicos",
+    "VER_ACADEMICOS": "Ver académicos",
+
+
+
+    "TITULO_EVENTO_ACADEMICO": "Eventos-Academicos | Softour",
+    "ACADEMICOS": "Académicos",
+    "ACADEMICOS_DESTACADOS": "Académicos",
+
+    "TITULO_EVENTO_CULTURAL": "Eventos-Cultural | Softour",
+    "CULTURAL": "Cultural",
+    "CULTURAL_DESTACADOS": "Cultural",
+
+
+    "TITULO_EVENTO_DEPORTIVOS": "Eventos-Deportivos | Softour",
+    "DEPORTIVOS": "Deportivos",
+    "DEPORTIVOS_DESTACADOS": "Deportivos",
+
+    "TITULO_EXPERIENCIAS": "Experiencias | Softour",
+    "TITULO_EXPERIENCIAS_GENERAL": "Experiencias",
+    "TITULO_EXPERIENCIASO_DESTACADO_1": "Experiencias",
+    "TITULO_EXPERIENCIAS_DESTACADO_2": "Súmale nuevas experiencias a tu vida",
+    "TITULO_EXPERIENCIAS_DESTACADO_3": "Que seas tan feliz que no sepas si vives o sueñas",
+    "TITULO_EXPERIENCIAS_DESTACADO_4": "Descubre otras opciones",
+
+    "EXPERIENCIAS_AVENTURA": "Aventuras",
+    "VER_AVENTURA": "Ver aventuras",
+
+    "EXPERIENCIAS_DEPORTIVAS": "Deportivas",
+    "VER_DEPORTIVAS": "Ver Deportivas",
+
+    "EXPERIENCIAS_DIVERSION": "Diversión",
+    "VER_DIVERSION": "Ver diversión",
+
+    "EXPERIENCIAS_NOCHE": "Noches",
+    "VER_NOCHES": "Ver noches",
+
+    "TTITULO_EXPERIENCIAS_AVENTURAS": "Experiencias-Aventuras | Softour",
+    "AVENTURAS": "Aventuras",
+    "AVENTURAS_DESTACADOS": "Aventuras",
+
+    "TITULO_EXPERIENCIAS_DEPORTIVAS": "Experiencias-Deportivas | Softour",
+    "DEPORTIVAS": "Deportivas",
+    "DEPORTIVAS_DESTACADOS": "Deportivas",
+
+    "TITULO_EXPERIENCIAS_DIVERSION": "Experiencias-Diversión | Softour",
+    "DIVERSION": "Diversión",
+    "DIVERSION_DESTACADOS": "Diversión",
+
+    "TITULO_EXPERIENCIAS_DIVERSION": "Experiencias-Noches | Softour",
+    "NOCHES": "Noches",
+    "NOCHES_DESTACADOS": "Noches",
+
+    "MOSTAR_ERRORES": "Por favor verifique los siguientes campos",
+
+
+
+    "TITULO_SESIONARME": "Sesionarme - Softour",
+    "CORREO": "Correo",
+    "CONTRASENA": "Contraseña",
+    "BOTON_INICIAR_SESION": "Iniciar sesión",
+    "O_INICIE_SESION_CON": "O INICIE SESIÓN CON",
+    "REGISTRAR_UNA_CUENTA": "Registrar una cuenta",
+
+
+    "TITULO_REGISTRARME": "Registro - Softour",
+    "NOMBRE_REGISTRARME": "Nombre",
+    "USUARIO_REGISTRARME": "Nombre de usuario",
+    "BOTON_REGISTRAR": "Registrar",
+    "YA_TIENES": "¿Ya tienes una cuenta?",
+    "ELIMINAR": "Eliminar",
+    "CANCELAR": "CANCELAR",
+
+    "INFORMACION_GENERAL": "Informacion general",
+    "ACERCA_DE": "Acerca de",
+    "CALIFICA": "Califica",
+    "COMPARTIR": "Compartir",
+    "INFORMACION": "Información",
+    "CALIFICAR_SERVICIOS": "Califica nuestro servicio",
+    "CALIFICACION_PROMEDIO": "Calificación promedio de usuarios",
+    "CALIFICACION": "Clasificación",
+
+    "CONTACTO": "Contactos",
+    "DIRECCION": "Dirección",
+    "SERVICIOS": "Servicios",
+    "RESPONSABLE": "Responsable",
+    "TELEFONO": "Teléfono",
+    "EMAIL": "Correo",
+    "HORA_PRECIO": "Horarios y Precio",
+    "FECHA_INICIO": "Fecha inicio",
+    "FECHA_FIN": "Fecha fin",
+    "REQUISITOS": "Requisitos",
+    "PRECIO": "Precio",
+    "PERIODICIDAD": "Periodicidad",
+    "DURACION": "Duración",
+    "SERVICIOS": "Servicios",
+    "HABITACIONES": "Habitaciones",
+
+    "ENTRADA": "Entrada",
+    "SALIDA": "Salida",
+    "HUESPEDES": "Huespedes",
+
+    "PRECIOS_DESDE": "PRECIO:",
+    "DESCRIPCION_HABITACION": "Descripción de Habitación",
+    "CARACTERISTICAS": "Caracteristicas",
+    "SERVICIOS_INCLUYE": "Servicios que incluye",
+    "METROS_CUADRADOS": "Metros cuadrados",
+    "N_BANOS": "Número de baños",
+
+    "TITULO_ALOJAMIENTO_VISUALIZAR": "Alojamiento-Información | Softour",
+    "TITULO_GASTRONOMIA_VISUALIZAR": "Gastronomía-Información | Softour",
+    "TITULO_EVENTO_VISUALIZAR": "Evento-Información | Softour",
+    "TITULO_EXPERIENCIA_VISUALIZAR": "Experiencia-Información | Softour",
+    "TITULO_LUGAR_VISUALIZAR": "Lugar-Información | Softour",
+
+
+    "FECHA_RESERVACION": "Fecha",
+    "HORA_RESERVACION": "Hora",
+    "COMENSALES": "Comensales",
+    "COMENSAL": "comensal",
+
+    "VER_MAS": "Ver más",
+
+    "RESULTADO_NO_ENCONTADO": "No se encontraron resultados"
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Descubre tu próximo destino, descubre tu próxima experiencia">
+    <meta name="keywords" content="">
+    <title>{{{_sections.titulo_pagina}}}</title>
+    <!-- Styles -->
+    <link href="/vendors/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/css/app.min.css" rel="stylesheet">
+    <link href="/css/index-softour.css" rel="stylesheet">
+    <link href="/css/formulario-busqueda.css" rel="stylesheet">
+    <link href="/vendors/air-datepicker/dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/vendors/starrr/dist/starrr.css">
+    <link href="/css/filtro.css" rel="stylesheet">
+
+    {{{_sections.head}}}
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,300,400,500,600,800%7COpen+Sans:300,400,500,600,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Favicons -->
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+    <link rel="icon" href="/images/favicon.ico">
+</head>
+
+<body class="nav-on-header smart-nav">
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <div class="pull-left">
+                <a class="navbar-toggle" data-toggle="offcanvas" href="#"><i class="ti-menu"></i></a>
+                <div class="logo-wrapper">
+                    <a class="logo" href="/"><img alt="logo" src="/images/logo.png"/></a>
+                    <a class="logo-alt" href="/"><img alt="logo" src="/images/logo.png"/></a>
+                </div>
+            </div>
+            <!-- END Logo -->
+            <!-- User account -->
+            <div class="pull-right">
+                <div class="dropdown user-account">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+              <img src="/images/avatar/user.svg" alt="avatar"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            </a>
+
+
+            <ul class="dropdown-menu dropdown-menu-right">
+            <!--   <li><a href="/usuario/sesionarme">Inicia sesión</a></li>
+            <li><a href="/usuario/registrar-cuenta">regístrate</a></li> -->
+               {{#if datos.value.usuario_sesionado.usuario}}
+    
+            <li class="text-center"><b>{{datos.value.usuario_sesionado.usuario}}</b></li>
+        <!-- <ul class="dropdown-menu dropdown-usermenu"> -->
+            <li><a href="/usuario/{{datos.value.usuario_sesionado.usuario}}">Ver perfil</a></li>
+            {{#if_mod datos.value.usuario_sesionado.tipo_usr "!=" "Administrador"}}
+               <li><a href="/usuario/{{datos.value.usuario_sesionado.usuario}}/configurar-cuenta">{{traduccion.MENU_SUP_CONFIG_CTA}}</a></li>
+            {{/if_mod}}
+            <li><a href="/usuario/cerrar-sesion">{{traduccion.MENU_SUP_CERRAR_SESION}}</a></li>
+        <!-- </ul> -->
+            {{else}}
+                    <li><a href="/usuario/sesionarme">{{traduccion.SESIONARSE}}</a></li>
+                    <li><a href="/usuario/registrar-cuenta">{{traduccion.REGISTRARSE}}</a></li>
+            {{/if}}
+            </ul>
+          </div>
+
+        </div>
+        <!-- END User account -->
+     
+
+                <!-- Navigation menu -->
+                <ul class="nav-menu">
+                    <li>
+                        <a href="/busqueda/lugar">{{traduccion.CATEGORIA_L}}</a>
+                        <ul>
+                            <li><a href="/busqueda/lugar/playa">{{traduccion.CATEGORIA_P}}</a></li>
+                            <li><a href="/busqueda/lugar/parque">{{traduccion.CATEGORIA_PAR}}</a></li>
+                            <li><a href="/busqueda/lugar/museo">{{traduccion.CATEGORIA_M}}</a></li>
+                            <li><a href="/busqueda/lugar/monumento">{{traduccion.CATEGORIA_MO}}</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/busqueda/alojamiento">{{traduccion.CATEGORIA_A}}</a>
+                        <ul>
+                            <li><a href="/busqueda/alojamiento/hotel">{{traduccion.CATEGORIA_H}}</a></li>
+                            <li><a href="/busqueda/alojamiento/posada">{{traduccion.CATEGORIA_PO}}</a></li>
+                            <li><a href="/busqueda/alojamiento/cabaña">{{traduccion.CATEGORIA_C}}</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/busqueda/gastronomia">{{traduccion.CATEGORIA_G}}</a>
+                        <ul>
+                            <li><a href="/busqueda/gastronomia/restaurante">{{traduccion.CATEGORIA_CO}}</a></li>
+                            <li><a href="/busqueda/gastronomia/bar">{{traduccion.CATEGORIA_BE}}</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/busqueda/experiencia">{{traduccion.CATEGORIA_EX}}</a>
+                        <ul>
+                            <li><a href="/busqueda/experiencia/aventura">{{traduccion.CATEGORIA_AV}}</a></li>
+                            <li><a href="/busqueda/experiencia/deporte">{{traduccion.CATEGORIA_DE}}</a></li>
+                            <li><a href="/busqueda/experiencia/diversion">{{traduccion.CATEGORIA_DI}}</a></li>
+                            <li><a href="/busqueda/experiencia/noche">{{traduccion.CATEGORIA_NO}}</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/busqueda/evento">{{traduccion.CATEGORIA_EV}}</a>
+                        <ul>
+                            <li><a href="/busqueda/evento/deporte">{{traduccion.CATEGORIA_DEP}}</a></li>
+                            <li><a href="/busqueda/evento/cultural">{{traduccion.CATEGORIA_CU}}</a></li>
+                            <li><a href="/busqueda/evento/academico">{{traduccion.CATEGORIA_AC}}</a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <a href="/itinerario">{{traduccion.CATEGORIA_IT}}</a>
+                       <ul>
+                       
+                           <li><a href="#">Salud</a></li>
+                           <li><a href="#">Seguridad</a></li>
+                           <li><a href="#">Transporte</a></li>
+                       </ul>
+                                    </li> -->
+            </ul>
+            <!-- END Navigation menu -->
+        </div>
+    </nav>
+    {{{body}}}
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <!-- Top section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-12 col-md-3">
+                    <center>
+                        <img class="soft" src="/images/logo-letras-footer.png" />
+                        <ul class="footer-links">
+                            <br>
+                            <li><a href="/nosotros">{{traduccion.FOOTER_1}} </a></li>
+                        </ul>
+                    </center>
+                </div>
+                <div class="col-sm-12 col-md-6">
+
+
+                    <h6 class="text-center">{{traduccion.FOOTER_2}}</h6>
+
+                    <p class="text-center">
+                        {{traduccion.FOOTER_3}}
+
+                    </p>
+                </div>
+
+
+                <div class="col-6 col-sm-12 col-md-3">
+                    <h6 class="text-center">{{traduccion.FOOTER_4}}</h6>
+                  <form action="" class="form-idiomas">
+                      <center>
+                          <div class="select">
+                              <select name="clang">
+                                 <option value="">{{traduccion.IDIOMAS}}</option>
+                                 <option value="es" {{#if_mod lang "==" "es"}}selected{{/if_mod}} >Español</option>
+                                 <option value="en" {{#if_mod lang "==" "en"}}selected{{/if_mod}} >English</option>
+                             </select>
+                             <button class="camb" type="submit" title="Cambiar"><i class="fa fa-globe"></i></button>
+                          </div>
+                      </center>
+                  </form>
+                </div>
+            </div>
+            <hr>
+            </hr>
+        </div>
+        <!-- END Top section -->
+        <!-- Bottom section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyrights © 2017 {{traduccion.FOOTER_5}} <a href="#">Softour</a>.</p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="google" href="#"><i class="fa fa-google"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END Site footer -->
+    <a href="#" id="scroll-up"><i class="ti-angle-up"></i></a>
+    <script src="/js/app.min.js"></script>
+    <script src="/vendors/wow.min.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/share.js"></script>
+    <script src="/vendors/moment/min/moment.min.js"></script>
+    <script src="/vendors/moment/locale/es.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <script src="/vendors/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="/js/handlebars.min.js"></script>
+    <script type="text/javascript" src="/vendors/typeahead/dist/typeahead.bundle.js"></script>
+    <script src="/vendors/starrr/dist/starrr.js"></script>
+    <script src="/js/softour.js"></script>
+    <script src="/vendors/air-datepicker/dist/js/datepicker.min.js"></script>
+    <script src="/vendors/air-datepicker/dist/js/i18n/datepicker.es.js"></script>
+    {{{_sections.js_libs}}}
+</body>
+
+</html>

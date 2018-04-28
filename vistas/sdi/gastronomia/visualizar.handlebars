@@ -1,0 +1,506 @@
+{{#section "titulo_pagina"}}
+   {{traduccion.TITULO_GASTRONOMIA_VISUALIZAR}} 
+{{/section}}
+{{#section 'head'}}
+    
+   <!-- Styles -->
+    <link href="/css/busquedas.css" rel="stylesheet">
+    <!-- Slider -->
+    <!-- mapa -->
+    <link rel="stylesheet" href="/vendors/leaflet/leaflet.css">
+{{/section}}
+
+   <!-- Site header -->
+<header class="site-header size-lg text-center" style="background-image: url(/images/alojamiento/background-hotel.jpg)">
+    <div class="container">
+        <div class="col-xs-12">
+            <br>
+            {{> buscador_general}}
+        </div>
+    </div>
+</header>
+<!-- END Site header -->
+     <!-- Main container -->
+    <main>
+        <!--Nombre restaurant-->
+    <div class="container establecimiento">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>{{datos.value.nombre}}</h2>
+            </div>
+            <!-- <div class="col-xs-12 col-md-8">
+            </div> -->
+        </div>
+    </div>
+    <!--Fin  Nombre restaurant-->
+        <!-- Filtro restaurant -->
+    <div class="container">
+        <div class="row"> <!-- { { datos.value } }< br > { { datos.lista_categorias } } -->
+            <!-- Estilis de formulario -->
+            <div class="col-xs-12 col-md-4 filtro-hotel">
+                <!-- Fechas -->
+                <div class="col-xxs-12 col-xs-6">
+                <div class="input-field">
+                    <section class="selector">
+                        <label for="date-start">{{traduccion.FECHA_RESERVACION}}:</label>
+                        <input class="form-control selectpicker" type="text" placeholder="dd / mm / aaaa" id="from" name="from" />
+                    </section>
+                </div>
+            </div>
+                <div class="col-xxs-12 col-xs-6">
+
+                    <section>
+                        <label for="class">{{traduccion.HORA_RESERVACION}}:</label>
+                        <select class="selector">
+                            <option value="0:00 AM">00:00</option>
+                            <option value="0:30 AM">00:30</option>
+                            <option value="1:00 AM">01:00</option>
+                            <option value="1:30 AM">01:30</option>
+                            <option value="2:00 AM">02:00</option>
+                            <option value="2:30 AM">02:30</option>
+                            <option value="3:00 AM">03:00</option>
+                            <option value="3:30 AM">03:30</option>
+                            <option value="4:00 AM">04:00</option>
+                            <option value="4:30 AM">04:30</option>
+                            <option value="5:00 AM">05:00</option>
+                            <option value="5:30 AM">05:30</option>
+                            <option value="6:00 AM">06:00</option>
+                            <option value="6:30 AM">06:30</option>
+                            <option value="7:00 AM">07:00</option>
+                            <option value="7:30 AM">07:30</option>
+                            <option value="8:00 AM">08:00</option>
+                            <option value="8:30 AM">08:30</option>
+                            <option value="9:00 AM">09:00</option>
+                            <option value="9:30 AM">09:30</option>
+                            <option value="10:00 AM">10:00</option>
+                            <option value="10:30 AM">10:30</option>
+                            <option value="11:00 AM">11:00</option>
+                            <option value="11:30 AM">11:30</option>
+                            <option value="0:00 PM">12:00</option>
+                            <option value="0:30 PM">12:30</option>
+                            <option value="1:00 PM">13:00</option>
+                            <option value="1:30 PM">13:30</option>
+                            <option value="2:00 PM">14:00</option>
+                            <option value="2:30 PM">14:30</option>
+                            <option value="3:00 PM">15:00</option>
+                            <option value="3:30 PM">15:30</option>
+                            <option value="4:00 PM">16:00</option>
+                            <option value="4:30 PM">16:30</option>
+                            <option value="5:00 PM">17:00</option>
+                            <option value="5:30 PM">17:30</option>
+                            <option value="6:00 PM">18:00</option>
+                            <option value="6:30 PM">18:30</option>
+                            <option value="7:00 PM">19:00</option>
+                            <option value="7:30 PM">19:30</option>
+                            <option value="8:00 PM" selected="selected">20:00</option>
+                            <option value="8:30 PM">20:30</option>
+                            <option value="9:00 PM">21:00</option>
+                            <option value="9:30 PM">21:30</option>
+                            <option value="10:00 PM">22:00</option>
+                            <option value="10:30 PM">22:30</option>
+                            <option value="11:00 PM">23:00</option>
+                            <option value="11:30 PM">23:30</option>
+                        </select>
+                    </section>
+                </div>
+                <!--fin fechas -->
+                <!-- Habitaciones -->
+                <div class="col-xxs-12 col-xs-6">
+                    <section>
+                        <label for="class">{{traduccion.COMENSALES}}:</label>
+                        <select class="selector">
+                            <option value="1">1&nbsp;{{traduccion.COMENSAL}}</option>
+                            <option value="2" selected="selected">2&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="3">3&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="4">4&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="5">5&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="6">6&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="7">7&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="8">8&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="9">9&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="10">10&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="11">11&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="12">12&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="13">13&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="14">14&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="15">15&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="16">16&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="17">17&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="18">18&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="19">19&nbsp;{{traduccion.COMENSALES}}</option>
+                            <option value="20">20&nbsp;{{traduccion.COMENSALES}}</option>
+                        </select>
+                    </section>
+                </div>
+                <!--fin habitaciones-->
+                <!-- Habitaciones
+                <div class="col-xxs-12 col-xs-6">
+                    <section>
+                        <label for="class">Huespedes:</label>
+                        <select class="selector">
+                            <option value="" disabled selected>1</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </section>
+                </div>
+                fin habitaciones -->
+                <!-- Boton búscar -->
+                <div class="col-xs-12">
+                    <input type="submit" class="btn btn-primary btn-block" value="Buscar Disponibilidad">
+                </div>
+                <!-- Fin boton Búscar -->
+            </div>
+            <!-- slider -->
+            <div class="col xs-12 col-md-8">
+                <div class="main">
+                    <div class="slides">
+                        {{#if datos.value.imagenes}}
+                            {{#each datos.value.imagenes}}
+                                <img src="{{this.url}}" alt="">
+                            {{/each}}
+                        {{else}}
+                            <img src="/images/sin_imagen.png" alt="">
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+           
+            <!-- Fin slider -->
+        </div>
+    </div>
+    <!-- Fin filtro restaurant -->
+        <!--Botones-->
+        <div class="container botonera">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="botones">
+                        <li><a data-scroll href="#informaciongeneral">{{traduccion.INFORMACION_GENERAL}}</a></li>
+                        <!-- <li><a data-scroll href="/">Ver habitaciones</a></li> -->
+                        <li><a data-scroll href="#acercade">{{traduccion.ACERCA_DE}}</a></li>
+                        <!-- <li><a data-scroll href="#califica">{{traduccion.CALIFICA}}</a></li> -->
+                        <!-- <li><a data-scroll href="#cercade">Cerca de ti</a></li> -->
+                        <li class="compartir"><a href=""  data-toggle="modal" data-target="#modal">{{traduccion.COMPARTIR}} <i class="fa fa-share" aria-hidden="true"></i> </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Fin  Botones-->
+         <!--Ventana modal-->
+                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="modal">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" >{{traduccion.COMPARTIR}}</h4>
+                            </div>
+                            <div class="modal-body">
+           
+                                <div class="redes"><a href="#" class="redesf" target="_blank"><lable class="fa fa-facebook">&nbsp;Facebook</lable></a></div>
+
+                                <div class="redes"><a href="#" class="redest" target="_blank"><lable class="fa fa-twitter">&nbsp;Twitter</lable></a></div>
+
+                                <div class="redes"><a href="#" class="redesg" target="_blank"><lable class="fa fa-google">&nbsp;Google</lable></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin Ventana modal-->
+        <!-- información -->
+        <div class="container informacion" id="informaciongeneral">
+            <div class="row">
+                <div class="descripcion colorh">
+                    <h3>{{traduccion.INFORMACION}}</h3>
+                </div>
+                <!-- Contactos -->
+                <div class="col-xs-12 col-md-4 borde-derecho">
+                    <h5>{{traduccion.CONTACTO}}: </h5>
+                    <ul>
+                        <li>
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <span><b>{{traduccion.TELEFONO}}:</b> {{datos.value.telefono}}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            <span><b>{{traduccion.DIRECCION}}:</b>{{datos.value.ubicacion.pais}}, {{datos.value.ubicacion.estado}}, {{datos.value.ubicacion.ciudad}}, {{datos.value.ubicacion.direccion}}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <span><b>{{traduccion.EMAIL}}: </b> {{datos.value.correo}}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-globe" aria-hidden="true"></i>
+                            <span><b>web: </b> <a href="http://{{datos.value.pagina_web}}"> {{datos.value.pagina_web}}</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <!--fin Contactos -->
+                <!-- servicios -->
+                <div class="col-xs-12 col-md-4 servicios">
+                    <h5>Servicios: </h5>
+                    <ul>
+                        <li>
+                            <span><b>Wi-Fi gratis</b></span>
+                        </li>
+                        <li>
+                            <span><b>Desayuno incluido</b></span>
+                        </li>
+                        <li>
+                            <span><b>Bañera de hidromasaje</b></span>
+                        </li>
+                        <li>
+                            <span><b>Servicio de habitación</b></span>
+                        </li>
+                        <li>
+                            <span><b>Restaurante</b></span>
+                        </li>
+                    </ul>
+                </div>
+                <!--fin servicios -->
+                <!-- ubicación -->
+                <div class="col-xs-12 col-md-4 mapa" id="mapa">
+                </div>
+                <!--fin ubicación-->
+            </div>
+            <div class="row">
+                <div class="acerca colorh" id="acercade">
+                    <h3>{{traduccion.ACERCA_DE}}</h3>
+                </div>
+                <div class="col-xs-12 justificar-text">
+                    <p class="text-justify"> {{datos.value.descripcion}} </p> <!-- Está ubicado cerca de la hermosa playa San Luis Estas instalaciones concebidas para su máximo confort y relax, fueron inauguradas en el año 1997, y desde entonces, nos caracterizamos por nuestro excelente servicio y esmerada atención a todos nuestros apreciados clientes.</p>
+                    <p class="text-justify">Proporciona a todos sus clientes, a muy razonables precios, una amplia gama de servicios, de una forma eficiente y personalizada, con calidad, seriedad y sentido de compromiso, así como Alimentos y Bebidas, Convenciones, Banquetes, y Actividades Recreativas para niños y adultos, logrando siempre la total satisfacción de todos aquellos que depositan su confianza en nosotros.</p> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="acerca colorh">
+                    <h3>Menú</h3>
+                </div>
+                <div class="col-xs-12">
+                    <ul>
+                        <li>
+                            <span><b>Pasticho - 145.000 Bs</b></span>
+                        </li>
+                        <li>
+                            <span><b>Ensalada Cesar - 100.000 Bs</b></span>
+                        </li>
+                        <li>
+                            <span><b>Ración Extra Queso - 95.000 Bs</b></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calificacion colorh" id="califica">
+                    <h3>{{traduccion.CALIFICAR_SERVICIOS}}</h3>
+                </div>
+                <div class="col-xs-12 justificar-text">
+                    <div class="container">
+                        <div class="row">
+                            <div class="rating-block col-md-12">
+                                <h5>{{traduccion.CALIFICACION_PROMEDIO}}</h5>
+                                <h2 class="bold padding-bottom-7">{{datos.value.promedio_calificaciones}} <small>/ 5</small></h2>
+                            </div>
+                            <div class='col-md-12' id="mensaje-calificacion"></div>
+                            <div class="col-md-4" id="calif-entidad" data-calificacion={{datos.value.promedio_calificaciones}}>
+                                </div>
+                            <div class="col-md-5" id="btn-calificar"></div>
+                            <!--<div class="col-sm-4">
+                                <h5>{{traduccion.CALIFICACION}}</h5>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">5 <span class="fa fa-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 100%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">1</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">4 <span class="fa fa-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">1</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">3 <span class="fa fa-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">0</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">2 <span class="fa fa-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">0</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">1 <span class="fa fa-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">0</div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- información -->
+    </main>
+     <!-- END Main container -->
+    <!-- <div class="container colorh" id="cercade">
+        <div class="row">
+            <div class="col-12 text-left">
+                <h3>Otros Sitios cercanos</h3>
+            </div>
+        </div>
+    </div>
+    
+     <div class="container">
+        <div class="row">
+          
+            
+           
+        </div>
+    </div> -->
+
+
+   
+{{#section 'js_libs'}}
+    <script src="/vendors/slidesjs/js/jquery.slides.js"></script>
+    <script>
+    $(function() {
+        $(".slides").slidesjs({
+            play: {
+                active: true,
+                // [boolean] Generate the play and stop buttons.
+                // You cannot use your own buttons. Sorry.
+                effect: "slide",
+                // [string] Can be either "slide" or "fade".
+                interval: 3000,
+                // [number] Time spent on each slide in milliseconds.
+                auto: true,
+                // [boolean] Start playing the slideshow on load.
+                swap: true,
+                // [boolean] show/hide stop and play buttons
+                pauseOnHover: false,
+                // [boolean] pause a playing slideshow on hover
+                restartDelay: 2500
+                // [number] restart delay on inactive slideshow
+            }
+        });
+    });
+    </script>
+    <script src="/vendors/slidesjs/js/jquery.slides.js"></script>
+    <script>
+    $(function() {
+        agregarMarcadorOSM([{{datos.value.geo_ubicacion.coordinates}}], true);
+        mostrarEntidadesCercanas([{{datos.value.geo_ubicacion.coordinates}}]);
+        mostrarFechas("{{datos.value.fecha_inicio}}", "{{datos.value.fecha_fin}}");
+        calificarEntidad("{{datos.value.usuario_sesionado.tipo_usr}}");
+        $(".slides").slidesjs({
+            play: {
+                active: true,
+                // [boolean] Generate the play and stop buttons.
+                // You cannot use your own buttons. Sorry.
+                effect: "slide",
+                // [string] Can be either "slide" or "fade".
+                interval: 3000,
+                // [number] Time spent on each slide in milliseconds.
+                auto: true,
+                // [boolean] Start playing the slideshow on load.
+                swap: true,
+                // [boolean] show/hide stop and play buttons
+                pauseOnHover: false,
+                // [boolean] pause a playing slideshow on hover
+                restartDelay: 2500
+                // [number] restart delay on inactive slideshow
+            }
+        });
+    });
+    </script>
+    <script src="/vendors/smooth-scroll.min.js"></script>
+    <script src="/js/st.js"></script>
+    <!-- mapa -->
+    <script src="/vendors/leaflet/leaflet.js"></script>
+    <script src="/js/manejador-mapa.js"></script>
+
+
+
+
+
+    <!-- datapicker -->
+    <script src="/vendors/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <!--script>
+        $( document ).ready(function() {
+            $('#to').datepicker();
+        });
+    </script-->
+    <script>
+    $(function() {
+        $.datepicker.setDefaults($.datepicker.regional["es"]);
+        $("#datepicker").datepicker({
+            firstDay: 1,
+        });
+    });
+    </script>
+    <script>
+    $(function() {
+        $('#from').datepicker({
+            minDate: 0,
+            onSelect: function(dateStr) {
+                var date = $(this).datepicker('getDate');
+                if (date) {
+                    date.setDate(date.getDate() + 1);
+                }
+                $('#to').datepicker('option', 'minDate', date || 1);
+            }
+        });
+        $('#to').datepicker({
+            minDate: 1,
+            onSelect: function(dateStr) {
+                var date = $(this).datepicker('getDate');
+                if (date) {
+                    date.setDate(date.getDate() - 1);
+                }
+                $('#from').datepicker('option', 'maxDate', date);
+            }
+        });
+    });
+    </script>
+
+{{/section}}

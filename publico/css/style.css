@@ -1,0 +1,189 @@
+body  {font-family: 'PT Sans', sans-serif;
+padding-bottom: 0;}
+
+h1,h2,h3,h4,h5 {font-weight: 700;}
+
+.logo a { color: #313131;
+		text-decoration: none;
+		font-size: 50px;
+		font-weight: 700;}
+
+
+.navbar-default {
+    position: relative;
+    padding: 5px 0;
+    margin-bottom: 0;
+    border: none;
+	background: white;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: #313131;
+    background-color: white;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    color: #CCC;
+   
+}
+.navbar-default .navbar-nav > li > a {
+    color: #313131;
+}
+
+.navbar-nav {
+    margin: 7.5px;
+	text-align: center;
+}
+
+.fa {
+    display: block!important;
+}
+
+.navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.carousel-caption {top: 15%;
+					text-align: left;}
+					
+.carousel-caption h1 {font-size: 136px;
+					margin-bottom: -10px;}
+					
+.carousel-caption p {font-size: 45px;
+					font-weight: 700;}
+					
+.carbtn {
+		z-index: 9999;
+		position: absolute;
+		right: 20%;
+		bottom: 60px;}
+
+		
+.carbtn a{ background: white;
+			display: inline-block;
+			color: black;
+			font-size: 50px;
+			padding: 10px 15px;
+			text-decoration: none;
+			margin-right: 5px;
+			}
+.tours	{font-weight: 400;
+		padding: 0  0 30px 0;}		
+			
+.tours hr {height: 1px;
+			background: #7a7a7a;
+			border: none;
+			}			
+
+.readMore {padding: 15px 90px 15px 12px;
+			margin: 20px 0 30px 0;
+			border-radius:0;
+			background: #b34440;
+			border: none;}		
+
+.readMore:hover {background: #9c2824;}			
+					
+.content {padding: 62px 0 90px 0;
+			color: white;
+			background: url(../images/worldbg.jpg);
+			background-size: cover;}	
+
+.content h1 {font-size: 66px;}	
+
+.content h2 {font-size: 30px;}				
+					
+					
+.gallery {padding: 60px 0 30px 0;}		
+
+
+.gallery figcaption { position: absolute;
+					z-index: 9999;
+					bottom: 20px;
+					font-size: 24px;
+					font-weight: 700;
+					color: white;
+					left: 20%;
+					transition: All .5s;}	
+
+.gallery img {margin-bottom: 15px;}					
+					
+					
+.gallery figure:hover figcaption {transform: translateY(-300%);}	
+
+.viewMore {padding: 15px 90px 15px 12px;
+			margin: 20px 0 30px 0;
+			border-radius:0;
+			background: #b34440;
+			border: none;}						
+					
+.viewMore:hover {background: #9c2824;}	
+
+footer {background: #2a2029;
+		padding: 45px 0;
+		color: white;}
+
+footer a {color: white;}
+		
+footer a:hover, footer a:focus {color: white;
+				text-decoration: none;}
+				
+footer ul {margin-top: 20px;
+		list-style: none;
+		padding-left: 0;
+		font-size: 20px;}
+
+footer li {display: inline-block;
+		padding-right: 5px;
+		margin-left: 0;}
+		
+footer h2 {font-size: 48px;}
+
+footer .rights {margin-top: 30px;}	
+
+
+
+
+					
+
+@media only screen and (min-width: 767px) {
+.navbar-collapse {float: right;}
+
+.icons-mob {display: none;}
+}
+
+@media only screen and (max-width: 767px) {
+.logo {margin-left: 15px;}
+
+.navbar-nav {
+    margin: 7.5px;
+	text-align: left;
+}
+
+.fa {
+    display: inline-block!important;
+}
+
+.carousel-caption {top: 10%;}
+
+.carousel-caption h1 {font-size: 70px;}
+
+.carousel-caption p {font-size: 26px;}
+
+.carousel {height: 300px;}
+
+.carousel .item {
+    height: 300px;}
+	
+.carousel .item img {height: 300px;}
+
+.carbtn {right: 10%;
+		bottom: 25px;}
+
+.carbtn a{	font-size: 30px;
+			padding: 7px 13px;
+			}	
+			
+.icons-desk {display: none;}
+
+}

@@ -1,0 +1,176 @@
+  /* Categorías lugares*/
+.backg-alt{
+    padding: 56px 0;}
+
+#subc{
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+#destacados{
+  text-align: center;
+  color: #7e8890;
+}
+
+
+/*///////////////INFORMACIÓN ESPECÍFICA LUGARES//////////////*/
+/* Nombre del lugar */
+.establecimiento {
+  background: #ffffff;
+  height: 60px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-bottom: 15px;
+  padding: 0px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  
+  .establecimiento h2 {
+    margin-left: 30px;
+    margin-top: 0; }
+/* fin nombre del lugar */
+
+/* Botones */
+.botonera {
+  background: #ffffff;
+  height: 50px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: 15px;
+  margin-left: auto;
+  padding: 10px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+  .botonera .botones {
+    padding: 0; }
+
+  .botonera li {
+    display: inline; }
+
+  .botonera a {
+    padding: 10px;
+    text-decoration: none;
+    color: #7e8890; }
+
+  .botonera a:hover {
+    color: #329bf2; }
+
+  .compartir {
+    float: right; }
+/* Fin botones */
+
+/* Títulos*/
+.sub1 {
+  margin-left: 15px;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #e5e5e5;
+  padding-bottom: 24px;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 32px;
+  color: #55595c; }
+/* Fin títulos */
+
+/* información */
+.informacion {
+  background: #fff;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  height: 800px;
+  margin: 15px auto; }
+
+  .informacion ul {
+    list-style-type: none; 
+    text-align: justify;
+    margin-right: 30px;}
+
+  .informacion .mapa {
+    height: 300px;
+    width: 350px;
+    z-index: 1; }
+
+  #cercade h4 {
+    color: #329bf2; }
+/* fin informacion */
+
+/* Clasificación */
+.rango li {
+    font-size: 14px;
+    width: 100%;
+}
+.progress{
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+/* Fin clasificación */
+
+/*///////////////FIN INFORMACIÓN ESPECÍFICA LUGARES//////////////*/
+
+
+
+
+
+
+
+/*Efecto hover imgns peq*/
+div#imagen {
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-image: url("../images/lugares/playa1.jpg");
+  margin: 30px auto;
+}
+.catm{
+	margin-left: 5em;
+  	margin-right: 5em;
+}
+
+div#info {
+  position:absolute;
+  overflow:hidden;
+  width: 300px;
+  height: 200px;
+  background-color:rgba(31, 31, 31, 0.5);
+  opacity:0;
+  transition: opacity 0.3s;
+}
+
+div#imagen:hover div#info {
+  opacity:1;
+}
+
+div#imagen:hover p#headline {
+  margin-left: 115px;
+}
+
+p#descripcion {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 200px;
+    transition: margin-top 0.4s;
+    color: #fff;
+}
+
+div#imagen:hover p#descripcion {
+  margin-top: 75px;
+}
+
+#greywrap{
+	margin-right: 3em;
+}
+ 
+.bus_{
+	background: white;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/vendors/OwlCarousel2/dist/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/vendors/OwlCarousel2/dist/assets/owl.theme.green.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Dropzone.js -->
+    <link href="/vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
+    <link href="/vendors/animate.css/animate.min.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="/vendors/datatables.net/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+
+	<link href="/vendors/jquery-tagsinput-revisited/src/jquery.tagsinput-revisited.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+	<link href="/vendors/pnotify/dist/pnotify.css" media="all" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+	<script src="/assets/js/ie8-responsive-file-warning.js"></script>
+	<![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <!-- <link href="/css/custom.min.css" rel="stylesheet"> -->
+    {{{_sections.head}}}
+    <link href="/css/graficos.min.css" rel="stylesheet">
+    <link href="/css/softour-admin.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col">
+				<div class="left_col scroll-view">
+					<div class="navbar nav_title" style="border: 0;">
+						<a href="/" class="site_title"> <img height="50px" src="/images/logo.png" alt=""></a>
+					</div>
+					<div class="clearfix"></div>
+					<br />
+					<!-- sidebar menu -->
+					<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+						<div class="menu_section">
+							<h3>Operaciones</h3>
+							<ul class="nav side-menu">
+								{{#if_mod datos.value.usuario_sesionado.tipo_usr "==" "Administrador"}}
+									<li>
+										<a href="/busqueda/solicitudes-ps" id="solicitudes-ps"><i class="fa fa-envelope"></i>Solicitudes</a>
+									<li>
+								{{/if_mod}}
+								<li>
+									<a><i class="fa fa-bed"></i>Administrar Alojamientos<span class="fa fa-chevron-down"></span></a>
+									<ul class="nav child_menu">
+										<li><a href="/alojamiento/agregar">Agregar Alojamiento</a></li>
+										<li><a href="/alojamiento/listado">Lista de Alojamientos</a></li>
+									</ul>
+								</li>
+								<li>
+									<a><i class="fa fa-cutlery"></i>Administrar Gastronomía<span class="fa fa-chevron-down"></span></a>
+									<ul class="nav child_menu">
+										<li><a href="/gastronomia/agregar">Agregar Sitio</a></li>
+										<li><a href="/gastronomia/listado">Lista de Sitios</a></li>
+									</ul>
+								</li>
+								<li>
+									<a><i class="fa fa-camera"></i>Administrar Experiencias<span class="fa fa-chevron-down"></span></a>
+									<ul class="nav child_menu">
+										<li><a href="/experiencia/agregar">Agregar Experiencia</a></li>
+										<li><a href="/experiencia/listado">Lista de Experiencias</a></li>
+									</ul>
+								</li>
+								<li>
+									<a><i class="fa fa-calendar-o"></i>Administrar Eventos<span class="fa fa-chevron-down"></span></a>
+									<ul class="nav child_menu">
+										<li><a href="/evento/agregar">Agregar Evento</a></li>
+										<li><a href="/evento/listado">Lista de Eventos</a></li>
+									</ul>
+								</li>
+								<li>
+									<a><i class="fa fa-globe"></i>Administrar Lugares<span class="fa fa-chevron-down"></span></a>
+									<ul class="nav child_menu">
+										<li><a href="/lugar/agregar">Agregar Lugar</a></li>
+										<li><a href="/lugar/listado">Lista de Lugares</a></li>
+									</ul>
+								</li>
+								{{#if_mod datos.value.usuario_sesionado.tipo_usr "==" "Administrador"}}
+									<li>
+										<a><i class="fa fa-user-plus"></i>Administrar Usuarios<span class="fa fa-chevron-down"></span></a>
+										<ul class="nav child_menu">
+											<li><a href="/usuario/registrar-cuenta">Agregar Prestador de servicios</a></li>
+											<li><a href="/usuario/listado/prestadores-servicio">Lista de Prestadores de servicios</a></li>
+											<!-- <li><a href="/">Agregar Turista</a></li> -->
+											<li><a href="/usuario/listado/turistas">Listado de Turistas</a></li>
+										</ul>
+									</li>
+								{{/if_mod}}
+							</ul>
+						</div>
+					</div>
+					<!-- /sidebar menu -->
+				</div>
+			</div>
+			<!-- top navigation -->
+			<div class="top_nav">
+				<div class="nav_menu">
+					<nav>
+						<div class="nav toggle">
+							<a id="menu_toggle"><i class="fa fa-bars"></i></a>
+						</div>
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="#" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<i class="glyphicon glyphicon-user"></i> &nbsp; <b>{{datos.value.usuario_sesionado.usuario}}</b>
+									<span class=" fa fa-angle-down"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-usermenu">
+									<li><a href="/usuario/{{datos.value.usuario_sesionado.usuario}}"><i class="fa fa-line-chart"></i> Dashboard</a></li>
+									{{#if_mod datos.value.usuario_sesionado.tipo_usr "!=" "Administrador"}}
+									   <li><a href="/usuario/{{datos.value.usuario_sesionado.usuario}}/configurar-cuenta"><i class="fa fa-edit"></i>  &nbsp;{{traduccion.MENU_SUP_CONFIG_CTA}}</a></li>
+									{{/if_mod}}
+									<li><a href="/usuario/cerrar-sesion"><i class="glyphicon glyphicon-off"></i>  &nbsp;{{traduccion.MENU_SUP_CERRAR_SESION}}</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<!-- /top navigation -->
+			{{{body}}}
+			<!-- footer content -->
+			<footer>
+				<div class="pull-right">
+					Softour - Hecho con &nbsp; <i class="fa fa-heart"></i> &nbsp; en Espin / Cumaná
+				</div>
+				<div class="clearfix"></div>
+			</footer>
+			<!-- /footer content -->
+		</div>
+	</div>
+	<!-- jQuery -->
+	<script src="/vendors/jquery/dist/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/vendors/OwlCarousel2/dist/owl.carousel.min.js"></script>
+	<!-- FastClick -->
+	<script src="/vendors/fastclick/lib/fastclick.js"></script>
+	<!-- NProgress -->
+	<script src="/vendors/nprogress/nprogress.js"></script>
+	<!-- Dropzone.js -->
+	<script src="/vendors/dropzone/dist/min/dropzone.min.js"></script>
+	<!-- DateJS -->
+	<!-- <script src="/vendors/DateJS/build/date.js"></script> -->
+	<!-- Chart.js -->
+	<script src="/vendors/Chart.js/dist/Chart.min.js"></script>
+	<script src="/vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+	<!-- <script src="/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script> -->
+	<!-- gauge.js -->
+	<script src="/vendors/gauge.js/dist/gauge.min.js"></script>
+	<!-- bootstrap-progressbar -->
+	<script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+	<!-- iCheck -->
+	<script src="/vendors/iCheck/icheck.min.js"></script>
+	<!-- Datatables -->
+	<script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+	<script src="/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+	<script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+
+	<!-- Flot -->
+	<script src="/vendors/Flot/jquery.flot.js"></script>
+	<script src="/vendors/Flot/jquery.flot.pie.js"></script>
+	<script src="/vendors/Flot/jquery.flot.time.js"></script>
+	<script src="/vendors/Flot/jquery.flot.stack.js"></script>
+	<script src="/vendors/Flot/jquery.flot.resize.js"></script>
+	<!-- Flot plugins -->
+	<script src="/vendors/Flot/js/jquery.flot.orderBars.js"></script>
+	<script src="/vendors/Flot/js/jquery.flot.spline.js"></script>
+	<script src="/vendors/Flot/js/curvedLines.js"></script>
+	<!-- jquery.inputmask -->
+	<!-- <script src="/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script> -->
+	<!-- bootstrap-daterangepicker -->
+	<script src="/vendors/moment/min/moment.min.js"></script>
+	<script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- iCheck -->
+    <script src="/vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <!-- Flot -->
+    <!-- <script src="/vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <script src="/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script> -->
+    <script src="/vendors/Flot/jquery.flot.js"></script>
+    <script src="/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="/vendors/flot-orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="/vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- jquery.inputmask -->
+    <!-- <script src="/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script> -->
+    <!-- bootstrap-daterangepicker -->
+    <!-- DateJS -->
+    <script src="/vendors/DateJS/build/date.js"></script>
+    <!-- Chart.js -->
+    <script src="/vendors/moment/min/moment.min.js"></script>
+    <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="/vendors/jquery-tagsinput-revisited/src/jquery.tagsinput-revisited.js"></script>
+    <!-- API calls -->
+    <script src="/vendors/axios/dist/axios.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="/js/graficos.min.js"></script>
+    <script src="/vendors/parsley/dist/parsley.min.js"></script>
+    <script src="/vendors/parsley/dist/i18n/es.js"></script>
+	<script src="/vendors/pnotify/dist/pnotify.js"></script>
+    <script src="/js/softour-admin.js"></script>
+    {{#if_mod datos.value.usuario_sesionado.tipo_usr "==" "Administrador"}}
+    	<script>
+    		if($("#solicitudes-ps").length > 0)
+    			inicializarContadorSolicitudesPS();
+    	</script>
+	{{/if_mod}}
+    {{{_sections.js_libs}}}
+    <!-- <script src="/js/api.js" type="text/javascript" charset="utf-8"></script> -->
+</body>
+
+</html>

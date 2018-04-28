@@ -1,0 +1,37 @@
+{{#section 'titulo_pagina'}}{{traduccion.TITULO_SESIONARME}}{{/section}}
+
+<body class="login-page">
+        {{> mostrar_errores}}
+    <main>
+        <div class="login-block">
+            <a class="logo" href="/"> <img src="/images/logo.png" alt=""> </a>
+            <form action="#" class="form-turista" method="post" accept-charset="utf-8" enctype="application/x-www-urlencoded"> 
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="ti-email"></i></span>
+                        <input value="{{datos.value.usuario}}" type="text" class="form-control" id="usuario" name="usuario" placeholder="{{traduccion.CORREO}}" required autofocus>
+                    </div>
+                </div>
+                <hr class="hr-xs">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="ti-unlock"></i></span>
+                        <input type="password" class="form-control" id="clave" name="clave" placeholder="{{traduccion.CONTRASENA}}" required="contraseña">
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block" type="submit">{{traduccion.BOTON_INICIAR_SESION}}</button>
+                <div class="login-footer">
+                    <h6>{{traduccion.O_INICIE_SESION_CON}}</h6>
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="/usuario/sesionarme/facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="/usuario/sesionarme/twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="google" href="/usuario/sesionarme/google"><i class="fa fa-google"></i></a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="login-links">
+          <!--   <a class="pull-left" href="user-forget-pass.html">¿Olvidó su contraseña?</a> -->
+            <a class="pull-right" href="/usuario/registrar-cuenta">{{traduccion.REGISTRAR_UNA_CUENTA}}</a>
+        </div>
+    </main>

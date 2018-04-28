@@ -1,0 +1,30 @@
+{{#section "titulo_pagina"}}
+    {{traduccion.TITULO_BUSQUEDA_GENERAL}}
+{{/section}}
+{{#section 'head'}}
+    <link href="/css/app.min.css" rel="stylesheet">
+    <link href="/css/busquedas.css" rel="stylesheet">
+{{/section}}
+<header class="site-header size-lg text-center" style="background-image: url(/images/background/bg-banner5.jpg)">
+    <div class="container">
+        <div class="col-xs-12">
+            <br>
+            <br>
+            <h2>{{traduccion.BUSQUEDA_GENERAL_TITULO}}</h2>
+            {{> buscador_general}}
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="row">
+            <h1 class="azul" >{{traduccion.RESULTADO_NO_ENCONTADO}}</h1>
+        </div>
+    </div>      
+    
+</main>
+{{#section 'js_libs'}}
+    <!-- <link rel="stylesheet" href="/vendors/starrr/dist/starrr.css">
+    <link rel="stylesheet" href="/css/style-hotelfinder.css"> -->
+{{/section}}

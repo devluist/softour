@@ -1,0 +1,56 @@
+<section class="ruta p-y-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-xs-right">
+                <a href="index.html">Inicio</a>> Configuración
+            </div>
+        </div>
+    </div>
+</section>
+<main class="p-y-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="m-b-2">Configura tu cuenta</h2>
+                <form action="" method="post" accept-charset="utf-8">
+                    {{> mostrar_errores}}
+                    <div class="form-group row">
+                        <label for="edad" class="col-md-3 col-form-label">Edad</label>
+                        <div class="col-md-9">
+                            <input class="form-control" type="number" value="{{datos.value.edad}}" id="edad" name="edad">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="sexo" class="col-md-3 col-form-label">Sexo</label>
+                        <div class="col-md-9">
+                            {{#if datos.value.sexo}}
+                                <select class="form-control" id="sexo" name="sexo">
+                                    {{#if datos.value.sexo}}
+                                        {{#if_mod datos.value.sexo "==" "M"}}
+                                            <option selected value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        {{else}}
+                                            <option value="M">Masculino</option>
+                                            <option selected value="F">Femenino</option>
+                                        {{/if_mod}}
+                                    {{/if}}
+                                </select>
+                            {{else}}
+                                <select class="form-control" id="sexo" name="sexo">
+                                    <option value="">Seleccione...</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                </select>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="form-group row pull-right">
+                        <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn btn-outline-success">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

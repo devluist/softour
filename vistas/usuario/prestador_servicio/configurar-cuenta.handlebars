@@ -1,0 +1,86 @@
+{{#section 'head'}}
+    <title>Configuración de Cuenta</title>
+{{/section}}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div>
+    <div>
+        <div class="page-title">
+            <h3>Configuración de Cuenta</h3>
+        </div>
+        <br>
+        <div class="clearfix"></div>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <div class="container perfil-usuario">
+                        <div class="row">
+                            <form class="col-md-3 col-sm-12 foto-perfil-usuario" id="form_cambiar_foto_perfil" name="form_cambiar_foto_perfil" onsubmit="return false;" accept-charset="utf-8">
+                                <span id="mensaje_form_cambiar_foto"></span>
+                                <h4>Foto Perfíl</h4>
+                                {{#if datos.value.foto_perfil.url}}
+                                    <input type="file" id="campo_foto_perfil" name="foto_perfil" value="" placeholder="Subir foto">
+                                    <img class="container" id="foto_perfil" src="{{datos.value.foto_perfil.url}}" alt="¿Deseas cambiar tu foto de perfíl?">
+                                {{else}}
+                                    <input type="file" id="campo_foto_perfil" name="foto_perfil" value="" placeholder="Subir foto">
+                                    <img class="container" id="foto_perfil" src="/images/sin_imagen.png" alt="¿Deseas agregar una?">
+                                {{/if}}
+                                <button id="boton_cambiar_foto_perfil" type="button" class="btn btn-softour">Subir</button>
+                                <p id="usuario">@{{datos.value.usuario}}</p>
+                            </form>
+                            <form class="col-md-8 col-md-offset-1" method="POST" accept-charset="utf-8" >
+                                <h4>Tus datos</h4>
+                                {{> mostrar_errores}}
+                                <div class="form-group row">
+                                    <label for="edad" class="col-md-1 col-form-label">Edad</label>
+                                    <div class="col-md-11">
+                                        <input class="form-control" type="number" value="{{datos.value.edad}}" id="edad" name="edad">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="sexo" class="col-md-1 col-form-label">Sexo</label>
+                                    <div class="col-md-11">
+                                        {{#if datos.value.sexo}}
+                                            <select class="form-control" id="sexo" name="sexo">
+                                                {{#if datos.value.sexo}}
+                                                    {{#if_mod datos.value.sexo "==" "M"}}
+                                                        <option selected value="M">Masculino</option>
+                                                        <option value="F">Femenino</option>
+                                                    {{else}}
+                                                        <option value="M">Masculino</option>
+                                                        <option selected value="F">Femenino</option>
+                                                    {{/if_mod}}
+                                                {{/if}}
+                                            </select>
+                                        {{else}}
+                                            <select class="form-control" id="sexo" name="sexo">
+                                                <option value="">Seleccione...</option>
+                                                <option value="M">Masculino</option>
+                                                <option value="F">Femenino</option>
+                                            </select>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                                <div class="form-group row pull-right">
+                                    <div class="col-md-8 offset-md-4">
+                                        <button type="submit" class="btn btn-softour">Guardar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> </div>
+</div>
+<!-- /page content -->
+
+
+{{#section 'js_libs'}}
+    <script src="/vendors/axios/dist/axios.min.js"></script>
+{{/section}}

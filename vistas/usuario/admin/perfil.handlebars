@@ -1,0 +1,177 @@
+{{#section 'head'}}
+	<title>Perfíl Administrador</title>
+{{/section}}
+    <div class="right_col" role="main">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h3>Bienvenido Administrador</h3>
+                <div class="row tile_count">
+                    <div class="col-md-2 col-sm-3 col-xs-12 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i> Visitantes</span>
+                        <div class="count">28</div>
+                        <span class="count_bottom"><i class="green">10% </i> Último mes</span>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12 tile_stats_count ">
+                        <span class="count_top"><i class="fa fa-user"></i> Navegadores</span>
+                        <div class="count">28</div>
+                        <span class="count_bottom"><i class="green">10% </i> Último mes</span>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-clock-o"></i> Turistas (R)</span>
+                        <div class="count">22</div>
+                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> Último mes</span>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i> Hombres y mujeres</span>
+                        <div class="count green">28</div>
+                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> Último mes</span>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-12 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i> Prestadores de servicio</span>
+                        <div class="count">3</div>
+                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>2% </i> Último mes</span>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-12 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i> Publicaciones</span>
+                        <div class="count">24</div>
+                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> Último mes</span>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                	<div class="x_panel">
+                        <div class="x_title">
+                            <h3>Promoción en redes sociales </h3>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content col-md-12 col-sm-12 col-xs-12 ">
+                            <!--style="height:40vh; width:100%" -->
+                            <canvas id="grafico-redes-sociales"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+	                        <div class="x_title">
+	                            <h3>Publicaciones mensuales</h3>
+	                            <div class="clearfix"></div>
+	                        </div>
+	                        <div class="x_content">
+	                            <!--style="height:40vh; width:100%" -->
+	                            <canvas id="grafico-publicaciones-mensuales"></canvas>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+	                        <div class="x_title">
+	                            <h3>Publicaciones anuales</h3>
+	                            <div class="clearfix"></div>
+	                        </div>
+	                        <div class="x_content">
+	                            <!--style="height:40vh; width:100%" -->
+	                            <canvas id="grafico-proporciones-publicaciones"></canvas>
+	                        </div>
+	                    </div>
+	                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{#section "js_libs"}}
+<script>
+	var ctx = document.getElementById('grafico-redes-sociales').getContext('2d');
+	var chart = new Chart(ctx, {
+	    // The type of chart we want to create
+	    type: 'line',
+
+	    // The data for our dataset
+	    data: {
+	        labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+	        datasets: [{
+	                label: "Twitter",
+	                backgroundColor: 'rgba(248, 229, 210, 0.5)',
+	                borderColor: 'rgb(253, 178, 106)',
+	                data: [15, 12, 14, 11, 13, 9, 10, 13, 15, 16, 18, 5],
+	            },
+	            {
+	                label: "Google",
+	                backgroundColor: 'rgba(220, 255, 255, 0.5)',
+	                borderColor: 'rgb(50, 50, 255)',
+	                data: [22, 21, 19, 20, 23, 17, 20, 19, 26, 23, 24, 14],
+	            },
+	            {
+	                label: "Facebook",
+	                backgroundColor: 'rgba(255, 220, 255, 0.5)',
+	                borderColor: 'rgb(255, 100, 255)',
+	                data: [27, 23, 25, 21, 18, 22, 27, 23, 20, 22, 25, 12],
+	            },
+	        ],
+	    },
+
+	    // Configuration options go here
+	    options: {}
+	});
+
+
+	var ctx2 = document.getElementById("grafico-publicaciones-mensuales").getContext('2d');
+
+	var myChart = new Chart(ctx2, {
+	    type: 'bar',
+	    data: {
+	        labels: ["Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+	        datasets: [{
+	            label: "Lugares",
+	            backgroundColor: 'rgb(52,152,219)',
+	            data: [8, 12, 17, 15, 14, 3]
+	        }, {
+	            label: "Alojamientos",
+	            backgroundColor: 'rgb(69,92,115)',
+	            data: [10, 9, 17, 14, 21, 5]
+	        }, {
+	            label: "Eventos",
+	            backgroundColor: 'rgb(155,89,182)',
+	            data: [19, 18, 26, 23, 24, 13]
+	        }, {
+	            label: "Gastronomía",
+	            backgroundColor: 'rgb(189,195,199)',
+	            data: [6, 5, 4, 5, 3, 1]
+	        }, {
+	            label: "Experiencias",
+	            backgroundColor: 'rgb(38,185,154)',
+	            data: [2, 1, 5, 7, 3, 1]
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero: true
+	                }
+	            }]
+	        }
+	    }
+	});
+	var ctx3 = document.getElementById("grafico-proporciones-publicaciones").getContext('2d');
+	var myDoughnutChart = new Chart(ctx3, {
+	    type: 'doughnut',
+
+	    data: {
+	        datasets: [{
+	            data: [29, 28, 43, 10, 19],
+	            backgroundColor: ['rgb(52,152 ,219)', 'rgb(69, 92, 115)', 'rgb(155, 89, 182)',
+	                'rgb(189, 195, 199)', 'rgb(38, 185, 154)'
+	            ]
+	        }],
+	        // These labels appear in the legend and in the tooltips when hovering different arcs
+	        labels: ['Lugares', 'Eventos', 'Experiencias', 'Gastronomía', 'Alojamientos']
+	    },
+	    options: {
+	        cutoutPercentage: 50
+	    }
+	});
+
+	/* chart.canvas.parentNode.style.height = '128px'; 
+	mychart.canvas.parentNode.style.height = '100px'; */
+</script>
+{{/section}}

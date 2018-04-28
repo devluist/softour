@@ -1,0 +1,315 @@
+<nav id="filtros-busqueda" class="margen_botton">
+        <div class="dropdown">
+            <p>{{traduccion.TITULO_FILTRO}}:</p>
+            
+        </div>
+        
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" data-toggle="dropdown" type="button" id="btn-fechas" class="btn btn-default">{{traduccion.FECHA_FILTRO}}</button>
+            <div id="cuadro-fechas" aria-labelledby="btn-fechas" role="menu" class="datepicker-here dropdown-menu"></div>
+        </div> 
+
+        <!-- <div class="dropdown">
+            <button class="btn dropdown-toggle" data-toggle="dropdown" type="button" id="btn-huespedes" class="btn btn-default">Huéspedes</button>
+            <div id="cuadro-huespedes" aria-labelledby="btn-huespedes" role="menu" class="dropdown-menu">
+                <h5>Número de personas</h5>
+                <div>
+                    <button type="button" id="dec-huespedes" class="btn btn-default"><img src="images/minus2.png"></button>
+                    <span id="texto-cantidad-huespedes">1</span>
+                    <button type="button" id="inc-huespedes" class="btn btn-default"><img src="images/plus2.png"></button>
+                </div>
+                <hr>
+                <input type="submit" class="btn btn-succes btn-sm pull-right" id="aplicar-huespedes" value="Aplicar">
+            </div>
+        </div>  -->
+        
+         <!-- <div class="dropdown">
+            <button class="btn dropdown-toggle" data-toggle="dropdown" type="button" id="btn-tipo-alojamiento" class="btn btn-default">Tipo de Alojamiento</button>
+            <div id="cuadro-tipo-alojamiento" aria-labelledby="btn-huespedes" role="menu" class="dropdown-menu">
+                <div>
+                    <div class="radio">
+                        <input type="radio" name="options" id="option1">
+                        <label for="option1"><h6>Espacio completo</h6></label>
+                        <br><small>Apartamento, casa, cabaña, otros.</small>
+                    </div>
+                    <br>
+                    <div class="radio">
+                        <input type="radio" name="options" id="option2">
+                        <label for="option2"><h6>Habitación Privada</h6></label>
+                        <br><small>Hotel, posada, residencia, otros.</small>
+                    </div>
+                </div>
+                <hr>
+                <input type="submit" class="btn btn-succes btn-sm pull-right" id="aplicar-huespedes" value="Aplicar">
+            </div>
+                 </div> -->
+
+        <!-- <div class="dropdown">
+            <button class="btn dropdown-toggle" data-toggle="dropdown" type="button" id="btn-servicios" class="btn btn-default">Servicios</button>
+            <div id="cuadro-servicios" aria-labelledby="btn-servicios" role="menu" class="dropdown-menu">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <ul class="serv">
+                            <li>
+                                <input type="checkbox" id="s1">
+                                <label for="s1"><h6>Desayuno</h6></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s2">
+                                <label for="s2"><h6>Wifi</h6></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s3">
+                                <label for="s3"><h6>Aire acondicionado</h6></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s4">
+                                <label for="s4"><h6>Lavandería</h6></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s5">
+                                <label for="s5"><h6>Minibar</h6></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s6">
+                                <label for="s6"><h6>Caja de seguridad</h6></label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <ul class="serv">
+                            <li>
+                                <input type="checkbox" id="s7">
+                                <label for="s7"><h6>Estacionamiento</h6></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s8">
+                                <label for="s8"><h6>Casino</h6></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s9">
+                                <label for="s9"><h6>Spa</h6></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s10">
+                                <label for="s10"><h6>Tiendas</h6></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s11">
+                                <label for="s11"><h6>Piscina</h6></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s12">
+                                <label for="s12"><h6>Restaurante</h6></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <input type="submit" class="btn btn-succes btn-sm pull-right" id="aplicar-huespedes" value="Aplicar">
+            </div>
+        </div> -->
+
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" data-toggle="dropdown" type="button" id="btn-precio" class="btn btn-default">{{traduccion.PRECIO_FILTRO}}</button>
+            <div id="cuadro-precio" aria-labelledby="btn-precio" role="menu" class="dropdown-menu">
+                <h6>{{traduccion.SUBTITULO_PRECIO_FILTRO}}</h6>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input min=0 id="preciomin" type="number" class="form-control" placeholder="min">
+                            <span class="input-group-addon">{{traduccion.MONEDA_FILTRO}}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input min=0 id="preciomax" type="number" class="form-control" placeholder="max">
+                            <span class="input-group-addon">{{traduccion.MONEDA_FILTRO}}</span>
+                        </div>
+                    </div>
+                </div>
+                <br><hr>
+                <input type="submit" class="btn btn-primary btn-sm pull-right" id="aplicar-precio" value="{{traduccion.BTN_APLICAR_FILTRO}}">
+            </div> 
+        </div>
+    </nav>
+
+<!--
+FILTRO 
+<nav id="cbp-hrmenu" class="cbp-hrmenu">
+    <ul>
+        <li>
+            <a href="#">Fecha</a>
+            <div class="cbp-hrsub">
+                <div class="cbp-hrsub-inner">
+                    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RANGO DE FECHA</h4>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div id="cuadro-calendario"></div>
+                        <input type="hidden" id="fechahora_inicio_fin" name="fechahora_inicio_fin" placeholder="dd/mm/aaaa" class="form-control picker_4" value="">
+                    </div>
+                </div>
+                <!- - /cbp-hrsub-inner - ->
+            </div>
+            <!- - /cbp-hrsub - ->
+        </li>
+        <li>
+            <a href="#">Huéspedes</a>
+            <div class="cbp-hrsub">
+                <div class="cbp-hrsub-inner">
+                    <div>
+                        <h4>ADULTOS</h4>
+                        <ul>
+                            <button class="btn btn-info btn-circle" type="button" id="menos" onclick="javascript: contadormenos1()"><img src="/images/filtro/minus2.png"></button>
+                            <input id="cantidad1" type="text" size="1" style="text-align: center;" value="1">
+                            <button class="btn btn-info btn-circle" type="button" id="mas" onclick="javascript: contadormas1()"><img src="/images/filtro/plus2.png"></button>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>NIÑOS</h4>
+                        <ul>
+                            <button class="btn btn-info btn-circle" type="button" id="menos" onclick="javascript: contadormenos2()"><img src="/images/filtro/minus2.png"></button>
+                            <input id="cantidad2" type="text" size="1" style="text-align: center;" value="0">
+                            <button class="btn btn-info btn-circle" type="button" id="mas" onclick="javascript: contadormas2()"><img src="/images/filtro/plus2.png"></button>
+                        </ul>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-success">Aplicar</button>
+                </div>
+                <!- - /cbp-hrsub-inner - ->
+            </div>
+            <!- - /cbp-hrsub - ->
+        </li>
+        <li>
+            <a href="#">Tipo de alojamiento</a>
+            <div class="cbp-hrsub">
+                <div class="cbp-hrsub-inner">
+                    <div>
+                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1">
+                        <label for="opciones_1">
+                            <h4>COMPLETO</h4></label>
+                        <br>
+                        <p style="color:#FFF" ;>Alojamiento completo solo para ti</p>
+                    </div>
+                    <div>
+                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2">
+                        <label for="opciones_2">
+                            <h4>POR HABITACIÓN</h4></label>
+                        <p style="color:#FFF">Habitaciones privadas y áreas comunes compartidas</p>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-success">Aplicar</button>
+                </div>
+                <!- - /cbp-hrsub-inner - ->
+            </div>
+            <!- - /cbp-hrsub - ->
+        </li>
+        <li>
+            <a href="#">Servicios e instalaciones</a>
+            <div class="cbp-hrsub">
+                <div class="cbp-hrsub-inner">
+                    <div>
+                        <h4>SERVICIOS</h4>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="s1">
+                                <label for="s1"><a>Desayuno&nbsp;</a><img src="//images/filtro/desayuno.png" class="icon" /></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s2">
+                                <label for="s2"><a>Wifi&nbsp;</a><img src="//images/filtro/wifi.png" class="icon" /></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s3">
+                                <label for="s3"><a>Aire acondicionado&nbsp;</a><img src="//images/filtro/aire.png" class="icon" /></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s4">
+                                <label for="s4"><a>Lavandería&nbsp;</a><img src="//images/filtro/lavanderia.png" class="icon" /></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s5">
+                                <label for="s5"><a>Minibar&nbsp;</a><img src="//images/filtro/bar.png" class="icon" /></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s6">
+                                <label for="s6"><a>Caja de seguridad&nbsp;</a><img src="//images/filtro/box.png" class="icon" /></label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>INSTALACIONES</h4>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="s7">
+                                <label for="s7"><a>Estacionamiento&nbsp;</a><img src="/images/filtro/parking.png" class="icon" /></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s8">
+                                <label for="s8"><a>Casino&nbsp;</a><img src="/images/filtro/casino.png" class="icon" /></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s9">
+                                <label for="s9"><a>Spa&nbsp;</a><img src="/images/filtro/spa.png" class="icon" /></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s10">
+                                <label for="s10"><a>Tiendas&nbsp;</a><img src="/images/filtro/tiendas.png" class="icon" /></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s11">
+                                <label for="s11"><a>Piscina&nbsp;</a><img src="/images/filtro/piscina.png" class="icon" /></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="s12">
+                                <label for="s12"><a>Restaurante&nbsp;</a><img src="/images/filtro/restaurante.png" class="icon" /></label>
+                            </li>
+                        </ul>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-success">Aplicar</button>
+                </div>
+                <!- - /cbp-hrsub-inner - ->
+            </div>
+            <!- - /cbp-hrsub - ->
+        </li>
+        <li>
+            <a href="#">Precio</a>
+            <div class="cbp-hrsub">
+                <div class="esp_">
+                    <h4>&nbsp;&nbsp;RANGO DE PRECIOS</h4>
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Precio min">
+                            <span class="input-group-addon">Bs.</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Precio max">
+                            <span class="input-group-addon">Bs.</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-2">
+                        <button type="button" class="btn btn-success">Aplicar</button>
+                    </div>
+                </div>
+            </div>
+            <!- - /cbp-hrsub - ->
+        </li>
+    </ul>
+</nav>
+-->

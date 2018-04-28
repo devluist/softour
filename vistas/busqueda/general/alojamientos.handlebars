@@ -1,0 +1,179 @@
+
+{{#section "titulo_pagina"}}
+    {{traduccion.TITULO_ALOJAMIENTO}}
+{{/section}}
+{{#section 'head'}}
+    
+    <link href="/css/busquedas.css" rel="stylesheet">
+    <link href="/css/subcategorias.css" rel="stylesheet">
+   
+{{/section}}
+
+<header class="site-header size-lg text-center" style="background-image: url(/images/alojamiento/background.jpg)">
+    <div class="container">
+        <div class="col-xs-12">
+            <br>
+            <br>
+            <h1 id="subc">{{traduccion.TITULO_ALOJAMIENTO_GENERAL}}</h1>
+            {{> buscador_general}}
+        </div>
+    </div>
+</header>
+<!--  <section class="backg-alt"> -->
+       <div class="container">
+            <header class="text-left colorh">
+            {{> filtros_busqueda}} <hr>
+                <!-- <h3>{{traduccion.TITULO_ALOJAMIENTO_DESTACADO_1}}</h3> -->
+            </header>
+        </div>
+            <main>
+                <div class="container">
+                    <div class="row">
+                          <!-- NUEVO CARD -->
+                {{#if_mod datos.value.cantidad_resultados ">" 0}}
+                            {{#if datos.value.lista_resultados}}
+                                {{#each datos.value.lista_resultados}}            
+                    <div class="col-md-4 col-sm-6 py">
+                        {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "Turista"}}
+                            <a href="/api/favoritos/{{this.__t}}/{{this.url}}" class="corazon-favoritos sesionado"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                        {{else}}
+                            {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "PrestadorServicio"}}
+                                <a class="corazon-favoritos"><img src="/images/like.png"></a>
+                            {{else}}
+                                <a href="/usuario/sesionarme" class="corazon-favoritos"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                            {{/if_mod}}
+                        {{/if_mod}}
+                        <div class="tarjeta_container">
+                            <div class="img_container">
+                                <a href="/alojamiento/{{datos.value}}{{this.url}}">
+                                    {{#if this.imagen_portada}}
+                                        <img src="{{this.imagen_portada.url}}" width="400" height="220" alt="image">
+                                    {{else}}
+                                        <img src="/images/sin_imagen.png" width="400" height="220" alt="image">
+                                    {{/if}}
+                                </a>       
+                            </div>
+                            <div class="tarjeta_title">
+                                <div>
+                                    <h3 class="texto"><strong>{{this.nombre}}</strong></h3>
+                                </div>
+                                
+                                <div class="acciones">
+                                    <div class="calif-entidades" data-calificacion={{this.promedio_calificaciones}}>
+                                    </div>
+                                    <div class="interaccion">
+                                        <div class="card__share">
+                                            <div class="card__social">
+                                                <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                                                <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                                                <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                                            </div>
+                                            <a id="share" class="share-toggle share-icon" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        {{/each}}
+                        {{/if}}
+                        {{else}}
+                        <!-- <h6>No se encontraron resultados <i class="fa fa-times" aria-hidden="true"></i></h6> -->
+                        {{/if_mod}}
+                        <!-- NUEVO CARD -->
+
+                    </div>
+                </div> 
+        
+              <div class="spinner">
+                <span class="dot1"></span>
+                <span class="dot2"></span>
+                <span class="dot3"></span>
+              </div>
+
+
+            </div>  
+            </main>
+
+
+            
+        
+   <!--  </section> -->
+
+<!-- SECTION DIVIDER4 -->
+        <section class="section-divider textdivider divider4">
+            <div class="container">
+                <h1>{{traduccion.TITULO_ALOJAMIENTO_DESTACADO_2}}</h1>
+                <hr>
+                <p>"{{traduccion.TITULO_ALOJAMIENTO_DESTACADO_3}}"</p>
+                <h6>-Anónimo</h6>
+
+            </div>
+        </section>
+        <!-- section -->
+
+
+        <!-- Categorías -->
+        <div class="cat_lug" styles="">
+            <div class="container">
+                <div class="subcategorias">
+                    <h2>{{traduccion.TITULO_ALOJAMIENTO_DESTACADO_4}}</h2>
+                </div>
+                <center>  
+                <div class="row">
+                        <div class="col-xs-6 col-md-4">
+                        <div class="_card">
+                            <div class="card">
+                                <figure class="front">
+                                    <img src="/images/alojamiento/alojam1.jpg">
+                                    <div class="caption">
+                                        <h2><span>{{traduccion.ALOJAMIENTO_HOTELES}}</span></h2>
+                                        <p>{{traduccion.VER_HOTELES}}</p>
+                                        <a href="/busqueda/alojamiento/hotel"></a>
+                                    </div>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="_card">
+                            <div class="card">
+                                <figure class="front">
+                                    <img src="/images/alojamiento/alojam2.jpg">
+                                    <div class="caption">
+                                        <h2><span>{{traduccion.ALOJAMIENTO_POSADAS}}</span></h2>
+                                        <p>{{traduccion.VER_POSADAS}}</p>
+                                        <a href="/busqueda/alojamiento/posada"></a>
+                                    </div>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="_card">
+                            <div class="card">
+                                <figure class="front">
+                                    <img src="/images/alojamiento/alojam3.jpg">
+                                    <div class="caption">
+                                        <h2><span>{{traduccion.ALOJAMIENTO_CABANAS}}</span></h2>
+                                        <p>{{traduccion.VER_CABANAS}}</p>
+                                        <a href="/busqueda/alojamiento/cabaña"></a>
+                                    </div>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <br>
+                    <br>
+                </center>
+
+            </div>
+        </div>
+        <!-- Fin Categorías -->
+
+
+{{#section 'js_libs'}}
+
+    
+{{/section}}

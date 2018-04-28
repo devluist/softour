@@ -1,0 +1,353 @@
+{{#section "titulo_pagina"}}
+    {{traduccion.TITULO_ALOJAMIENTO_VISUALIZAR}}
+{{/section}}
+{{#section 'head'}}
+    
+   <!-- Styles -->
+    <link href="/css/busquedas.css" rel="stylesheet">
+    <!-- Slider -->
+    <!-- mapa -->
+    <link rel="stylesheet" href="/vendors/leaflet/leaflet.css">
+    <link rel="stylesheet" href="/vendors/starrr/dist/starrr.css">
+
+{{/section}}
+
+   <!-- Site header -->
+<header class="site-header size-lg text-center" style="background-image: url(/images/alojamiento/background-hotel.jpg)">
+    <div class="container">
+        <div class="col-xs-12">
+            <br>
+            {{> buscador_general}}<!-- {{datos.value}} --> 
+             <!-- {{datos.lista_categorias}} -->
+        </div>
+    </div>
+</header>
+<!-- END Site header -->
+     <!-- Main container -->
+    <main>
+        <!--Nombre hotel-->
+        <div class="container establecimiento">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>{{datos.value.nombre}}</h2> 
+                </div>
+                <!-- <div class="col-xs-12 col-md-8">
+            </div> -->
+            </div>
+        </div>
+        <!--Fin  Nombre hotel-->
+         <!-- Filtro hotel -->
+        <div class="container">
+            <div class="row">
+                
+                <!-- Tipos de habitaciones -->
+               <div class="col-xs-12 col-md-4 filtro-hotel scrollbar" id="style-4" style="overflow-y:scroll;">
+
+                   <h4 class="habi">{{traduccion.HABITACIONES}}</h4>
+                   {{#each datos.lista_categorias}}
+                   <a class="item-block" href="/alojamiento/{{../datos.value.url}}/{{this.nombre}}">
+                       <header>
+                         <img class="habf" src="/images/alojamiento/hotelvenetur/hab-sencilla.jpg" alt="">
+                         <div class="hgroup">
+                           <h4>{{this.nombre}}</h4>
+                           <span> Bs.F &nbsp;{{this.precio_unitario_producto}}</span>
+                         </div>
+                       </header>
+                   </a>
+                   <!-- <a class="item-block" href="DOBLE">
+                       <header>
+                         <img class="habf" src="/images/alojamiento/hotelvenetur/hab-doble.jpg" alt="">
+                         <div class="hgroup">
+                           <h4>Doble</h4>
+                           <span><i class="fa fa-usd"></i>&nbsp;150</span>
+                         </div>
+                       </header>
+                   </a>
+                    <a class="item-block" href="#">
+                       <header>
+                         <img class="habf" src="/images/alojamiento/hotelvenetur/hab-matrimonial.jpg" alt="">
+                         <div class="hgroup">
+                           <h4>Matrimonial</h4>
+                           <span><i class="fa fa-usd"></i>&nbsp;200</span>
+                         </div>
+                       </header>
+                   </a>
+                   <a class="item-block" href="#">
+                       <header>
+                         <img class="habf" src="/images/alojamiento/hotelvenetur/hab-suite.jpg" alt="">
+                         <div class="hgroup">
+                           <h4>Suite</h4>
+                           <span><i class="fa fa-usd"></i>&nbsp;500</span>
+                         </div>
+                       </header>
+                   </a> -->
+                    {{/each}}
+               </div>
+                <!-- slider -->
+                <div class="col xs-12 col-md-8">
+                    <div class="main">
+                        <div class="slides">
+
+                            {{#if datos.value.imagenes}}
+                                {{#each datos.value.imagenes}}
+                                    <img src="{{this.url}}" alt="">
+                                {{/each}}
+                            {{else}}
+                                <img src="/images/sin_imagen.png" alt="">
+                            {{/if}}
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin slider -->
+            </div>
+        </div>
+        <!-- Filtro hotel -->
+        <!--Botones-->
+        <div class="container botonera">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="botones">
+                        <li><a data-scroll href="#informaciongeneral">{{traduccion.INFORMACION_GENERAL}}</a></li>
+                        <!-- <li><a data-scroll href="/">Ver habitaciones</a></li> -->
+                        <li><a data-scroll href="#acercade">{{traduccion.ACERCA_DE}}</a></li>
+                        <li><a data-scroll href="#califica">{{traduccion.CALIFICA}}</a></li>
+                        <!-- <li><a data-scroll href="#cercade">Cerca de ti</a></li> -->
+                        <li class="compartir"><a href=""  data-toggle="modal" data-target="#modal">{{traduccion.COMPARTIR}} <i class="fa fa-share" aria-hidden="true"></i> </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Fin  Botones-->
+         <!--Ventana modal-->
+                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="modal">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" >{{traduccion.COMPARTIR}}</h4>
+                            </div>
+                            <div class="modal-body">
+           
+                                <div class="redes"><a href="#" class="redesf" target="_blank"><lable class="fa fa-facebook">&nbsp;Facebook</lable></a></div>
+
+                                <div class="redes"><a href="#" class="redest" target="_blank"><lable class="fa fa-twitter">&nbsp;Twitter</lable></a></div>
+
+                                <div class="redes"><a href="#" class="redesg" target="_blank"><lable class="fa fa-google">&nbsp;Google</lable></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin Ventana modal-->
+        <!-- información -->
+        <div class="container informacion" id="informaciongeneral">
+            <div class="row">
+                <div class="descripcion colorh">
+                    <h3>{{traduccion.INFORMACION}}</h3>
+                </div>
+                <!-- Contactos -->
+                <div class="col-xs-12 col-md-4 borde-derecho">
+                    <h5>{{traduccion.CONTACTO}}: </h5>
+                    <ul>
+                        <li>
+                            <i class="fa fa-male" aria-hidden="true"></i>
+                            <span><b>{{traduccion.RESPONSABLE}}:</b> <a href="/usuario/{{datos.value.prestador_servicio.usuario}}"> {{datos.value.prestador_servicio.nombre}}</a></span>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <span><b>{{traduccion.TELEFONO}}:</b> {{datos.value.telefono}}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            <span><b>{{traduccion.DIRECCION}}:</b> {{datos.value.ubicacion.pais}}, {{datos.value.ubicacion.estado}}, {{datos.value.ubicacion.ciudad}}, {{datos.value.ubicacion.direccion}}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <span><b>{{traduccion.EMAIL}}: </b> {{datos.value.correo}}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-globe" aria-hidden="true"></i>
+                            <span><b>web: </b> <a href="http://{{datos.value.pagina_web}}"> {{datos.value.pagina_web}}</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <!--fin Contactos -->
+                <!-- servicios -->
+                <div class="col-xs-12 col-md-4 servicios">
+                    <h5>{{traduccion.SERVICIOS}}: </h5>
+                    <ul>
+                        <!-- <li>
+                            <span><b>{{datos.value.etiquetas}}</b></span>
+                        </li> -->
+                        <li>
+                            <span><b>Desayuno</b></span>
+                        </li>
+                        <li>
+                            <span><b>Wifi</b></span>
+                        </li>
+                        <li>
+                            <span><b>Tv</b></span>
+                        </li>
+                    </ul>
+                </div>
+                <!--fin servicios -->
+                <!-- ubicación -->
+                <div class="col-xs-12 col-md-4 mapa" id="mapa">
+
+                </div>
+                <!--fin ubicación-->
+            </div>
+            <div class="row">
+                <div class="acerca colorh" id="acercade">
+                    <h3>{{traduccion.ACERCA_DE}}</h3>
+                </div>
+                <div class="col-xs-12 justificar-text">
+                    <p class="text-justify">{{datos.value.descripcion}}</p>
+                    <!-- <p class="text-justify">Está ubicado cerca de la hermosa playa San Luis Estas instalaciones concebidas para su máximo confort y relax, fueron inauguradas en el año 1997, y desde entonces, nos caracterizamos por nuestro excelente servicio y esmerada atención a todos nuestros apreciados clientes.</p> -->
+                    <!-- <p class="text-justify">Proporciona a todos sus clientes, a muy razonables precios, una amplia gama de servicios, de una forma eficiente y personalizada, con calidad, seriedad y sentido de compromiso, así como Alimentos y Bebidas, Convenciones, Banquetes, y Actividades Recreativas para niños y adultos, logrando siempre la total satisfacción de todos aquellos que depositan su confianza en nosotros.</p> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="calificacion colorh" id="califica">
+                    <h3>{{traduccion.CALIFICAR_SERVICIOS}}</h3>
+                </div>
+                <div class="col-xs-12 justificar-text">
+                    <div class="container">
+                        <div class="row">
+                            <div class="rating-block col-md-12">
+                                <h5>{{traduccion.CALIFICACION_PROMEDIO}}</h5>
+                                <h2 class="bold padding-bottom-7">{{datos.value.promedio_calificaciones}} <small>/ 5</small></h2>
+                            </div>
+                            <div class='col-md-12' id="mensaje-calificacion"></div>
+                            <div class="col-md-4" id="calif-entidad" data-calificacion={{datos.value.promedio_calificaciones}}>
+                                </div>
+                            <div class="col-md-5" id="btn-calificar"></div>
+                            <!-- <div class="col-sm-4">
+                                <h5>{{traduccion.CALIFICACION}}</h5>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">5 <span class="fa fa-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 100%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">1</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">4 <span class="fa fa-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">1</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">3 <span class="fa fa-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">0</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">2 <span class="fa fa-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">0</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">1 <span class="fa fa-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">0</div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- información -->
+    </main>
+     <!-- END Main container -->
+    <!-- <div class="container colorh" id="cercade">
+        <div class="row">
+            <div class="col-12 text-left">
+                <h3>Otros Alojamientos cercanos</h3>
+            </div>
+        </div>
+    </div>
+    
+     <div class="container">
+        <div class="row">
+          
+            
+           
+        </div>
+    </div> -->
+
+
+   
+{{#section 'js_libs'}}
+   <script src="/vendors/slidesjs/js/jquery.slides.js"></script>
+    <script>
+    $(function() {
+        agregarMarcadorOSM([{{datos.value.geo_ubicacion.coordinates}}], true);
+        mostrarEntidadesCercanas([{{datos.value.geo_ubicacion.coordinates}}]);
+        mostrarFechas("{{datos.value.fecha_inicio}}", "{{datos.value.fecha_fin}}");
+        calificarEntidad("{{datos.value.usuario_sesionado.tipo_usr}}");
+        $(".slides").slidesjs({
+            play: {
+                active: true,
+                // [boolean] Generate the play and stop buttons.
+                // You cannot use your own buttons. Sorry.
+                effect: "slide",
+                // [string] Can be either "slide" or "fade".
+                interval: 3000,
+                // [number] Time spent on each slide in milliseconds.
+                auto: true,
+                // [boolean] Start playing the slideshow on load.
+                swap: true,
+                // [boolean] show/hide stop and play buttons
+                pauseOnHover: false,
+                // [boolean] pause a playing slideshow on hover
+                restartDelay: 2500
+                // [number] restart delay on inactive slideshow
+            }
+        });
+    });
+    </script>
+    <script src="/vendors/smooth-scroll.min.js"></script>
+    <script src="/js/st.js"></script>
+    <!-- mapa -->
+    <script src="/vendors/leaflet/leaflet.js"></script>
+    <script src="/js/manejador-mapa.js"></script>
+{{/section}}

@@ -1,0 +1,12 @@
+
+	{{#if datos.error}}
+<div class="alert alert-danger text-center" role="alert">
+	<ul id="lista-errores-form">
+		<strong> {{traduccion.MOSTAR_ERRORES}}<br></strong>
+		{{#each datos.error}}
+			<b>{{this.campo}}:</b> {{{this.mensaje}}}<br>
+		{{/each}}
+	</ul>
+</div>
+{{/if}}
+	

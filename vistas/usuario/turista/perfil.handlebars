@@ -1,0 +1,324 @@
+{{#section 'titulo_pagina'}}Perfíl Turista - Softour{{/section}} {{#section "head"}}
+<link href="/vendors/dropzone/dist/dropzone.css" rel="stylesheet">
+<link href="/css/perfil.css" rel="stylesheet">
+<link href="/css/lightbox.css" rel="stylesheet"> {{/section}}
+<!-- Page header -->
+<header class="page-header bg-img" style="background-image: url(/images/perfil/fondoperfil.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8">
+                <div class="col-xs-4 col-sm-4 col-md-3">
+                    {{#if datos.value.persona.foto_perfil.url}}
+                    <img id="foto_perfil" src="{{datos.value.persona.foto_perfil.url}}" alt="" width="128px" height="128px"> {{else}}
+                    <img id="foto_perfil" src="/images/sin_imagen.png" alt="" width="128px" height="128px"> {{/if}}
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-9">
+                    <h4 id="nombre">{{datos.value.persona.nombre}}</h4>
+                    <h4 id="usuario">@{{datos.value.persona.usuario}}</h4>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <ul class="details">
+                    <li>
+                        <i class="fa fa-envelope"></i>
+                        <a href="#" style="color:#55595c;">{{datos.value.persona.correo}}</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-male"></i>
+                        <span style="color:#55595c;">{{datos.value.persona.sexo}}</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-birthday-cake"></i>
+                        <span style="color:#55595c;">{{#if_mod datos.value.persona.edad "==" 0}}{{else}}{{datos.value.persona.edad}}{{/if_mod}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <h1 style="text-align: center;">Favoritos</h1>
+    </div>
+</header>
+<!-- END Page header -->
+<!--//////////////////////////// SUBMENU ////////////////////////////////-->
+<div class="container" style="margin-top:10em;">
+    <div class="row">
+
+
+        <div class="col-xs-12 col-md-12 well admin-content" id="listado-favoritos">
+        </div>
+        <!-- ************** Modal listados ************** -->
+        <!-- ************** Fin Modal listados ************** -->
+        <!--//////////////////////////Reservaciones/////////////////////////
+		<div class="col-xs-12 col-md-12 well admin-content" id="reservaciones">
+			  
+		  <header class="section-header">
+			<h2 id="titulo_submenu">Alojamiento</h2>
+		  </header>
+		  <div class="row">
+
+			<div class="col-sm-12 col-md-6">
+			  <a class="item-block" href="#">
+				<header>
+				  <div class="hgroup">
+					<h4>HOTEL VENETUR</h4>
+					<h5>Dirección: Av. Universidad sector San Luis</h5>
+					<h5>Teléfono: 0293-4301578</h5>
+				  </div>
+				</header>
+
+				<div class="item-body">
+				  <div class="contenido1">
+					<p><b>Número de reserva:</b></p>
+					<p><b>Reserva realizada por:</b></p>
+					<p><b>Tu reserva:</b></p>
+					<p><b>Entrada:</b></p>
+					<p><b>Salida:</b></p>
+				  </div>
+				  <div class="contenido2">
+					<p>4567</p>
+					<p>Daniela Benitez</p>
+					<p>3 noches 1 habitación, 2 personas</p>
+					<p>15/01/18 1:00pm</p>
+					<p>18/01/18 1:00pm</p>
+				  </div>
+				</div>
+				<footer></footer>
+			  </a>
+			</div>
+
+			<div class="col-sm-12 col-md-6">
+			  <a class="item-block" href="#">
+				<header>
+				  <div class="hgroup">
+					<h4>POSADA JUAMUN</h4>
+					<h5>Dirección: Calle Urdaneta, Cumaná</h5>
+					<h5>Teléfono: 0293-4322156</h5>
+				  </div>
+				</header>
+
+				<div class="item-body">
+				  <div class="contenido1">
+					<p><b>Número de reserva:</b></p>
+					<p><b>Reserva realizada por:</b></p>
+					<p><b>Tu reserva:</b></p>
+					<p><b>Entrada:</b></p>
+					<p><b>Salida:</b></p>
+				  </div>
+				  <div class="contenido2">
+					<p>0123</p>
+					<p>Daniela Benitez</p>
+					<p>2 noches 1 habitación, 2 personas</p>
+					<p>18/01/18 3:00pm</p>
+					<p>20/01/18 3:00pm</p>
+				  </div>
+				</div>
+				<footer></footer>
+			  </a>
+			</div>
+		  </div>
+
+		  <header class="section-header">
+			<br><h2 id="titulo_submenu">Gastronomía</h2>
+		  </header>
+
+		  <div class="row">
+			<div class="col-sm-12 col-md-6">
+			  <a class="item-block" href="#">
+				<header>
+				  <div class="hgroup">
+					<h4>RESTAURANT VINO BAR</h4>
+					<h5>Dirección: C.C. Marina Plaza</h5>
+					<h5>Teléfono: 0293-4410952</h5>
+				  </div>
+				</header>
+
+				<div class="item-body">
+				  <div class="contenido1">
+					<p><b>Número de reserva:</b></p>
+					<p><b>Reserva realizada por:</b></p>
+					<p><b>Tu reserva:</b></p>
+					<p><b>Fecha y Hora:</b></p>
+				  </div>
+				  <div class="contenido2">
+					<p>0793</p>
+					<p>Daniela Benitez</p>
+					<p>1 Mesa, 2 personas</p>
+					<p>15/01/18 8:00pm</p>
+				  </div>
+				</div>
+				<footer></footer>
+			  </a>
+			</div>
+
+			<div class="col-sm-12 col-md-6">
+			  <a class="item-block" href="#">
+				<header>
+				  <div class="hgroup">
+					<h4>RESTAURANTE EL TEIDE</h4>
+					<h5>Dirección: Av. Aristides Rojas, Edificio Oriente</h5>
+					<h5>Teléfono: 0293-4332907</h5>
+				  </div>
+				</header>
+
+				<div class="item-body">
+				  <div class="contenido1">
+					<p><b>Número de reserva:</b></p>
+					<p><b>Reserva realizada por:</b></p>
+					<p><b>Tu reserva:</b></p>
+					<p><b>Fecha y Hora:</b></p>
+				  </div>
+				  <div class="contenido2">
+					<p>1208</p>
+					<p>Daniela Benitez</p>
+					<p>1 mesa, 2 personas</p>
+					<p>19/01/18 8:00pm</p>
+				  </div>
+				</div>
+				<footer></footer>
+			  </a>
+			</div>
+		  </div>
+		</div>-->
+        <!--/////////////////////////// Fotos /////////////////////////-->
+        <div class="col-xs-12 col-md-12 well admin-content" id="fotos">
+            <div class="agg_foto">
+                <div class="widget widget_tag_cloud">
+                    <div class="widget-body">
+                        <a data-toggle="modal" data-target="#exampleModal" href="#">Agregar Fotos</a>
+                    </div>
+                </div>
+            </div>
+            <!-- ************** Modal agregar fotos ************** -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="gridSystemModalLabel">Agregar Fotos</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="formSubirFotosAlbum" action="/api/album/usuario/{{datos.value.usuario_sesionado.usuario}}/subir-foto" class="dropzone"></form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Listo</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- ************** Fin Modal agregar fotos ************** -->
+            <div class="container galeria">
+                <articles class="row">
+                    <article class="col-md-3">
+                        <a href="/images/galeria/img1.jpg" data-lightbox="example-set" data-title="Regala">
+								<img src="/images/galeria/img1.jpg" alt="Regala" class="img-thumbnail"></a>
+                        <p>Regala</p>
+                    </article>
+                    <article class="col-md-3">
+                        <a href="/images/galeria/img2.jpg" data-lightbox="example-set" data-title="Descansa">
+								<img src="/images/galeria/img2.jpg" alt="Descansa" class="img-thumbnail"></a>
+                        <p>Descansa</p>
+                    </article>
+                    <article class="col-md-3">
+                        <a href="/images/galeria/img3.jpg" data-lightbox="example-set" data-title="Empatiza">
+								<img src="/images/galeria/img3.jpg" alt="Empatiza" class="img-thumbnail"></a>
+                        <p>Empatiza</p>
+                    </article>
+                    <article class="col-md-3">
+                        <a href="/images/galeria/img4.jpg" data-lightbox="example-set" data-title="Ház deporte">
+								<img src="/images/galeria/img4.jpg" alt="Ház deporte" class="img-thumbnail"></a>
+                        <p>Ház deporte</p>
+                    </article>
+                    <article class="col-md-3">
+                        <a href="/images/galeria/img5.jpg" data-lightbox="example-set" data-title="Vuela">
+								<img src="/images/galeria/img5.jpg" alt="Vuela" class="img-thumbnail"></a>
+                        <p>Vuela</p>
+                    </article>
+                    <article class="col-md-3">
+                        <a href="/images/galeria/img6.jpg" data-lightbox="example-set" data-title="Sueña">
+								<img src="/images/galeria/img6.jpg" alt="Sueña" class="img-thumbnail"></a>
+                        <p>Sueña</p>
+                    </article>
+                    <article class="col-md-3">
+                        <a href="/images/galeria/img7.jpg" data-lightbox="example-set" data-title="Viaja">
+								<img src="/images/galeria/img7.jpg" alt="Viaja" class="img-thumbnail"></a>
+                        <p>Viaja</p>
+                    </article>
+                    <article class="col-md-3">
+                        <a href="/images/galeria/img8.jpg" data-lightbox="example-set" data-title="Relájate">
+								<img src="/images/galeria/img8.jpg" alt="Relájate" class="img-thumbnail"></a>
+                        <p>Relájate</p>
+                    </article>
+                </articles>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//////////////////////////// FIN SUBMENU ////////////////////////////////-->
+{{#section "js_libs"}}
+<script src="/vendors/dropzone/dist/min/dropzone.min.js"></script>
+<script>
+if (window.Dropzone !== undefined)
+    Dropzone.options.formSubirFotosAlbum = {
+        dictDefaultMessage: "Has Click ó Arrastre las imagenes aquí"
+    };
+</script>
+<!-- SUBMENÚ -->
+<script>
+$(document).ready(function() {
+    var navItems = $('.admin-menu li > a');
+    var navListItems = $('.admin-menu li');
+    var allWells = $('.admin-content');
+    var allWellsExceptFirst = $('.admin-content:not(:first)');
+
+    allWellsExceptFirst.hide();
+    navItems.click(function(e) {
+        e.preventDefault();
+        navListItems.removeClass('active');
+        $(this).closest('li').addClass('active');
+
+        allWells.hide();
+        var target = $(this).attr('data-target-id');
+        $('#' + target).show();
+    });
+});
+</script>
+<!-- FIN SUBMENÚ -->
+<!-- Fotos -->
+<script src="/vendors/lightbox.min.js"></script>
+<script>
+lightbox.option({
+    'albumLabel': "Imagen %1 de %2"
+})
+</script>
+<!-- Fin Fotos -->
+<!-- Slider -->
+{{!--
+<script src="/js/jquery-3.2.1.min.js"></script> --}}
+<script src="/vendors/slidesjs/js/jquery.slides.js"></script>
+<script>
+$(function() {
+    $(".slides").slidesjs({
+        play: {
+            active: true,
+            // [boolean] Generate the play and stop buttons.
+            // You cannot use your own buttons. Sorry.
+            effect: "slide",
+            // [string] Can be either "slide" or "fade".
+            interval: 3000,
+            // [number] Time spent on each slide in milliseconds.
+            auto: true,
+            // [boolean] Start playing the slideshow on load.
+            swap: true,
+            // [boolean] show/hide stop and play buttons
+            pauseOnHover: false,
+            // [boolean] pause a playing slideshow on hover
+            restartDelay: 2500
+            // [number] restart delay on inactive slideshow
+        }
+    });
+});
+</script>
+<!-- Fin Slider -->
+{{/section}}

@@ -1,0 +1,55 @@
+{
+  "name": "softour",
+  "version": "0.0.3",
+  "description": "Descubre sitios turisticos y ubica la actividad que te gustaria hacer y en donde te gustaria hacerlo",
+  "keywords": [
+    ""
+  ],
+  "author": {
+    "name": "Softour CA",
+    "email": "des.luistena@hotmail.com"
+  },
+  "homepage": "http://softour.tk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/desLT/softour"
+  },
+  "engines": {
+    "node": ">= 7.9.0",
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "async": "^1.5.0",
+    "basic-auth": "^1.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.0.0",
+    "connect-flash": "^0.1.1",
+    "connect-session": "0.0.1",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.2",
+    "formidable": "^1.1.1",
+    "handlebars": "^4.0.0",
+    "i18n-express": "^1.1.3",
+    "joi": "^10.6.0",
+    "mongoose": "^4.7.7",
+    "mv": "^2.1.1",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+  "private": true,
+  "scripts": {
+    "start": "node aplicacion.js",
+    "dev": "set NODE_ENV=desarrollo&&node aplicacion.js",
+    "des": "NODE_ENV=desarrollo node aplicacion.js"
+  },
+  "main": "aplicacion.js"
+}

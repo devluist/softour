@@ -1,0 +1,11 @@
+<form action="/busqueda/general/" method="get" class="header-job-search">
+    <div class="input-keyword" id="sugerencias-busqueda">
+        <input class="form-control caja-texto typeahead" autofocus="on" autocomplete="off" placeholder="{{traduccion.CAJA_BUSQUEDA}}" type="text" value="{{datos.value.consulta}}" name="b" id="cuadro-buscar">
+    </div>
+    <div class="input-location" id="sugerencias-ciudad">
+        <input class="form-control caja-texto typeahead" required="required" autofocus="on" autocomplete="off" placeholder="{{traduccion.CAJA_BUSQUEDA_DESTINO}}" id="ciudad" type="text" value="{{datos.value.destino}}" name="u">
+    </div>
+    <div class="btn-search">
+        <button class="btn btn-primary" type="submit">{{traduccion.CAJA_BUSQUEDA}}</button>
+    </div>
+</form>

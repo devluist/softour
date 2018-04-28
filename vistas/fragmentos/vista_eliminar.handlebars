@@ -1,0 +1,29 @@
+{{#section 'head'}}
+	<title>{{traduccion.ELIMINAR}} {{datos.value.tipo_objeto}}</title>
+{{/section}}
+<!-- page content -->
+<div class="right_col" role="main">
+	<div class="">
+		<div class="page-title">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+		       
+		    </div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				 <div  style="margin-top: 8em; text-align: center; margin-bottom: 6em;">
+               <h3>{{traduccion.ELIMINAR}} {{datos.value.tipo_objeto}}</h3>
+               <h4>{{{datos.value.mensaje_confirmacion}}}</h4>
+               <br><br>
+               <form data-parsley-validate class="form-horizontal form-label-left" action="" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+                   <a class="btn btn-default" href="/">{{traduccion.CANCELAR}}</a>
+                   <input type="submit" class="btn btn-danger" value="Sí, estoy seguro!">
+               </form>
+           </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /page content -->
+

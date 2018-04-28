@@ -1,0 +1,186 @@
+{{#section "titulo_pagina"}}
+    Softour
+{{/section}}
+{{#section 'head'}}
+    <link rel="stylesheet" type="text/css" href="/css/hover.css" />
+    
+{{/section}}
+   <!-- Site header -->
+    <header class="site-header size-lg text-center" style="background-image: url(/images/background/bg-banner5.jpg)">
+        <div class="container">
+            <div class="col-xs-12  wow fadeInLeft" data-wow-delay="0.1s">
+                <br>
+                <img class="logo-letras" src="images/logo-letras.png">
+                <h4 class="font-alt">{{traduccion.ESLOGAN_INICIO}}</h4>
+                {{> buscador_general}}
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </header>
+    <!-- END Site header -->
+    <!-- Main container -->
+    <main>
+        <!-- Descripcion -->
+       <section class="description">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 wow fadeInDown" data-wow-delay="0.1s">
+                        <article class="py-2 text-center ">
+                            <!-- <i class="fa fa-globe " aria-hidden="true"></i> -->
+                            <img src="images/descripcion/viajar.svg" class="dimencion" alt="">
+                            <h2>{{traduccion.DESCRIPCION_E}}</h2>
+                            <p class="text-justify">{{traduccion.DESCRIPCION_TITULO_E}}</p>
+                        </article>
+                    </div>
+                    <div class="col-xs-12 col-md-4 wow fadeInDown" data-wow-delay="0.1s">
+                        <article class="py-2 text-center">
+                            <!-- <i class="fa fa-check-square" aria-hidden="true"></i> -->
+                            <img src="images/descripcion/backpack.svg" class="dimencion" alt="">
+                            <h2>{{traduccion.DESCRIPCION_V}}</h2>
+                            <p class="text-justify">{{traduccion.DESCRIPCION_TITULO_V}}</p>
+                        </article>
+                    </div>
+                    <div class="col-xs-12 col-md-4 wow fadeInDown" data-wow-delay="0.1s">
+                        <article class="py-2 text-center">
+                            <!--   <i class="fa fa-heart " aria-hidden="true"></i> -->
+                            <img src="images/descripcion/like.svg" class="dimencion" alt="">
+                            <h2>{{traduccion.DESCRIPCION_P}}</h2>
+                            <p class="text-justify">{{traduccion.DESCRIPCION_TITULO_P}}</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- fin descripcion-->
+
+
+        <!-- Destacados -->
+        <section id="publicidad-interna" class="backg-alt">
+            <div class="container">
+                
+            </div>
+        </section>
+        <!-- Destacado -->
+
+
+
+        <!-- categorias -->
+        <section class="backg-alt-2">
+            <div class="container">
+                <header class="section-header">
+                    <h2>{{traduccion.TITULO_1}}</h2>
+                    <p>{{traduccion.TITULO_2}}</p>
+                </header>
+                
+                <div class="row">
+                    <!-- lugar -->
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        
+                        <div class="grid">
+                        <figure class="effect-lexi">
+                        <img src="/images/categorias/lugar.jpg" alt="imagen alojamiento"/>
+                        <figcaption>
+                            <h2><span>{{traduccion.CATEGORIA_L}}</span></h2>
+                            <p>{{traduccion.CATEGORIA_P}}<br>{{traduccion.CATEGORIA_PAR}} 
+                            {{traduccion.CATEGORIA_M}}
+                            {{traduccion.CATEGORIA_MO}}</p>
+                            <a href="/busqueda/lugar">{{traduccion.VER_MAS}}</a>
+                        </figcaption>           
+                    </figure>
+                    </div>
+                    </div>
+                    <!--fin lugar -->
+                     <!-- alojamiento -->
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        
+                        <div class="grid">
+                        <figure class="effect-lexi">
+                        <img src="/images/categorias/alojamiento.jpg" alt="imagen alojamiento"/>
+                        <figcaption>
+                            <h2><span>{{traduccion.CATEGORIA_A}}</span></h2>
+                            <p>{{traduccion.CATEGORIA_H}} {{traduccion.CATEGORIA_PO}} {{traduccion.CATEGORIA_C}}</p>
+                            <a href="/busqueda/alojamiento">{{traduccion.VER_MAS}}</a>
+                        </figcaption>           
+                    </figure>
+                    </div>
+                   </div>
+                    <!--fin alojamiento -->
+                     <!-- gastronomia -->
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                     
+                        <div class="grid">
+                        <figure class="effect-lexi">
+                        <img src="/images/categorias/gastronomia.jpg" alt="imagen alojamiento"/>
+                        <figcaption>
+                            <h2><span>{{traduccion.CATEGORIA_G}}</span></h2>
+                            <p>{{traduccion.CATEGORIA_CO}}<br>{{traduccion.CATEGORIA_BE}}</p>
+                            <a  href="/busqueda/gastronomia">{{traduccion.VER_MAS}}</a>
+                        </figcaption>           
+                    </figure>
+                    </div>
+                    </div>
+                    <!--fin gastronomi -->
+                     <!-- experiencias -->
+                    <div class="col-xs-12 col-sm-6 ">
+                         
+                        <div class="grid">
+                        <figure class="effect-lexi">
+                        <img src="/images/categorias/experiencias.jpg" alt="imagen experiencias"/>
+                        <figcaption>
+                            <h2><span>{{traduccion.CATEGORIA_EX}}</span></h2>
+                            <p> {{traduccion.CATEGORIA_AV}} 
+                            {{traduccion.CATEGORIA_DE}}
+                            {{traduccion.CATEGORIA_DI}}
+                            {{traduccion.CATEGORIA_NO}} </p>
+                            <a href="/busqueda/experiencia">{{traduccion.VER_MAS}}</a>
+                        </figcaption>           
+                    </figure>
+                    </div>
+                    </div>
+                    <!--fin experiencias -->
+                     <!-- eventos -->
+                    <div class="col-xs-12 col-sm-6">
+                        
+                        <div class="grid">
+                        <figure class="effect-lexi">
+                        <img src="/images/categorias/eventos.jpg" alt="imagen alojamiento"/>
+                        <figcaption>
+                            <h2><span>{{traduccion.CATEGORIA_EV}}</span></h2>
+                            <p>{{traduccion.CATEGORIA_DEP}} {{traduccion.CATEGORIA_CU}} {{traduccion.CATEGORIA_AC}}</p>
+                            <a href="/busqueda/evento">{{traduccion.VER_MAS}}</a>
+                        </figcaption>           
+                    </figure>
+                    </div>
+                    </div>
+                    <!--fin eventos -->
+                   
+                </div>
+            </div>
+        </section>
+        <!-- END Categories -->
+        <!-- Newsletter -->
+        <section class="bg-img text-center" style="background-image: url(/images/background/bg-pattern1.jpg)">
+            <div class="container">
+                <blockquote>
+                <h3  class="font"> "{{traduccion.sita1}}, <br> {{traduccion.sita2}}".</h3>
+                <footer>Agustín de Hipona</footer>
+            </blockquote>
+            
+                <br>
+                <br>
+            </div>
+        </section>
+        <!-- END Newsletter -->
+    </main>
+    {{#section 'js_libs'}}
+    <script>
+        // For Demo purposes only (show hover effect on mobile devices)
+        [].slice.call( document.querySelectorAll('a[href="#"') ).forEach( function(el) {
+            el.addEventListener( 'click', function(ev) { ev.preventDefault(); } );
+        } );
+
+        var idioma = "{{lang}}";
+    </script>
+    {{/section}}

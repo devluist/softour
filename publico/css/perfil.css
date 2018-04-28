@@ -1,0 +1,173 @@
+#nombre {
+    color: #55595c;
+    margin-bottom: 0;
+}
+
+#usuario {
+    font-size: 20px;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+.details {
+    margin-top: 15px;
+}
+
+#sobre {
+    color: #55595c;
+    margin-top: 0;
+    text-align: center;
+}
+
+.lead {
+    color: #252525;
+    text-align: justify;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.agg_foto {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.widget {
+    margin-bottom: 30px;
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #29aafe;
+}
+
+a,
+a:focus,
+a:hover {
+    color: #55595c;
+}
+
+.page-header {
+    margin-bottom: 0;
+}
+
+.well {
+    background-color: white;
+    border: none;
+}
+
+.navbar-nav>li>a {
+    margin-right: 1em;
+}
+
+#titulo_submenu {
+    color: #6d7479;
+    font-size: 30px;
+    margin-top: 1em;
+}
+
+.section-header h2:after {
+    background-color: #b8c7d4;
+}
+
+.item-block header img {
+    width: 90px;
+    height: 65px;
+}
+
+.btn {
+    height: 24px;
+    line-height: 24px;
+    color: #55595c;
+}
+
+.btn-block {
+    width: 150px;
+}
+
+.item-block header {
+    border: 1px solid #f1ebeb;
+}
+
+.btn-info {
+    background-color: #ffffff;
+    border-color: #ded9d9!important;
+}
+
+.section-header {
+    margin-bottom: 0px;
+}
+
+.contenido1 {
+    float: left;
+    color: #55595c;
+}
+
+.contenido2 {
+    float: right;
+    text-align: right;
+    color: #55595c;
+}
+
+.agg_img {
+    text-align: center;
+    margin-bottom: 8px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    color: #7e8890;
+    font-size: 20px;
+    width: 255px;
+    height: 173px;
+    display: block;
+    padding-top: 3em;
+}
+
+
+
+/* slider*/
+
+.slides {
+    width: 100%;
+}
+
+.slides img {
+    width: 100%;
+}
+
+.slidesjs-pagination {
+    background: #424242;
+    list-style: none;
+    overflow: hidden;
+}
+
+.slidesjs-pagination li {
+    float: left;
+}
+
+.slidesjs-pagination li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.slidesjs-pagination li a:hover {
+    background: #000;
+}
+
+.slides .active {
+    background: #000;
+}
+
+.slidesjs-navigation {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    float: right;
+}
+
+
+/* Fin slider*/

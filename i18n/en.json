@@ -1,0 +1,292 @@
+{
+
+    "COPYRIGHT": "All rights reserved.",
+    "IDIOMAS": "Languages",
+    "ESLOGAN_INICIO": "discover your next destination, discover your next experience",
+    "CAJA_BUSQUEDA": "Search",
+    "TITULO_FILTRO": "Filter by",
+    "VER_MAS": "More",
+    "FECHA_FILTRO": "Start - End Dates",
+    "PRECIO_FILTRO": "Price",
+    "SUBTITULO_PRECIO_FILTRO": "Prince range",
+    "MONEDA_FILTRO": "$",
+    "BTN_APLICAR_FILTRO": "Apply",
+
+    "DESCRIPCION_E": "Explore",
+    "DESCRIPCION_TITULO_E": "Softour has thousands of activities and places that will help you have a different experiencie",
+
+    "DESCRIPCION_V": "Live",
+    "DESCRIPCION_TITULO_V": "By categories or through search box, you can enjoy the most meaningful adventures, and we have for all tastes.",
+
+    "DESCRIPCION_P": "Share",
+    "DESCRIPCION_TITULO_P": "Help others find the best experiences throw your vote.",
+
+    "TITULO_1": "Enjoy Softour",
+    "TITULO_2": "Search through our categories",
+
+    "CATEGORIA_L": "Places",
+    "CATEGORIA_P": "Beaches",
+    "CATEGORIA_PAR": "Parks",
+    "CATEGORIA_M": "Museums",
+    "CATEGORIA_MO": "Monuments",
+
+    "CATEGORIA_A": "Accomodations",
+    "CATEGORIA_H": "Hotels",
+    "CATEGORIA_PO": "Hostal",
+    "CATEGORIA_C": "Cottage",
+
+    "CATEGORIA_G": "Gastronomy",
+    "CATEGORIA_CO": "Restaurants",
+    "CATEGORIA_BE": "Bars",
+
+    "CATEGORIA_EX": "Experiences",
+    "CATEGORIA_AV": "Adventures",
+    "CATEGORIA_DE": "Sports",
+    "CATEGORIA_DI": "Fun",
+    "CATEGORIA_NO": "Night",
+
+    "CATEGORIA_EV": "Events",
+    "CATEGORIA_DEP": "Sports",
+    "CATEGORIA_CU": "Cultural",
+    "CATEGORIA_AC": "Academics",
+
+    "CATEGORIA_IT": "Itinerario",
+
+
+
+    "sita1": "The world is a book",
+    "sita2": "and those who do not travel, read only a page.",
+    "FOOTER_1": "About",
+    "FOOTER_2": "Join Us",
+    "FOOTER_3": "Try SofTour, a touristic plataform to host your hotel, cottage, event or activity. We are the best choice to promote and to boost your business.",
+    "FOOTER_4": "LANGUAGE",
+    "FOOTER_5": "All rights reserved by",
+
+    "MENU_SUP_CONFIG_CTA": "Manage your Account",
+    "MENU_SUP_CERRAR_SESION": "Logout",
+    "SESIONARSE": "Login",
+    "REGISTRARSE": "Sign up",
+    "CAJA_BUSQUEDA_DESTINO": "Destination",
+
+    "TITULO_BUSQUEDA_GENERAL": "SEARCH",
+    "BUSQUEDA_GENERAL_TITULO": "Don`t wait! Let's start the adventure",
+
+
+
+    "TITULO_LUGAR_PAGINA": "Places | Softour",
+    "TITULO_LUGAR_GENERAL": "Choose your destination",
+    "TITULO_LUGAR_DESTACADO_1": "Places",
+    "TITULO_LUGAR_DESTACADO_2": "Find new places",
+    "TITULO_LUGAR_DESTACADO_3": "Cities are like books, you have to read it with your feets.",
+    "TITULO_LUGAR_DESTACADO_4": "Discover other options",
+    "LUGAR_PLAYAS": "Beaches",
+    "VER_PLAYAS": "More from beaches",
+    "LUGAR_PARQUES": "Parks",
+    "VER_PARQUES": "More from parques",
+    "LUGAR_MONUMENTOS": "Monuments",
+    "VER_MONUMENTOS": "More from monuments",
+    "LUGAR_MUSEOS": "Museums",
+    "VER_MUSEOS": "More from museums",
+
+    "TITULO_LUGAR_PAGINA_PLAYA": "Places-Beaches | Softour",
+    "PLAYAS": "Beaches",
+    "PLAYAS_DESTACADAS": "Beaches",
+
+    "TITULO_LUGAR_PAGINA_MONUMENTOS": "Places-Monuments | Softour",
+    "MONUMENTOS": "Monuments",
+    "MONUMENTOS_DESTACADOS": "Monuments",
+
+    "TITULO_LUGAR_PAGINA_PARQUES": "Places-Parks | Softour",
+    "PARQUES": "Parks",
+    "PARQUES_DESTACADOS": "Come enjoy",
+
+    "TITULO_LUGAR_PAGINA_MUSEOS": "Places-Museums | Softour",
+    "MUSEOS": "Museums",
+    "MUSEOS_DESTACADOS": "Museums",
+
+
+    "TITULO_ALOJAMIENTO": "Accomodation | Softour",
+    "TITULO_ALOJAMIENTO_GENERAL": "Accomodations",
+    "TITULO_ALOJAMIENTO_DESTACADO_1": "Accomodations",
+    "TITULO_ALOJAMIENTO_DESTACADO_2": "Find the right place for you",
+    "TITULO_ALOJAMIENTO_DESTACADO_3": "Travel is one of those things that you pay, but makes you richer",
+    "TITULO_ALOJAMIENTO_DESTACADO_4": "Discover other options",
+    "ALOJAMIENTO_HOTELES": "hotels",
+    "VER_HOTELES": "More from hotels",
+    "ALOJAMIENTO_POSADAS": "hostal",
+    "VER_POSADAS": "More from hostal",
+    "ALOJAMIENTO_CABANAS": "Cottage",
+    "VER_CABANAS": "More from Cottage",
+
+    "TITULO_ALOJAMIENTO_CABANAS": "Accomodation-Cottage | Softour",
+    "CABANAS": "Cottage",
+    "CABANAS_DESTACADAS": "Cottage",
+
+    "TITULO_ALOJAMIENTO_HOTELES": "Accomodation-Hotels | Softour",
+    "HOTELES": "Hotels",
+    "HOTELES_DESTACADAS": "Hotels",
+
+    "TITULO_ALOJAMIENTO_POSADAS": "Accomodation-Hostal | Softour",
+    "POSADAS": "Hostal",
+    "POSADAS_DESTACADAS": "Hostal",
+
+
+    "TITULO_GASTRONOMIA": "Gastronomy | Softour",
+    "TITULO_GASTRONOMIA_GENERAL": "Gastronomy",
+    "TITULO_GASTRONOMIA_DESTACADO_1": "Gastronomy",
+    "TITULO_GASTRONOMIA_DESTACADO_2": "Visit our new restaurants and have a good appetite",
+    "TITULO_GASTRONOMIA_DESTACADO_3": "A well-balanced meal is like a poem to life",
+    "TITULO_GASTRONOMIA_DESTACADO_4": "Discover other options",
+    "GASTRONOMIA_RESTAURANTE": "Restaurants",
+    "VER_RESTAURANTE": "More from restaurants",
+    "GASTRONOMIA_BARES": "Bars",
+    "VER_BARES": "More from bars",
+
+
+    "TITULO_GASTRONOMIA_BARES": "Gastronomy-Bars | Softour",
+    "BARES": "Bars",
+    "BARES_DESTACADOS": "Bars",
+
+    "TITULO_GASTRONOMIA_RESTAURANTES": "Gastronomy-Restaurants | Softour",
+    "RESTAURANTES": "restaurants",
+    "RESTAURANTES_DESTACADOS": "Restaurants",
+
+
+    "TITULO_EVENTO": "Events | Softour",
+    "TITULO_EVENTO_GENERAL": "Events",
+    "TITULO_EVENTO_DESTACADO_1": "Events",
+    "TITULO_EVENTO_DESTACADO_2": "Great events are waiting for you",
+    "TITULO_EVENTO_DESTACADO_3": "You have to join together not to be together, but to do something together",
+    "TITULO_EVENTO_DESTACADO_4": "Discover other options",
+
+    "EVENTO_DEPORTIVOS": "Sports",
+    "VER_DEPORTIVOS": "More from sports",
+
+    "EVENTO_CULTURALES": "Cultural",
+    "VER_CULTURALES": "More from cultural",
+
+    "EVENTO_ACADEMICOS": "Academics",
+    "VER_ACADEMICOS": "More from academics",
+
+
+
+    "TITULO_EVENTO_ACADEMICO": "Events-Academics | Softour",
+    "ACADEMICOS": "Academics",
+    "ACADEMICOS_DESTACADOS": "Academics",
+
+    "TITULO_EVENTO_CULTURAL": "Events-Cultural | Softour",
+    "CULTURAL": "Cultural",
+    "CULTURAL_DESTACADOS": "Cultural",
+
+
+    "TITULO_EVENTO_DEPORTIVOS": "Events-Sports | Softour",
+    "DEPORTIVOS": "Sports",
+    "DEPORTIVOS_DESTACADOS": "Sports",
+
+    "TITULO_EXPERIENCIAS": "Experiences | Softour",
+    "TITULO_EXPERIENCIAS_GENERAL": "Experiences",
+    "TITULO_EXPERIENCIASO_DESTACADO_1": "Experiences",
+    "TITULO_EXPERIENCIAS_DESTACADO_2": "Add new experiences to your life",
+    "TITULO_EXPERIENCIAS_DESTACADO_3": "May you be so happy that you do not know if you live or dream",
+    "TITULO_EXPERIENCIAS_DESTACADO_4": "Discover other options",
+
+    "EXPERIENCIAS_AVENTURA": "Adventures",
+    "VER_AVENTURA": "More from adventures",
+
+    "EXPERIENCIAS_DEPORTIVAS": "Sports",
+    "VER_DEPORTIVAS": "More from sports",
+
+    "EXPERIENCIAS_DIVERSION": "Fun",
+    "VER_DIVERSION": "More from fun",
+
+    "EXPERIENCIAS_NOCHE": "Night",
+    "VER_NOCHES": "More from nights",
+
+    "TTITULO_EXPERIENCIAS_AVENTURAS": "Experiences-Adventures | Softour",
+    "AVENTURAS": "Adventures",
+    "AVENTURAS_DESTACADOS": "Adventures",
+
+    "TITULO_EXPERIENCIAS_DEPORTIVAS": "Experiences-Sports | Softour",
+    "DEPORTIVAS": "Sports",
+    "DEPORTIVAS_DESTACADOS": "Sports",
+
+    "TITULO_EXPERIENCIAS_DIVERSION": "Experiences-Fun | Softour",
+    "DIVERSION": "Fun",
+    "DIVERSION_DESTACADOS": "Fun",
+
+    "TITULO_EXPERIENCIAS_DIVERSION": "Experiences-Night | Softour",
+    "NOCHES": "Night",
+    "NOCHES_DESTACADOS": "Night",
+
+    "MOSTAR_ERRORES": "Please verify your data",
+
+
+
+    "TITULO_SESIONARME": "Login - Softour",
+    "CORREO": "Email",
+    "CONTRASENA": "Password",
+    "BOTON_INICIAR_SESION": "Login",
+    "O_INICIE_SESION_CON": "OR USE SOCIAL NETWORKS",
+    "REGISTRAR_UNA_CUENTA": "Sign up",
+
+
+    "TITULO_REGISTRARME": "Sign up - Softour",
+    "NOMBRE_REGISTRARME": "Name",
+    "USUARIO_REGISTRARME": "Username",
+    "BOTON_REGISTRAR": "Sign up",
+    "YA_TIENES": "Do you already have an account?",
+    "ELIMINAR": "Delete",
+    "CANCELAR": "CANCEL",
+
+    "INFORMACION_GENERAL": "General Information",
+    "ACERCA_DE": "About",
+    "CALIFICA": "Rate",
+    "COMPARTIR": "Share",
+    "INFORMACION": "Information",
+    "CALIFICAR_SERVICIOS": "Rate our service",
+    "CALIFICACION_PROMEDIO": "Average Rating",
+    "CALIFICACION": "Rating",
+
+    "CONTACTO": "Contact",
+    "DIRECCION": "Address",
+    "SERVICIOS": "Services",
+    "RESPONSABLE": "Person in charge",
+    "TELEFONO": "Phone number",
+    "EMAIL": "Email",
+    "HORA_PRECIO": "Schedules y Price",
+    "FECHA_INICIO": "Start Date",
+    "FECHA_FIN": "End Date",
+    "REQUISITOS": "Requirements",
+    "PRECIO": "Price",
+    "PERIODICIDAD": "Periodicity",
+    "DURACION": "Duration",
+    "SERVICIOS": "Services",
+    "HABITACIONES": "Rooms",
+
+    "ENTRADA": "Check-In",
+    "SALIDA": "Check-Out",
+    "HUESPEDES": "Guests",
+
+    "PRECIOS_DESDE": "PRICE:",
+    "DESCRIPCION_HABITACION": "Description",
+    "CARACTERISTICAS": "Caracteristics",
+    "SERVICIOS_INCLUYE": "Included services",
+    "METROS_CUADRADOS": "Square meters",
+    "N_BANOS": "Number of bathrooms",
+
+    "TITULO_ALOJAMIENTO_VISUALIZAR": "Accomodation-Información | Softour",
+    "TITULO_GASTRONOMIA_VISUALIZAR": "Gastronomy-Información | Softour",
+    "TITULO_EVENTO_VISUALIZAR": "Event-Información | Softour",
+    "TITULO_EXPERIENCIA_VISUALIZAR": "Experience-Información | Softour",
+    "TITULO_LUGAR_VISUALIZAR": "Place-Información | Softour",
+
+
+    "FECHA_RESERVACION": "Reservation Date",
+    "HORA_RESERVACION": "Reservation Time",
+    "COMENSALES": "Diner",
+    "COMENSAL": "diner",
+
+    "VER_MAS": "See more",
+    "RESULTADO_NO_ENCONTADO": "Result no found"
+
+}

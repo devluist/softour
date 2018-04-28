@@ -1,0 +1,158 @@
+{{#section "titulo_pagina"}}
+    Perfíl Prestador de Servicio | Softour
+{{/section}}
+{{#section "head"}}
+    <link href="/css/perfil.css" rel="stylesheet">
+{{/section}}
+<!-- Page header -->
+
+    <header class="page-header bg-img" style="background-image: url(/images/perfil/fondoperfil.jpg)">
+
+        <div class="container">
+            <div class="row">
+                <center>
+                    <div class="col-xs-12 col-sm-3">
+                        {{#if datos.value.persona.foto_perfil.url}}
+                            <img id="foto_perfil" src="{{datos.value.persona.foto_perfil.url}}" alt="" width="220" height="220">
+                                {{else}}
+                                    <img id="foto_perfil" src="/images/sin_imagen.png" alt="" width="220" height="220">
+                                {{/if}}
+                        
+
+                    </div>
+                </center>
+                <div class="col-xs-12 col-sm-9 header-detail">
+                    <div class="hgroup">
+
+                        <h1 id="nombre">{{datos.value.persona.nombre}}</h1>
+                        <h3>@{{datos.value.persona.usuario}}</h3>
+                    </div>
+                    <hr>
+                    <!-- { { datos.value.lista_sdis } } -->
+                    <!-- { { datos.value.lista_alojamientos } } -->
+                    <!-- { { datos.value.lista_eventos } } -->
+                    <!-- { { datos.value.lista_experiencias } } -->
+                    <!-- <p class="lead">Gerente de una prestigiosa cadena hotelera a lo largo y ancho del país, ofrecemos una agradable atención en cada una de nuestras instalaciones, garantizando un buen servicio para el disfrute de nuestros huéspedes. Además ofrecemos servicios de restaurante y distintos eventos que lo mantendran gratamente entretenido en su periodo vacacional.</p> -->
+
+                    <ul class="details cols-1">
+                        <li>
+                            <i class="fa fa-male" style="color: #55595c;"></i>
+                            <span id="tag">{{datos.value.persona.sexo}}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-birthday-cake" style="color: #55595c;"></i>
+                            <span id="tag">{{#if_mod datos.value.persona.edad "==" 0}}{{else}}{{datos.value.persona.edad}}{{/if_mod}}</span>
+                        </li>
+                        <!-- <li>
+                            <i class="fa fa-phone" style="color: #55595c;"></i>
+                            <span id="tag">0800-CONTACTO-00</span>
+                        </li> -->
+                        <!-- <li>
+                            <i class="fa fa-envelope" style="color: #55595c;"></i>
+                            <a href="#" id="tag">{{datos.value.correo}}</a>
+                        </li> -->
+                        <!-- <li>
+                            <i class="fa fa-globe" style="color: #55595c;"></i>
+                            <a href="#" id="tag">misitioweb.com</a>
+                        </li> -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END Page header -->
+    <!-- Main container -->
+    <main>
+        <!-- Skills -->
+        <section>
+            <div class="container">
+                <header class="section-header" style="margin-top:1em;">
+                    <span>Otras plublicaciones</span>
+                    <h2>Servicios</h2>
+                </header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <ul class="nav navbar-nav nav-pills admin-menu" style="padding-left: 22%;">
+                                <li class="active"><a href="#" data-target-id="todos">&nbsp;Todos</a></li>
+
+                                <li><a href="#" data-target-id="lugar">&nbsp;Lugar</a></li>
+
+                                <li><a href="#" data-target-id="alojamientos">&nbsp;Alojamientos</a></li>
+                                <li><a href="#" data-target-id="gastronomia">&nbsp;Gastronomía</a></li>
+                                <li><a href="#" data-target-id="eventos">&nbsp;Eventos</a></li>
+                                <li><a href="#" data-target-id="experiencias">&nbsp;Experiencias</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-md-12 well admin-content" id="todos">
+                            Todos
+                        </div>
+                        <div class="col-xs-12 col-md-12 well admin-content" id="lugar">
+                            {{#if datos.value.sitios}}
+                                <ul class="listado-perfil-ps">
+                                    {{#each datos.value.sitios}}
+                                        <li><a href="/sitio/{{this.url}}">{{this.nombre}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            {{else}}
+                                <p>No hay sitios para mostrar</p>
+                            {{/if}}
+                            
+                        </div>
+
+                        <div class="col-xs-12 col-md-12 well admin-content" id="alojamientos">
+                            alojamiento
+                            
+                        </div>
+                        <div class="col-xs-12 col-md-12 well admin-content" id="gastronomia">
+                            gastronomia
+                        </div>
+                        <div class="col-xs-12 col-md-12 well admin-content" id="eventos">
+                           evento
+                                
+                        </div>
+                        <div class="col-xs-12 col-md-12 well admin-content" id="experiencias">
+
+                            {{#if datos.value.experiencias}}
+                                <ul class="listado-perfil-ps">
+                                    {{#each datos.value.experiencias}}
+                                        <li><a href="/actividad/{{this.url}}">{{this.nombre}}</a></li>
+                                     {{/each}}
+                                </ul>
+                            {{else}}
+                                <p>No hay experiencias para mostrar</p>
+                            {{/if}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- END Main container -->
+{{#section "js_libs"}}
+<script src="/vendors/jquery-3.2.1.js"></script>
+<!-- SUBMENÚ -->
+    <script>
+    $(document).ready(function() {
+        var navItems = $('.admin-menu li > a');
+        var navListItems = $('.admin-menu li');
+        var allWells = $('.admin-content');
+        var allWellsExceptFirst = $('.admin-content:not(:first)');
+
+        allWellsExceptFirst.hide();
+        navItems.click(function(e) {
+            e.preventDefault();
+            navListItems.removeClass('active');
+            $(this).closest('li').addClass('active');
+
+            allWells.hide();
+            var target = $(this).attr('data-target-id');
+            $('#' + target).show();
+        });
+    });
+    </script>
+    <!-- FIN SUBMENÚ -->
+
+{{/section}}

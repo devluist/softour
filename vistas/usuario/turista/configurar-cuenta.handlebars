@@ -1,0 +1,123 @@
+{{#section 'titulo_pagina'}}Configuración de Cuenta - Softour{{/section}}
+{{#section "head"}}
+    <!-- <link href="/css/editar-perfil.css" rel="stylesheet"> -->
+   	<link href="/css/formulario-perfil-turista.css" rel="stylesheet">
+{{/section}}
+ <!-- Site header -->
+    <header class="site-header size-lg text-center" style="background-image: url(images/bg-banner3.jpg)">
+        <div class="container">
+            <div class="col-xs-12">
+                <br>
+                <br>
+                <h2>EDITAR PERFIL</h2>
+            </div>
+        </div>
+    </header>
+    <!-- END Site header -->
+
+    <!-- Main container -->
+    <main>
+        <!--<div class="clearfix"></div>-->
+        <div class="container-fluid">
+            <br>
+            <br>
+            <br>
+            <!-- Row -->
+            <div class="row">
+                <!-- Column -->
+                <div class="col-lg-5 col-xlg-5 col-md-5">
+                    <div class="card">
+                        <div class="card-block">
+                            <center class="m-t-30"> <img src="/images/perfil.png" class="img-circle" width="200" />
+                                <h4 class="card-title m-t-10">{{datos.value.nombre}}</h4>
+                                <p class="card-title m-t-10">@{{datos.value.usuario}}</p>
+                                <div class="action-buttons">
+                                    <br><a class="btn btn-gray" data-toggle="modal" data-target="#exampleModal" href="#">Cambiar imagen de perfil</a>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /.modal-content -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="gridSystemModalLabel">Agregar Fotos</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form id="formSubirFotosAlbum" action="/api/album/usuario/{{datos.value.usuario_sesionado.usuario}}/subir-foto" class="dropzone"></form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Listo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
+                
+                <div class="col-lg-7 col-xlg-7 col-md-7">
+                    <div class="form">
+                        <form class="form-horizontal form-material" method="POST" accept-charset="utf-8">
+                            <h6>Correo eléctronico</h6>
+                            <input type="email" disabled="disabled" placeholder="{{datos.value.correo}}" class="form-control form-control-line" name="correo" id="correo">
+                            
+                            <h6>Edad</h6>
+                            <input class="form-control form-control-line" type="number" value="{{datos.value.edad}}" id="edad" name="edad" min="18" max="70">
+                            
+
+                            <h6>Sexo</h6>
+                            <div class="center">
+                        <label for="sexo" class="col-md-12 col-form-label">        
+                                {{#if datos.value.sexo}}
+                        <select class="form-control" id="sexo" name="sexo">
+                            {{#if datos.value.sexo}} {{#if_mod datos.value.sexo "==" "M"}}
+                            <option selected value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                            {{else}}
+                            <option value="M">Masculino</option>
+                            <option selected value="F">Femenino</option>
+                            {{/if_mod}} {{/if}}
+                        </select>
+                    {{else}}
+                        <select class="form-control" id="sexo" name="sexo">
+                            <option value="">Seleccione...</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                        </select>
+                    {{/if}}
+                            </div>
+                           
+                            <h6>Sobre mí</h6>
+                            <textarea class="form-control" rows="3" name="biografia" placeholder="Acerca de mí"></textarea>
+                        
+                            <div class="form-group" style="text-align: right;">
+                                <br><br><a class="btn btn-danger" href="/usuario/{{datos.value.usuario_sesionado.usuario}}/eliminar-cuenta">Eliminar mi cuenta</a>
+
+                                <button  type="submit" class="btn btn-success">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- END Main -->
+
+    
+
+
+{{#section "js_libs"}}
+ <script src="/vendors/dropzone/dist/min/dropzone.min.js"></script>
+    <script>
+      if(window.Dropzone !== undefined)
+        Dropzone.options.formSubirFotosAlbum = {
+          dictDefaultMessage: "Has Click ó Arrastre las imagenes aquí"
+        };
+    </script>
+       
+    
+{{/section}}

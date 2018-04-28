@@ -1,0 +1,205 @@
+{{#section "head"}}
+<title>Agregar un sitio Gastronómico</title>
+<link rel="stylesheet" href="/vendors/leaflet/leaflet.css" />
+<link rel="stylesheet" href="/vendors/leaflet-geosearch/dist/leaflet.css"> {{/section}}
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h3>Agregar un sitio Gastronómico</h3>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                            {{> mostrar_errores}}
+                            <br>
+                            <ul id="barra-navegacion-form" class="nav nav-tabs bar_tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                	<a href="#tab_info" id="info" role="tab" data-toggle="tab" aria-expanded="true">1 - Información</a>
+                                </li>
+                                <li role="presentation" class="">
+                                	<a href="#tab_contacto" class="enlace-contacto" role="tab" id="contacto" data-toggle="tab" aria-expanded="false">2 - Contacto</a>
+                                </li>
+                                <li role="presentation" class="">
+                                	<a href="#tab_subir_fotos" class="enlace-subir-fotos" role="tab" id="subir-fotos" data-toggle="tab" aria-expanded="false">3 - Subir Fotos</a>
+                                </li>
+                                <li role="presentation" class="">
+                                	<a href="#tab_foto_portada" class="enlace-foto-portada" role="tab" id="foto-portada" data-toggle="tab" aria-expanded="false">4 - Elige Foto de Portada</a>
+                                </li>
+                                <li role="presentation" class="">
+                                	<a href="#tab_negocio" class="enlace-contacto" role="tab" id="negocio" data-toggle="tab" aria-expanded="false">5 - Datos del Negocio</a>
+                                </li>
+                            </ul>
+                            <form class="tab-content" id="form-guardar-entidad" data-parsley-validate="">
+                                <!-- <div> -->
+                                    <div role="tabpanel" class="tab-pane fade active in" id="tab_info" aria-labelledby="info">
+                                        <input type="hidden" name="tipo_sdi" value="Gastronomia">
+                                        <label>
+                                            Nombre:
+                                            <input value="" required type="text" class="form-control" pattern="/^[a-zA-Z ñáéíóúÑÁÉÍÓÚ-]+$/" name="nombre" minlength="2" data-parsley-error-message="Debe ser un nombre real" placeholder="Nombre del sitio">
+                                        </label>
+                                        <label>
+                                            Descripción:
+                                            <textarea type="text" class="form-control" rows="3" data-parsley-minlength="150" name="descripcion" placeholder="Describe las características, beneficios..."></textarea>
+                                        </label>
+                                        <label class="input-peq">
+                                            Tipo de sitio gastronómico:
+                                            <input class="form-control" type="text" name="tipo_sdi_gastronomico" placeholder="Restaurante, Bar, Comida Rápida.." value="">
+                                        </label>
+                                        <label class="input-peq pull-right">
+                                            Horarios:
+                                            <input class="form-control" type="text" name="horario" placeholder="Horario de atención" value="">
+                                        </label>
+                                        <div class="clearfix"></div>
+                                        <label>
+                                            Etiquetas:
+                                            <input value="" type="text" id="etiquetas" class="form-control input-etiquetas" name="etiquetas" placeholder="Palabras claves que lo describan (esto para el motor de búsqueda)">
+                                        </label>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="tab_contacto" aria-labelledby="contacto">
+                                        <label class="input-peq" id="sugerencias-ps">
+                                            Prestador de Servicio:
+                                            <input type="text" required autocomplete="off" class="form-control caja-texto typeahead" name="prestador_servicio" id="prestador_servicio" placeholder="Sólo el nombre de usuario..." value="">
+                                        </label>
+                                        <label class="input-peq pull-right">
+                                            Correo:
+                                            <input value="" type="email" class="form-control" name="correo" required placeholder="Correo de Atención al Cliente">
+                                        </label>
+                                        <div class="clearfix"></div>
+                                        <label class="input-peq">
+                                            País:
+                                            <input type="text" required readonly="readonly" class="form-control" name="pais" value="Venezuela">
+                                        </label>
+                                        <label class="input-peq pull-right">
+                                            Estado / Provincia:
+                                            <input type="text" required readonly="readonly" class="form-control" name="estado" value="Sucre" placeholder="Estado / Provincia / Departamento...">
+                                        </label>
+                                        <div class="clearfix"></div>
+                                        <label class="input-peq" id="sugerencias-ciudad">
+                                            Ciudad:
+                                            <input type="text" required autocomplete="off" class="form-control caja-texto typeahead" name="ciudad" id="ciudad" placeholder="Municipio / Parroquia / Poblado..." value="">
+                                        </label>
+                                        <label class="input-peq pull-right" id="sugerencias-cp">
+                                            Código Postal:
+                                            <input type="text" required autocomplete="off" class="form-control caja-texto typeahead" name="codigo_postal" id="codigo_postal" placeholder="0000" maxlength="4" maxlength="4" pattern="\d+" value="">
+                                        </label>
+                                        <div class="clearfix"></div>
+                                        <label>
+                                            Dirección:
+                                            <input type="text" required class="form-control" name="direccion" placeholder="Calle/Avenida/Lugares de referencia, dirección exacta del lugar" value="">
+                                        </label>
+                                        <div class="clearfix"></div>
+                                        <label class="input-peq">
+                                            Teléfono:
+                                            <input value="" type="tel" class="form-control" name="telefono" placeholder="Teléfono de Atención al Cliente">
+                                        </label>
+                                        <label class="input-peq pull-right">
+                                            Página web:
+                                            <input type="url" name="pagina_web" class="form-control" value="" placeholder="Sitio web institucional">
+                                        </label>
+                                        <br>
+                                        <br>
+                                        <label>
+                                            <input type="hidden" required data-parsley-required-message="Debe ingresar su ubicación" id="lat" name="lat" value="">
+                                        </label>
+                                        <input type="hidden" id="lng" name="lng" value="">
+                                        <h4>Haga clic en el botón con el icono  <i class="fa fa-map-marker"></i>  para agregar la ubicación</h4>
+                                        <div id="mapa"></div>
+                                    </div>
+                                <!-- </div> -->
+                                <div role="tabpanel" class="tab-pane fade" id="tab_subir_fotos" aria-labelledby="subir fotos">
+                                    <div id="formSubirFotosAlbum" class="dropzone"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_foto_portada" aria-labelledby="foto portada">
+                                </div>
+                                <div role="tabpanel" style="width:100%" class="tab-pane fade row" id="tab_negocio" aria-labelledby="negocio">
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <h2>1 - Menú</h2>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="x_content" class="form-horizontal">
+                                                <label style="width: 100%;">
+                                                    Nº platillos / bebidas:
+                                                    <br>
+                                                    <input type="number" name="" value="" class="form-control" min="1" max="20">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <h2>2 - Item(s) <br><small>(Haga clic en cada una)</small></h2>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div id="img-categoria-gastronomia" class="x_content">
+                                                <div class="row">
+                                                    <a href="#detalles" class="item-gastronomia col-md-12 col-sm-12 col-lg-12" id="1">Item 1</a>
+                                                    <a href="#detalles" class="item-gastronomia col-md-12 col-sm-12 col-lg-12" id="2">Item 2</a>
+                                                    <a href="#detalles" class="item-gastronomia col-md-12 col-sm-12 col-lg-12" id="3">Item 3</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-sm-12 col-xs-12">
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <h2 id="detalles">3 - Detalles</h2>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="x_content">
+                                                <label style="width: 100%;">
+                                                    Nombre del Platillo / Bebida:
+                                                    <input class="form-control" required type="text" >
+                                                </label>
+                                                <label style="width: 100%;">
+                                                    Ingredientes / Descripción:
+                                                    <textarea class="form-control" rows="3" type="text" ></textarea>
+                                                </label>
+                                                <div class="clearfix"></div>
+                                                <label class="input-peq pull-left">
+                                                    Tipo de cocina:
+                                                    <input class="form-control" type="text">
+                                                </label>
+                                                <label class="input-peq pull-right">
+                                                    Precio:
+                                                    <input class="form-control" required type="number" min=0>
+                                                </label>
+                                                <a href="#" class="btn btn-dark guardar-centrado btn-guardar-categoria">Cargar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="ln_solid"></div>
+                                <div class="form-navigation">
+                                    <button type="button" class="anterior btn btn-dark pull-left"><i class="fa fa-caret-left"></i> Anterior</button>
+                                    <button type="button" class="siguiente btn btn-dark pull-right">Siguiente <i class="fa fa-caret-right"></i></button>
+                                    <button type="button" data-url="/gastronomia/listado" id="btn-finalizar-sdi" class="btn btn-success pull-right">Aceptar</button>
+                                    <span class="clearfix"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page content -->
+{{#section "js_libs"}}
+<script src="/vendors/leaflet/leaflet.js"></script>
+<script src="/vendors/leaflet-geosearch/dist/bundle.min.js"></script>
+<script src="/js/manejador-mapa.js"></script>
+<script src="/js/handlebars.min.js"></script>
+<script src="/vendors/typeahead/dist/typeahead.bundle.js"></script>
+<script>
+    activarCreacionMarcadoresOSM();
+</script>
+{{/section}}

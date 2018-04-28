@@ -1,0 +1,40 @@
+{{#section 'head'}}
+    <title>Agregar Prestador de Servicio</title>
+{{/section}}
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Agregar Prestador de Servicio</h3>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="col-md-6">
+                            <br>
+                            <form action="" method="post" accept-charset="utf-8" enctype=" application/x-www-form-urlencoded">
+                                <input type="hidden" name="tipo_usr" value="PrestadorServicio">
+                                {{> mostrar_errores}}
+                                <label>Nombre</label>
+                                <input class="form-control" autofocus="on" type="text" id="nombre" name="nombre" placeholder="Nombre" value="{{datos.value.persona.nombre}}" required="required">
+                                <label>Usuario</label>
+                                <input class="form-control" type="text" id="usuario" name="usuario" placeholder=" Nombre de usuario" value="{{datos.value.persona.usuario}}" required="required">
+                                <label>Correo</label>
+                                <input class="form-control" type="email" id="correo" name="correo" placeholder="Correo" value="{{datos.value.persona.correo}}" required="required">
+                                <label>Contraseña</label>
+                                <input type="password" class="form-control" id="clave" name="clave" placeholder="Contraseña" required="required">
+
+                                <button type="submit" class="pull-right btn btn-dark">Guardar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page content -->

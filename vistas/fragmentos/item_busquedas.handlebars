@@ -1,0 +1,75 @@
+<div class="row">
+    {{#if_mod datos.value.cantidad_resultados ">" 0}}
+        {{#if datos.value.lista_resultados}}
+            {{#each datos.value.lista_resultados}}
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 py">
+                    <div class="info-sitio">
+                        <a href="/sitio/{{this.url}}">
+                            {{#if this.imagen_portada}}
+			            		<img src="{{this.imagen_portada.url}}">
+			            	{{else}}
+			            		<img src="/images/sin_imagen.png">
+			            	{{/if}}
+                        </a>
+                        <div class="descripcion-info">
+                            <h4 class="text-center">{{this.nombre}}</h4>
+                            <p class="text-justify"></p>
+                            <div class="acciones">
+                                <div class="calif-entidades" data-calificacion={{this.promedio_calificaciones}}>
+                                </div>
+                                <div class="interaccion">
+                                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                   <a href="" data-toggle="modal" data-target="#modal"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        {{/if}}
+    {{else}}
+    	<!-- <h6>No se encontraron resultados <i class="fa fa-times" aria-hidden="true"></i></h6> -->
+   	{{/if_mod}}
+    <!--//////////////////VENTANAS MODAL/////////////////////-->
+
+                <!--Ventana modal-->
+                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="modal">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" >Compartir</h4>
+                            </div>
+                            <div class="modal-body">
+           
+                                <div class="redes"><a href="#" class="redesf" target="_blank"><lable class="fa fa-facebook">&nbsp;Facebook</lable></a></div>
+
+                                <div class="redes"><a href="#" class="redest" target="_blank"><lable class="fa fa-twitter">&nbsp;Twitter</lable></a></div>
+
+                                <div class="redes"><a href="#" class="redesg" target="_blank"><lable class="fa fa-google">&nbsp;Google</lable></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin Ventana modal-->
+
+                <!--Ventana modal error-->
+               <!--  <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+                   <div class="modal-dialog" role="document">
+                       <div class="modal-content">
+                           <div class="modal-header">
+                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                               <h4 class="modal-title">Ups! <i class="fa fa-frown-o"></i></h4>
+                           </div>
+                           <div class="modal-body">
+                               <p>Debes iniciar sesión para poder compartir esta información</p>
+                           </div>
+                           <div class="modal-footer">
+                               <a href="/usuario/sesionarme">Inicia sesión</a> <a class="btn btn-sm btn-primary" href="/usuario/registrar-cuenta">regístrate</a>
+                           </div>
+                       </div>
+                   </div>
+               </div> -->
+                <!--Fin Ventana modal error-->
+                <!--//////////////////FIN VENTANAS MODAL/////////////////////-->
+ </div>

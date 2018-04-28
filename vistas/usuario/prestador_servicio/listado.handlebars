@@ -1,0 +1,51 @@
+{{#section 'head'}}
+	<title>Lista de Prestadores de Servicio</title>
+{{/section}}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <h3>Lista de Prestadores de Servicio <small>(personas encargadas de un Sitio o una Experiencia)</small></h3>
+        </div>
+        <br>
+        <div class="clearfix"></div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        {{#if datos.value}}
+	                        <table id="datatable-responsive" class="table table-striped dt-responsive nowrap" cellspacing="0" width="100%">
+	                            <thead>
+	                                <tr>
+	                                    <th>#</th>
+	                                    <th>Nombre</th>
+	                                    <th>Usuario</th>
+	                                    <th>Operación</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                                {{#each datos.value}}
+		                                <tr>
+		                                	<td>{{@index}}</td>
+		                                	<td>{{this.nombre}}</td>
+		                                	<td>{{this.usuario}}</td>
+		                                	<td>
+		                                		<a href="/usuario/{{ this.usuario }}" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> &nbsp; Consultar </a>
+		                                        <a href="/usuario/{{ this.usuario }}/eliminar-cuenta"  class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> &nbsp; Eliminar </a>
+		                                	</td>
+		                                </tr>
+	                                {{/each}}
+	                            </tbody>
+	                        </table>
+	                    {{else}}
+                        	<h4>No se han agregado Prestadores de Servicio a la Base de Datos... <a  href="/usuario/registrar-cuenta"><b style="border-bottom: 2px solid">¿Deseas hacerlo ahora?</b></a></h4>
+                        {{/if}}    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page content -->

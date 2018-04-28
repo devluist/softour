@@ -1,0 +1,280 @@
+{{#section "titulo_pagina"}}
+    Alojamiento-Información | Softour
+{{/section}}
+{{#section 'head'}}
+    
+   <!-- Styles -->
+    <link href="/css/busquedas.css" rel="stylesheet">
+    <!-- Slider -->
+{{/section}}
+
+   <!-- Site header -->
+<header class="site-header size-lg text-center" style="background-image: url(/images/alojamiento/background-hotel.jpg)">
+    <div class="container">
+        <div class="col-xs-12">
+            <br>
+            {{> buscador_general}}
+        </div>
+    </div>
+</header>
+<!-- END Site header -->
+<!--Nombre hotel-->
+    <div class="container establecimiento">
+        <div class="row">
+            <div class="col-xs-12 enlinea">
+                <h2 class="enlinea">{{datos.value.alojamiento.nombre}}</h2> / <p class="enlinea azul">{{datos.value.nombre}}</p>
+            </div>
+            <!-- <div class="col-xs-12 col-md-8">
+            </div> -->
+        </div>
+    </div>
+    <!--Fin  Nombre hotel-->
+    <div class="container">
+        <div class="row">
+            <!-- Estilis de formulario -->
+                <div class="col-xs-12 col-md-4 filtro-hotel">
+                    <!-- Fechas -->
+                    <div class="col-xxs-12 col-xs-6">
+                        <div class="input-field">
+                            <section class="selector">
+                                <label for="date-start"> {{traduccion.ENTRADA}}:</label>
+                                <input class="form-control selectpicker" type="text" placeholder="dd / mm / aaaa" id="from" name="from" />
+                            </section>
+                        </div>
+                    </div>
+                    <div class="col-xxs-12 col-xs-6">
+                        <section>
+                            <label for="class">{{traduccion.SALIDA}}:</label>
+                            <input class="form-control selectpicker" type="text" placeholder="dd / mm / aaaa" id="to" name="to" />
+                        </section>
+                    </div>
+                    <!--fin fechas -->
+                    <!-- Habitaciones -->
+                    <div class="col-xxs-12 col-xs-6">
+                        <section>
+                            <label for="class">{{traduccion.HABITACIONES}}:</label>
+                            <select class="selector">
+                                <option value="" disabled selected>1</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </section>
+                    </div>
+                    <!--fin habitaciones-->
+                    <!-- huespedes -->
+                    <div class="col-xxs-12 col-xs-6">
+                        <section>
+                            <label for="class">{{traduccion.HUESPEDES}}:</label>
+                            <select class="selector">
+                                <option value="" disabled selected>1</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </section>
+                    </div>
+                    <!-- fin huespedes -->
+                    <!-- Boton búscar -->
+                    <div class="col-xs-12">
+                        <input type="submit" class="btn btn-primary btn-block" value="Ver disponibilidad">
+                    </div>
+                    <!-- Fin boton Búscar -->
+                </div>
+                <!-- slider -->
+                <div class="col xs-12 col-md-8">
+                    <div class="main">
+                        <div class="slides">
+                            {{#if datos.value.imagenes}}
+                                {{#each datos.value.imagenes}}
+                                    <img src="{{this.url}}" alt="">
+                                {{/each}}
+                            {{else}}
+                                <img src="/images/sin_imagen.png" alt="">
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin slider -->
+            </div>
+        </div>
+        <!-- Filtro hotel -->
+                <!--     <ul>
+                <li><i class="fa fa-credit-card" aria-hidden="true"></i></li>
+                <li><i class="fa fa-cc-mastercard" aria-hidden="true"></i></li>
+                <li><i class="fa fa-cc-visa" aria-hidden="true"></i></li>
+            </ul> -->
+                <!-- Fin boton Búscar -->
+            </div>
+        </div>
+    </div>
+    <!-- Filtro hotel -->
+    <!--Botones-->
+    <!--     <div class="container botonera">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="botones">
+                <li><a data-scroll href="#informaciongeneral"></a></li>
+                <li><a data-scroll href="/"></a></li>
+                <li><a data-scroll href="#acercade"></a></li>
+                <li><a data-scroll href="#califica"></a></li>
+                <li><a data-scroll href="#cercade"></a></li>
+                <li class="compartir"><a href=""> <i class="fa fa-share" aria-hidden="true"></i> </a></li>
+            </ul>
+        </div>
+    </div>
+</div> -->
+    <!--Fin  Botones-->
+    <!-- información -->
+    <div class="container informacion-habitacion" id="informaciongeneral">
+        <div class="row">
+            <div class="descripcion colorh">
+                <h3>{{traduccion.PRECIOS_DESDE}} <span class="amarillo">{{datos.value.precio_unitario_producto}}</span></h3>
+            </div>
+            <!-- Descripción -->
+            <div class="col-xs-12 col-md-8 justificar-text borde-derecho">
+                <h5>{{traduccion.DESCRIPCION_HABITACION}}: </h5>
+                <p class="text-justify">{{datos.value.descripcion}}</p>
+                <!-- <p class="text-justify">Está ubicado cerca de la hermosa playa San Luis Estas instalaciones concebidas para su máximo confort y relax, fueron inauguradas en el año 1997, y desde entonces, nos caracterizamos por nuestro excelente servicio y esmerada atención a todos nuestros apreciados clientes.</p>
+                <p class="text-justify">Proporciona a todos sus clientes, a muy razonables precios, una amplia gama de servicios, de una forma eficiente y personalizada, con calidad, seriedad y sentido de compromiso, así como Alimentos y Bebidas, Convenciones, Banquetes, y Actividades Recreativas para niños y adultos, logrando siempre la total satisfacción de todos aquellos que depositan su confianza en nosotros.</p> -->
+            </div>
+            <!-- Fin Descripción -->
+            <!-- Servivios de Habitación -->
+            <div class="col-xs-12 col-md-4 servicios">
+                <h5>{{traduccion.CARACTERISTICAS}}: </h5>
+                <ul>
+                    <li>
+                        <span><b>{{traduccion.METROS_CUADRADOS}}: {{datos.value.metros_cuadrados}}</b></span>
+                    </li>
+                    <li>
+                        <span><b>{{traduccion.N_BANOS}}: {{datos.value.cantidad_baños}}</b></span>
+                    </li>
+                    <!-- <li>
+                        <span><b>Desayuno incluido</b></span>
+                    </li>
+                    <li>
+                        <span><b>Bañera de hidromasaje</b></span>
+                    </li>
+                    <li>
+                        <span><b>Servicio de habitación</b></span>
+                    </li> -->
+                </ul>
+            </div>
+            <!--Fin Servicios de habitación -->
+             <!-- <div class="descripcion colorh">
+                <h3>{{datos.value.nombre}}</h3>
+                         </div> -->
+            <!-- Descripción -->
+            <div class="col-xs-12 col-md-8 justificar-text borde-derecho">
+                <h5>{{traduccion.SERVICIOS_INCLUYE}}: </h5>
+                <ul>
+                    <li>
+                        <span><b>{{datos.value.servicios_incluidos}}</b></span>
+                    </li>
+                    <!-- <li>
+                        <span><b>TV con servicio de cable</b></span>
+                    </li>
+                    <li>
+                        <span><b>Desayuno incluido</b></span>
+                    </li>
+                    <li>
+                        <span><b>Bañera de hidromasaje</b></span>
+                    </li>
+                    <li>
+                        <span><b>Servicio de habitación</b></span>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- Fin Descripción -->
+        </div>
+        <!-- <footer>
+            <div class="htlfndr-blue-title">Nuestras habitaciones</div>
+            <div class="htlfndr-more-avilability-rooms">
+                <div class="htlfndr-available-room htlfndr-table-view">
+                    <div class="htlfndr-hotel-thumbnail"> <a href="hotel-room-page.html"><img src="images/29572el_chaise_longue_o_cheslon.jpg" alt="avilable room"></a> </div>
+                    <div class="htlfndr-hotel-info">
+                        <h6 class="htlfndr-post-title"><a href="hotel-room-page.html">Clasica</a></h6>
+                        <p>por noche</p> <span class="htlfndr-cost-normal">$ 150</span> </div>
+                </div>
+                <hr>
+                <div class="htlfndr-available-room htlfndr-table-view">
+                    <div class="htlfndr-hotel-thumbnail"> <a href="hotel-room-page.html"><img src="images/5053563227_ee0db21ca5_b.jpg" alt="avilable room"></a> </div>
+                    <div class="htlfndr-hotel-info">
+                        <h6 class="htlfndr-post-title"><a href="hotel-room-page.html">Doble</a></h6>
+                        <p>por noche</p> <span class="htlfndr-cost-normal">$ 200</span> </div>
+                </div>
+                <hr>
+                <div class="htlfndr-available-room htlfndr-table-view">
+                    <div class="htlfndr-hotel-thumbnail"> <a href="hotel-room-page.html"><img src="images/5690083711_44634c54f8_b.jpg" alt="avilable room"></a> </div>
+                    <div class="htlfndr-hotel-info">
+                        <h6 class="htlfndr-post-title"><a href="hotel-room-page.html">Familiar</a></h6>
+                        <p>por noche</p> <span class="htlfndr-cost-normal">$ 400</span> </div>
+                </div>
+            </div>
+        </footer> -->
+    </div>
+
+    {{#section 'js_libs'}}
+    <script src="/vendors/slidesjs/js/jquery.slides.js"></script>
+    <script>
+    $(function() {
+        $(".slides").slidesjs({
+            play: {
+                active: true,
+                // [boolean] Generate the play and stop buttons.
+                // You cannot use your own buttons. Sorry.
+                effect: "slide",
+                // [string] Can be either "slide" or "fade".
+                interval: 3000,
+                // [number] Time spent on each slide in milliseconds.
+                auto: true,
+                // [boolean] Start playing the slideshow on load.
+                swap: true,
+                // [boolean] show/hide stop and play buttons
+                pauseOnHover: false,
+                // [boolean] pause a playing slideshow on hover
+                restartDelay: 2500
+                // [number] restart delay on inactive slideshow
+            }
+        });
+    });
+    </script>
+    <script src="/vendors/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script>
+    $(function() {
+        $.datepicker.setDefaults($.datepicker.regional["es"]);
+        $("#datepicker").datepicker({
+            firstDay: 1,
+        });
+    });
+    </script>
+     <script>
+    $(function() {
+        $('#from').datepicker({
+            minDate: 0,
+            onSelect: function(dateStr) {
+                var date = $(this).datepicker('getDate');
+                if (date) {
+                    date.setDate(date.getDate() + 1);
+                }
+                $('#to').datepicker('option', 'minDate', date || 1);
+            }
+        });
+        $('#to').datepicker({
+            minDate: 1,
+            onSelect: function(dateStr) {
+                var date = $(this).datepicker('getDate');
+                if (date) {
+                    date.setDate(date.getDate() - 1);
+                }
+                $('#from').datepicker('option', 'maxDate', date);
+            }
+        });
+    });
+    </script>
+
+    
+
+{{/section}}

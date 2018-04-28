@@ -1,0 +1,53 @@
+{{#section 'head'}}
+	<title>Lista de Turistas</title>
+{{/section}}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <h3>Lista de Turistas <small>(usuarios registrados en el sistema)</small></h3>
+        </div>
+        <br>
+        <div class="clearfix"></div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        {{#if datos.value}}
+	                        <table id="datatable-responsive" class="table table-striped dt-responsive nowrap" cellspacing="0" width="100%">
+	                            <thead>
+	                                <tr>
+	                                    <th>#</th>
+	                                    <th>Nombre</th>
+	                                    <th>Usuario</th>
+	                                    <th>Operación</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                                {{#each datos.value}}
+		                                <tr>
+		                                	<td>{{@index}}</td>
+		                                	<td>{{this.nombre}}</td>
+		                                	<td>{{this.usuario}}</td>
+		                                	<td>
+		                                		<a href="/usuario/{{ this.usuario }}" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> &nbsp; Consultar </a>
+		                                		{{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "Administrador"}}
+		                                        	<a href="/usuario/{{ this.usuario }}/eliminar-cuenta"  class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> &nbsp; Eliminar </a>
+		                                        {{/if_mod}}
+		                                	</td>
+		                                </tr>
+	                                {{/each}}
+	                            </tbody>
+	                        </table>
+	                    {{else}}
+                        	<h4>No hay usuarios registrados en el sistema...</h4>
+                        {{/if}}    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page content -->

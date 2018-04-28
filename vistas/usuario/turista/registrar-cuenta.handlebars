@@ -1,0 +1,52 @@
+{{#section 'titulo_pagina'}}{{traduccion.TITULO_REGISTRARME}}{{/section}}
+<body class="login-page">
+    {{> mostrar_errores}}
+    
+    <main>
+        <div class="login-block">
+            <a class="logo" href="/"><img src="/images/logo.png" alt=""></a>
+            <form action="" class="form-turista" method="post" accept-charset="utf-8" enctype="application/x-www-urlencoded">
+                
+	        	<div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="ti-user"></i></span>
+                        <input class="form-control" autofocus="on" type="text" id="nombre" name="nombre" placeholder="{{traduccion.NOMBRE_REGISTRARME}}" value="{{datos.value.persona.nombre}}" required="required">
+                    </div>
+                </div>
+                <hr class="hr-xs"> 
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-at" aria-hidden="true"></i></span>
+                        <input class="form-control" type="text" id="usuario" name="usuario" placeholder="{{traduccion.USUARIO_REGISTRARME}}" value="{{datos.value.persona.usuario}}" required="required">
+                    </div>
+                </div>
+                <hr class="hr-xs">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="ti-email"></i></span>
+                        <input class="form-control" type="email" id="correo" name="correo" placeholder="{{traduccion.CORREO}}" value="{{datos.value.persona.correo}}" required="required">
+                    </div>
+                </div>
+                <hr class="hr-xs">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="ti-unlock"></i></span>
+                        <input type="password" class="form-control" id="clave" name="clave" placeholder="{{traduccion.CONTRASENA}}" required="required">
+                    </div>
+                </div>
+                <input type="hidden" name="tipo_usr" value="Turista">
+                <button class="btn btn-primary btn-block" type="submit">{{traduccion.BOTON_REGISTRAR}}</button>
+                <div class="login-footer">
+                    <h6>{{traduccion.O_INICIE_SESION_CON}}</h6>
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="google" href="#"><i class="fa fa-google"></i></a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="login-links">
+            <p class="text-center">{{traduccion.YA_TIENES}} <a class="txt-brand" href="/usuario/sesionarme">{{traduccion.SESIONARSE}} </a></p>
+        </div>
+    </main>

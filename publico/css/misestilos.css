@@ -1,0 +1,692 @@
+.imgevento {
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.imgevento {
+    height: 35em;
+    width: 20em;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 13px 15px 10px -6px #e0d0e0;
+}
+
+.imgevento img {
+    height: 35em;
+    vertical-align: top;
+    width: 100%;
+}
+
+
+
+/*Media queries sitio de interes*/
+
+@media (min-width: 992px) {
+    .imgevento {
+        width: 24rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .imgevento {
+        width: 26rem;
+    }
+}
+
+
+@media (min-width: 360px) {
+    .imgevento {
+        width: auto;
+    }
+}
+
+
+}
+.tituloev {
+    margin-top: 4em;
+}
+.mapa {
+    margin-right: 9em;
+}
+#map-container {
+    height: 280px;
+    width: 400px;
+}
+
+
+/*Estrellas calificación*/
+.ec-stars-wrapper {
+    /* Espacio entre los inline-block (los hijos, los `a`) */
+
+    font-size: 0;
+    /* Podríamos quitarlo, 
+    pero de esta manera (siempre que no le demos padding), 
+    sólo aplicará la regla .ec-stars-wrapper:hover a cuando
+    también se esté haciendo hover a alguna estrella */
+
+    display: inline-block;
+}
+
+.ec-stars-wrapper a {
+    text-decoration: none;
+    display: inline-block;
+    /* Volver a dar tamaño al texto */
+
+    font-size: 32px;
+    font-size: 2rem;
+
+    color: #888;
+}
+
+.ec-stars-wrapper:hover a {
+    color: rgb(39, 130, 228);
+}
+
+/*
+ * El selector de hijo, es necesario para aumentar la especifidad
+ */
+.ec-stars-wrapper>a:hover~a {
+    color: #888;
+}
+
+/* Fin estrellas de calificación */
+.price {
+    position: absolute;
+    top: 23px;
+    left: 25px;
+    padding: 7px 15px;
+    background: #ffffff;
+    color: #514d4d;
+    font-family: "lato-bold", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+
+.destacados {
+    margin-left: 4em;
+    margin-right: 4em;
+}
+.vive {
+    font-family: "Brush Script MT";
+    font-size: 80px;
+}
+.hoy {
+    font-family: "lato-bold", Helvetica, Arial, sans-serif;
+    font-size: 25px;
+}
+
+
+
+/** ====================
+ * Lista de Comentarios
+ =======================*/
+.comments-container {
+    margin: 60px auto 15px;
+    width: 768px;
+}
+
+.comments-container h1 {
+    font-size: 36px;
+    color: #283035;
+    font-weight: 400;
+}
+
+.comments-container h1 a {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.comments-list {
+    margin-top: 30px;
+    position: relative;
+}
+
+
+/**
+ * Lineas / Detalles
+ -----------------------*/
+.comments-list:before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: #c7cacb;
+    position: absolute;
+    left: 32px;
+    top: 0;
+}
+
+.comments-list:after {
+    content: '';
+    position: absolute;
+    background: #c7cacb;
+    bottom: 0;
+    left: 27px;
+    width: 7px;
+    height: 7px;
+    border: 3px solid #dee1e3;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.reply-list:before,
+.reply-list:after {
+    display: none;
+}
+.reply-list li:before {
+    content: '';
+    width: 60px;
+    height: 2px;
+    background: #c7cacb;
+    position: absolute;
+    top: 25px;
+    left: -55px;
+}
+
+
+.comments-list li {
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+}
+
+.comments-list li:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    width: 0;
+}
+
+.reply-list {
+    padding-left: 88px;
+    clear: both;
+    margin-top: 15px;
+}
+
+/**
+ * Avatar
+ ---------------------------*/
+.comments-list .comment-avatar {
+    width: 65px;
+    height: 65px;
+    position: relative;
+    z-index: 99;
+    float: left;
+    border: 3px solid #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.comments-list .comment-avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.reply-list .comment-avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.comment-main-level:after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+/**
+ * Caja del Comentario
+ ---------------------------*/
+.comments-list .comment-box {
+    width: 680px;
+    float: right;
+    position: relative;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.comments-list .comment-box:before,
+.comments-list .comment-box:after {
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    display: block;
+    border-width: 10px 12px 10px 0;
+    border-style: solid;
+    border-color: transparent #FCFCFC;
+    top: 8px;
+    left: -11px;
+}
+
+.comments-list .comment-box:before {
+    border-width: 11px 13px 11px 0;
+    border-color: transparent rgba(0, 0, 0, 0.05);
+    left: -12px;
+}
+
+.reply-list .comment-box {
+    width: 610px;
+}
+.comment-box .comment-head {
+    background: #FCFCFC;
+    padding: 10px 12px;
+    border-bottom: 1px solid #E5E5E5;
+    overflow: hidden;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+.comment-box .comment-head i {
+    float: right;
+    margin-left: 14px;
+    position: relative;
+    top: 2px;
+    color: #A6A6A6;
+    cursor: pointer;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.comment-box .comment-head i:hover {
+    color: #03658c;
+}
+
+.comment-box .comment-name {
+    color: #283035;
+    font-size: 14px;
+    font-weight: 700;
+    float: left;
+    margin-right: 10px;
+}
+
+.comment-box .comment-name a {
+    color: #283035;
+}
+
+.comment-box .comment-head span {
+    float: left;
+    color: #999;
+    font-size: 13px;
+    position: relative;
+    top: 1px;
+}
+
+.comment-box .comment-content {
+    background: #FFF;
+    padding: 12px;
+    font-size: 15px;
+    color: #595959;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+.comment-box .comment-name.by-author,
+.comment-box .comment-name.by-author a {
+    color: #03658c;
+}
+.comment-box .comment-name.by-author:after {
+    content: 'autor';
+    background: #03658c;
+    color: #FFF;
+    font-size: 12px;
+    padding: 3px 5px;
+    font-weight: 700;
+    margin-left: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+
+/** =====================
+ * Responsive
+ ========================*/
+@media only screen and (max-width: 766px) {
+    .comments-container {
+        width: 480px;
+    }
+
+    .comments-list .comment-box {
+        width: 390px;
+    }
+
+    .reply-list .comment-box {
+        width: 320px;
+    }
+}
+
+.ec-stars-wrapper a p {
+    font-size: 16px;
+}
+
+.caption p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*
+Fade content bs-carousel with hero headers
+Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
+Image credits: unsplash.com
+*/
+
+/********************************/
+
+/*       Fade Bs-carousel       */
+
+/********************************/
+.fade-carousel {
+    position: relative;
+    height: 100vh;
+}
+.fade-carousel .carousel-inner .item {
+    height: 100vh;
+}
+.fade-carousel .carousel-indicators>li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .5;
+}
+.fade-carousel .carousel-indicators>li.active {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+
+/********************************/
+
+/*          Hero Headers        */
+
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .75);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+.hero h1 {
+    font-size: 6em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+
+
+/********************************/
+
+/*            Overlay           */
+
+/********************************/
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .5;
+}
+
+
+
+
+/********************************/
+
+/*       Slides backgrounds     */
+
+/********************************/
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+    background-image: url(https://blog.cuadrala.com/wp-content/uploads/2017/09/Futsal-Pro-3-1.jpeg);
+}
+.fade-carousel .slides .slide-2 {
+    background-image: url(https://www.diarioregion.com/wp-content/uploads/2017/10/2017-10-05-Deportes2.jpg);
+}
+.fade-carousel .slides .slide-3 {
+    background-image: url(http://4.bp.blogspot.com/-JcIHK5yRpzA/UBcwD6Q3NbI/AAAAAAAACM4/dKQCjUqNM2c/s1600/Tiburones+de+Vargas+LNB..jpg);
+}
+
+
+/********************************/
+
+/*          Media Queries       */
+
+/********************************/
+@media screen and (min-width: 980px) {
+    .hero {
+        width: 980px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .hero h1 {
+        font-size: 4em;
+    }
+}
+
+
+/*Titulo eventos*/
+.titudesc {
+    font-family: "arial";
+    font-size: 16px;
+    color: #424242;
+}
+
+
+
+
+.container {
+    margin: 0 auto;
+}
+
+/* Example wrapper */
+.wrap {
+    position: relative;
+    margin: 3em 0;
+}
+
+/* Frame */
+.frame {
+    height: 250px;
+    line-height: 250px;
+    overflow: hidden;
+}
+.frame ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 50px;
+}
+.frame ul li {
+    float: left;
+    width: 227px;
+    height: 100%;
+    margin: 0 1px 0 0;
+    padding: 0;
+    background: #333;
+    color: #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+.frame ul li.active {
+    color: #fff;
+    background: #a03232;
+}
+
+/* Scrollbar */
+.scrollbar,
+.scrollbar2 {
+    margin: 0 0 1em 0;
+    height: 2px;
+    background: #ccc;
+    line-height: 0;
+}
+
+/* Pages */
+.pages {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    text-align: center;
+}
+.pages li {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 4px;
+    text-indent: -999px;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
+}
+.pages li:hover {
+    background: #aaa;
+}
+.pages li.active {
+    background: #666;
+}
+
+/* Controls */
+.controls {
+    margin: 25px 0;
+    text-align: center;
+}
+
+/* One Item Per Frame example*/
+.oneperframe {
+    height: 300px;
+    line-height: 300px;
+}
+.oneperframe ul li {
+    width: 1140px;
+}
+.oneperframe ul li.active {
+    background: #333;
+}
+
+/* Crazy example */
+.crazy ul li:nth-child(2n) {
+    width: 100px;
+    margin: 0 4px 0 20px;
+}
+.crazy ul li:nth-child(3n) {
+    width: 300px;
+    margin: 0 10px 0 5px;
+}
+.crazy ul li:nth-child(4n) {
+    width: 400px;
+    margin: 0 30px 0 2px;
+}
+
+
+/*Categorias*/
+.categ {
+    margin-left: 12em;
+    margin-right: 12em;
+}
+.imcateg {
+    height: 420px;
+    width: 200px;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 13px 15px 10px -6px #e0d0e0;
+}
+.imcateg img {
+    height: 420px;
+    vertical-align: top;
+    width: 100%;
+}
+
+
+
+/*Media queries sitio de interes*/
+@media (min-width: 992px) {
+    .imcateg {
+        width: 24rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .imcateg {
+        width: 26rem;
+    }
+}
+
+
+@media (min-width: 360px) {
+    .imcateg {
+        width: auto;
+    }
+}
+
+
+/* Efecto hover acercar */
+.hover figure img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.hover figure:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/*Fin efecto hover acercar

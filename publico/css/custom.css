@@ -1,0 +1,93 @@
+/* log in */
+
+.login-page main {
+
+    margin: 1% auto;
+}
+
+
+/* Descripcion de softour */
+
+.description .alinear {
+    line-height: 2rem;
+}
+
+.description .fa {
+    color: #29aafe;
+    width: 7rem;
+    height: 7rem;
+    line-height: 7rem;
+    font-size: 4.5em;
+}
+
+
+/* Estilos de la descripcion antes del formulario */
+
+h4.font-alt {
+    font-style: oblique;
+}
+
+section .font {
+    font-weight: 700;
+    font-size: 250%;
+}
+
+.social-icons a.google:hover {
+    background-color: #ef4b4b;
+}
+
+
+.backg-alt {
+    background-color: #eee;
+}
+
+
+
+
+
+/*Sitio de interes*/
+
+.info-sitio {
+    height: 22rem;
+    width: 22rem;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 15px 19px 10px -4px #f7f7f7;
+}
+
+.info-sitio img {
+    height: 14rem;
+    vertical-align: top;
+    width: 100%;
+}
+
+.info-sitio .descripcion-info {
+    background: #fff;
+    height: 8rem;
+    padding: 0 .8rem;
+}
+
+
+
+
+
+/*Media-queries*/
+
+@media (min-width: 992px) {
+    .info-sitio {
+        width: 20rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .info-sitio {
+        width: 22rem;
+    }
+}
+
+
+@media (min-width: 360px) {
+    .info-sitio {
+        width: auto;
+    }
+}

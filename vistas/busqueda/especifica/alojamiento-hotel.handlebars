@@ -1,0 +1,91 @@
+
+{{#section "titulo_pagina"}}
+    {{traduccion.TITULO_ALOJAMIENTO_HOTELES}}
+{{/section}}
+{{#section 'head'}}
+    
+    <link href="/css/busquedas.css" rel="stylesheet">
+    
+{{/section}}
+
+<header class="site-header size-lg text-center" style="background-image: url(/images/alojamiento/background-hotel.jpg)">
+    <div class="container">
+        <div class="col-xs-12">
+            <br>
+            <br>
+            <h1 id="subc">{{traduccion.HOTELES}}</h1>
+            {{> buscador_general}}
+        </div>
+    </div>
+</header>
+
+    
+
+<div class="container">
+    <header class="text-left colorh">
+       <h3>{{traduccion.HOTELES_DESTACADAS}}</h3>
+    </header>
+</div>
+<main>
+    <div class="container">
+        <div class="row">
+                            <!-- NUEVO CARD -->
+                {{#if_mod datos.value.cantidad_resultados ">" 0}}
+                            {{#if datos.value.lista_resultados}}
+                                {{#each datos.value.lista_resultados}}            
+                    <div class="col-md-4 col-sm-6 py">
+                        {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "Turista"}}
+                            <a href="/api/favoritos/{{this.__t}}/{{this.url}}" class="corazon-favoritos sesionado"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                        {{else}}
+                            {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "PrestadorServicio"}}
+                                <a class="corazon-favoritos"><img src="/images/like.png"></a>
+                            {{else}}
+                                <a href="/usuario/sesionarme" class="corazon-favoritos"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                            {{/if_mod}}
+                        {{/if_mod}}
+                        <div class="tarjeta_container">
+                            <div class="img_container">
+                                <a href="/alojamiento/{{this.url}}">
+                                    {{#if this.imagen_portada}}
+                                        <img src="{{this.imagen_portada.url}}" width="400" height="220" alt="image">
+                                    {{else}}
+                                        <img src="/images/sin_imagen.png" width="400" height="220" alt="image">
+                                    {{/if}}
+                                </a>       
+                            </div>
+                            <div class="tarjeta_title">
+                                <div>
+                                    <h3 class="texto"><strong>{{this.nombre}}</strong></h3>
+                                </div>
+                                
+                                <div class="acciones">
+                                    <div class="calif-entidades" data-calificacion={{this.promedio_calificaciones}}>
+                                    </div>
+                                    <div class="interaccion">
+                                        <div class="card__share">
+                                            <div class="card__social">
+                                                <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                                                <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                                                <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                                            </div>
+                                            <a id="share" class="share-toggle share-icon" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        {{/each}}
+                        {{/if}}
+                        {{else}}
+                        <!-- <h6>No se encontraron resultados <i class="fa fa-times" aria-hidden="true"></i></h6> -->
+                        {{/if_mod}}
+                        <!-- NUEVO CARD -->
+                    </div>
+                </div>
+</main>
+{{#section 'js_libs'}}
+ 
+    
+
+{{/section}}

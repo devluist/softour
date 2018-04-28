@@ -1,0 +1,325 @@
+@charset "UTF-8";
+.site-header {
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 120px 0;
+    color: #fff;
+    z-index: 0;
+    color: #fff;
+}
+
+.site-header::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: rgba(0, 24, 40, 0.55);
+}
+
+.site-header.bg-repeat {
+    background-size: none;
+    background-repeat: repeat;
+}
+
+.site-header.size-lg {
+    padding: 40px 0;
+}
+
+.site-header.size-full {
+    height: 100vh;
+}
+
+.site-header.size-full .container,
+.site-header.size-full .container-fluid {
+    position: relative;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+.site-header h1 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 76px;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+}
+
+.site-header h4,
+.site-header h3 {
+    letter-spacing: 1px;
+    line-height: 36px;
+}
+
+h3 {
+    margin-top: 30px;
+    font-size: 40px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.site-header mark {
+    color: rgba(92, 190, 254, 0.8);
+    background-color: transparent;
+    font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    .site-header h1 {
+        font-size: 48px;
+        line-height: 50px;
+        margin-bottom: 20px;
+    }
+    .site-header h4,
+    .site-header h3 {
+        line-height: 32px;
+        font-size: 21px;
+    }
+    .site-header h5 {
+        line-height: 28px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-header {
+        padding: 60px 0;
+    }
+    .site-header.size-sm {
+        padding: 30px 0;
+    }
+    .site-header.size-lg {
+        padding: 90px 0;
+    }
+    .site-header h1 {
+        font-size: 28px;
+        line-height: 40px;
+        margin-bottom: 16px;
+    }
+    .site-header h4,
+    .site-header h3 {
+        line-height: 25px;
+        font-size: 17px;
+    }
+    .site-header h5 {
+        line-height: 22px;
+        font-size: 16px;
+    }
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #bbbbbb !important;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #bbbbbb !important;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #bbbbbb !important;
+}
+
+.header-job-search {
+    margin-top: 50px;
+}
+
+.header-job-search .input-keyword,
+.header-job-search .input-location,
+.header-job-search .btn-search {
+    display: inline-block;
+    float: left;
+}
+
+.header-job-search .input-keyword,
+.header-job-search .input-location {
+    position: relative;
+    width: 40%;
+}
+
+.header-job-search .input-keyword::before,
+.header-job-search .input-location::before {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-family: 'themify';
+    font-size: 28px;
+    line-height: 70px;
+    color: #b3c1c6;
+    content: "\e610";
+}
+
+.header-job-search .input-location::before {
+    content: "\e693";
+}
+
+.header-job-search .input-keyword .form-control {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-right: 1px solid #c2cdd1;
+}
+
+.header-job-search .btn-search {
+    width: 20%;
+}
+
+.header-job-search .btn-search .btn {
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 16px;
+    text-transform: none;
+    height: 70px;
+    width: 100%;
+}
+
+.header-job-search .btn-search a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 13px;
+    opacity: .8;
+    transition: opacity .2s ease-in-out;
+}
+
+.header-job-search .btn-search a:hover {
+    opacity: 1;
+}
+
+.header-job-search .form-control {
+    border: none;
+    padding-left: 60px;
+    height: 70px;
+    color: #55595c;
+}
+
+.info-sitio {
+    height: 28rem;
+    width: 28rem;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 16px 25px 10px -6px #e0d0e0;
+}
+
+.info-sitio img {
+    height: 17rem;
+    vertical-align: top;
+    width: 100%;
+}
+
+.info-sitio .descripcion-info {
+    background: #fff;
+    height: 10rem;
+    padding: 0 .8rem;
+}
+
+.py {
+    padding: 30px 25px;
+}
+
+@media (min-width: 992px) {
+    .info-sitio {
+        width: 24rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .info-sitio {
+        width: 26rem;
+    }
+}
+
+@media (min-width: 360px) {
+    .info-sitio {
+        width: auto;
+    }
+}
+
+.social-icons a.google:hover {
+    background-color: #ef4b4b;
+}
+
+
+/*Estrellas calificación*/
+
+.ec-stars-wrapper {
+    /* Espacio entre los inline-block (los hijos, los `a`) */
+    font-size: 0;
+    /* Podríamos quitarlo, 
+      pero de esta manera (siempre que no le demos padding), 
+      sólo aplicará la regla .ec-stars-wrapper:hover a cuando
+      también se esté haciendo hover a alguna estrella */
+    display: inline-block;
+}
+
+.ec-stars-wrapper a {
+    text-decoration: none;
+    display: inline-block;
+    /* Volver a dar tamaño al texto */
+    font-size: 32px;
+    font-size: 2rem;
+    color: #888;
+}
+
+.ec-stars-wrapper:hover a {
+    color: #2782e4;
+}
+
+
+/*
+ * El selector de hijo, es necesario para aumentar la especifidad
+ */
+
+.ec-stars-wrapper>a:hover~a {
+    color: #888;
+}
+
+
+/* Fin estrellas de calificación */
+
+
+/*# sourceMappingURL=custom.css.map */
+
+
+/*------Hora y fecha-----*/
+
+#fh5co-contact {
+    padding: 7em 0;
+}
+
+.fh5co-heading .heading:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    left: 50%;
+    background: #fb6e14;
+    margin-left: -20px;
+}
+
+.fh5co-heading .sub-heading {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.fh5co-heading .heading {
+    font-size: 50px;
+    font-style: italic;
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.row-padded {
+    padding-bottom: 40px;
+}

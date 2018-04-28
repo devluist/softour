@@ -1,0 +1,62 @@
+{{#section 'head'}}
+<title>Lista de sitios Gastronómicos</title>
+{{/section}}
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Lista de sitios Gastronómicos</h3>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        {{#if datos.value}}
+	                        <table id="listado-entidad" class="hover stripe display dt-responsive nowrap" cellspacing="0" width="100%">
+	                            <thead>
+	                                <tr>
+	                                    <th>Nombre</th>
+	                                    <th>Ubicación</th>
+	                                    <th>Calificación</th>
+	                                    <th>Operación</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                                {{#each datos.value}}
+		                                <tr>
+		                                    <td>{{this.nombre}}</td>
+		                                    <td>{{#if this.ubicacion.ciudad}}
+			                                    	{{this.ubicacion.direccion}}, {{this.ubicacion.ciudad}}, 
+			                                    	{{this.ubicacion.estado}}, 
+			                                    	{{this.ubicacion.pais}}
+			                                    {{/if}}
+		                                	</td>
+		                                    <td>{{this.promedio_calificaciones}}/{{this.total_calificaciones}}</td>
+		                                    <td>
+		                                        <a href="/gastronomia/{{ this.url }}" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Consultar </a>
+	                                        	<a href="/gastronomia/{{ this.url }}/editar" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Modificar </a>
+	                                        	<!-- <a href="/reservacion/inventario/hospedaje/{{ this.url }}" class="btn btn-info btn-xs"><i class="fa fa-check-square-o"></i> Reservaciones </a> -->
+	                                        	<a href="/gastronomia/{{ this.url }}/eliminar" class="btn btn-danger btn-xs"><i class="fa fa-remove"></i> Eliminar </a>
+		                                    </td>
+		                                </tr>
+	                                {{/each}}
+	                            </tbody>
+	                        </table>
+                        {{else}}
+                        	{{#if_mod datos.value.usuario_sesionado.tipo_usr "==" "Administrador"}}
+                        		<h4>No se han agregado sitios gastronómicos a la BD... <a  href="/gastronomia/agregar"><b style="border-bottom: 2px solid">¿Deseas hacerlo ahora?</b></a></h4>
+							{{else}}
+								<!-- <h4>Actualmente no administras ningún sitios gastronómicos... <a  href="/mensajeria/"><b style="border-bottom: 2px solid">Puedes enviar un mensaje al Administrador solicitando que lo incorpore</b></a></h4> -->
+								<h4>Actualmente no administras ningún sitio gastronómico... <a  href="/contacto/"><b style="border-bottom: 2px solid">Puedes enviar un correo al Administrador solicitando que lo incorpore</b></a></h4>
+							{{/if_mod}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page content -->

@@ -1,0 +1,303 @@
+{{#section "titulo_pagina"}}
+    {{traduccion.TITULO_BUSQUEDA_GENERAL}}
+{{/section}}
+{{#section 'head'}}
+    <link href="/css/app.min.css" rel="stylesheet">
+    <link href="/css/busquedas.css" rel="stylesheet">
+{{/section}}
+<header class="site-header size-lg text-center" style="background-image: url(/images/background/bg-banner5.jpg)">
+    <div class="container">
+        <div class="col-xs-12">
+            <br>
+            <br>
+            <h2>{{traduccion.BUSQUEDA_GENERAL_TITULO}}</h2>
+            {{> buscador_general}}
+        </div>
+    </div>
+</header>
+{{> filtros_busqueda}}
+<main>
+    <div class="container">
+        {{#if datos.value.lista_resultados_lugares}}
+            <div class="row">
+                <header class="text-left">
+                    <h3>{{traduccion.TITULO_LUGAR_DESTACADO_1}}</h3>
+                </header>
+                {{#each datos.value.lista_resultados_lugares}}
+                    <div class="col-md-4 col-sm-6 py">
+                        {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "Turista"}}
+                            <a href="/api/favoritos/{{this.__t}}/{{this.url}}" class="corazon-favoritos sesionado"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                        {{else}}
+                            {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "PrestadorServicio"}}
+                                <a class="corazon-favoritos"><img src="/images/like.png"></a>
+                            {{else}}
+                                <a href="/usuario/sesionarme" class="corazon-favoritos"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                            {{/if_mod}}
+                        {{/if_mod}}
+                        <div class="tarjeta_container">
+                            <div class="img_container">
+                                <a href="/lugar/{{this.url}}">
+                                    {{#if this.imagen_portada}}
+                                        <img src="{{this.imagen_portada.url}}" width="400" height="220" alt="image">
+                                    {{else}}
+                                        <img src="/images/sin_imagen.png" width="400" height="220" alt="image">
+                                    {{/if}}
+                                </a>       
+                            </div>
+                            <div class="tarjeta_title">
+                                <div>
+                                    <h3 class="texto"><strong>{{this.nombre}}</strong></h3>
+                                </div>
+                                
+                                <div class="acciones">
+                                    <div class="calif-entidades" data-calificacion={{this.promedio_calificaciones}}>
+                                    </div>
+                                    <div class="interaccion">
+                                        <img src="/images/likes" alt="">
+                                        <div class="card__share">
+                                            <div class="card__social">
+                                                <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                                                <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                                                <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                                            </div>
+                                            <a id="share" class="share-toggle share-icon" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+                <div class="text-right boton-mas">
+                    <!-- <a href="/busqueda/lugar"><i class="fa fa-plus-circle " aria-hidden="true"></i></a> -->
+                    <a class="btn btn-primary btn-xs" href="/busqueda/lugar">{{traduccion.VER_MAS}}</a>
+                </div>
+            </div>
+        {{/if}}
+        {{#if datos.value.lista_resultados_alojamientos}}
+            <div class="row">
+                <header class="text-left">
+                    <h3>{{traduccion.TITULO_ALOJAMIENTO_DESTACADO_1}}</h3>
+                </header>
+                {{#each datos.value.lista_resultados_alojamientos}}
+                    <div class="col-md-4 col-sm-6 py">
+                        {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "Turista"}}
+                            <a href="/api/favoritos/{{this.__t}}/{{this.url}}" class="corazon-favoritos sesionado"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                        {{else}}
+                            {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "PrestadorServicio"}}
+                                <a class="corazon-favoritos"><img src="/images/like.png"></a>
+                            {{else}}
+                                <a href="/usuario/sesionarme" class="corazon-favoritos"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                            {{/if_mod}}
+                        {{/if_mod}}
+                        <div class="tarjeta_container">
+                            <div class="img_container">
+                                <a href="/alojamiento/{{this.url}}">
+                                    {{#if this.imagen_portada}}
+                                        <img src="{{this.imagen_portada.url}}" width="400" height="220" alt="image">
+                                    {{else}}
+                                        <img src="/images/sin_imagen.png" width="400" height="220" alt="image">
+                                    {{/if}}
+                                </a>       
+                            </div>
+                            <div class="tarjeta_title">
+                                <div>
+                                    <h3 class="texto"><strong>{{this.nombre}}</strong></h3>
+                                </div>
+                                
+                                <div class="acciones">
+                                    <div class="calif-entidades" data-calificacion={{this.promedio_calificaciones}}>
+                                    </div>
+                                    <div class="interaccion">
+                                        <div class="card__share">
+                                            <div class="card__social">
+                                                <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                                                <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                                                <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                                            </div>
+                                            <a id="share" class="share-toggle share-icon" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+                <div class="text-right boton-mas">
+                    <!-- <a href="/busqueda/alojamiento"><i class="fa fa-plus-circle " aria-hidden="true"></i></a> -->
+                    <a class="btn btn-primary btn-xs" href="/busqueda/alojamiento">{{traduccion.VER_MAS}}</a>
+                </div>
+            </div>
+        {{/if}}
+        {{#if datos.value.lista_resultados_gastronomicos}}
+            <div class="row">
+                <header class="text-left">
+                    <h3>{{traduccion.TITULO_GASTRONOMIA_DESTACADO_1}}</h3>
+                </header>
+                {{#each datos.value.lista_resultados_gastronomicos}}
+                   <div class="col-md-4 col-sm-6 py">
+                        {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "Turista"}}
+                            <a href="/api/favoritos/{{this.__t}}/{{this.url}}" class="corazon-favoritos sesionado"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                        {{else}}
+                            {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "PrestadorServicio"}}
+                                <a class="corazon-favoritos"><img src="/images/like.png"></a>
+                            {{else}}
+                                <a href="/usuario/sesionarme" class="corazon-favoritos"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                            {{/if_mod}}
+                        {{/if_mod}}
+                        <div class="tarjeta_container">
+                            <div class="img_container">
+                                <a href="/gastronomia/{{this.url}}">
+                                    {{#if this.imagen_portada}}
+                                        <img src="{{this.imagen_portada.url}}" width="400" height="220" alt="image">
+                                    {{else}}
+                                        <img src="/images/sin_imagen.png" width="400" height="220" alt="image">
+                                    {{/if}}
+                                </a>       
+                            </div>
+                            <div class="tarjeta_title">
+                                <div>
+                                    <h3 class="texto"><strong>{{this.nombre}}</strong></h3>
+                                </div>
+                                
+                                <div class="acciones">
+                                    <div class="calif-entidades" data-calificacion={{this.promedio_calificaciones}}>
+                                    </div>
+                                    <div class="interaccion">
+                                        <div class="card__share">
+                                            <div class="card__social">
+                                                <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                                                <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                                                <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                                            </div>
+                                            <a id="share" class="share-toggle share-icon" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+                <div class="text-right boton-mas">
+                    <!-- <a href="/busqueda/gastronomia"><i class="fa fa-plus-circle " aria-hidden="true"></i></a> -->
+                    <a class="btn btn-primary btn-xs" href="/busqueda/gastronomia">{{traduccion.VER_MAS}}</a>
+                </div>
+            </div>
+        {{/if}}
+        {{#if datos.value.lista_resultados_experiencias}}
+            <div class="row">
+                <header class="text-left">
+                    <h3>{{traduccion.TITULO_EXPERIENCIASO_DESTACADO_1}}</h3>
+                </header>
+                {{#each datos.value.lista_resultados_experiencias}}
+                    <div class="col-md-4 col-sm-6 py">
+                        {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "Turista"}}
+                            <a href="/api/favoritos/{{this.__t}}/{{this.url}}" class="corazon-favoritos sesionado"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                        {{else}}
+                            {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "PrestadorServicio"}}
+                                <a class="corazon-favoritos"><img src="/images/like.png"></a>
+                            {{else}}
+                                <a href="/usuario/sesionarme" class="corazon-favoritos"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                            {{/if_mod}}
+                        {{/if_mod}}
+                        <div class="tarjeta_container">
+                            <div class="img_container">
+                                <a href="/experiencia/{{this.url}}">
+                                    {{#if this.imagen_portada}}
+                                        <img src="{{this.imagen_portada.url}}" width="400" height="220" alt="image">
+                                    {{else}}
+                                        <img src="/images/sin_imagen.png" width="400" height="220" alt="image">
+                                    {{/if}}
+                                </a>       
+                            </div>
+                            <div class="tarjeta_title">
+                                <div>
+                                    <h3 class="texto"><strong>{{this.nombre}}</strong></h3>
+                                </div>
+                                
+                                <div class="acciones">
+                                   <div class="calif-entidades" data-calificacion={{this.promedio_calificaciones}}>
+                                    </div>
+                                    <div class="interaccion">
+                                        <div class="card__share">
+                                            <div class="card__social">
+                                                <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                                                <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                                                <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                                            </div>
+                                            <a id="share" class="share-toggle share-icon" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+                <div class="text-right boton-mas">
+                    <!-- <a href="/busqueda/experiencia"><i class="fa fa-plus-circle " aria-hidden="true"></i></a> -->
+                    <a class="btn btn-primary btn-xs" href="/busqueda/experiencia">{{traduccion.VER_MAS}}</a>
+                </div>
+            </div>
+        {{/if}}
+        {{#if datos.value.lista_resultados_eventos}}
+            <div class="row">
+                <header class="text-left">
+                    <h3>{{traduccion.TITULO_EVENTO_DESTACADO_1}}</h3>
+                </header>
+                {{#each datos.value.lista_resultados_eventos}}
+                    <div class="col-md-4 col-sm-6 py">
+                        {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "Turista"}}
+                            <a href="/api/favoritos/{{this.__t}}/{{this.url}}" class="corazon-favoritos sesionado"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                        {{else}}
+                            {{#if_mod ../datos.value.usuario_sesionado.tipo_usr "==" "PrestadorServicio"}}
+                                <a class="corazon-favoritos"><img src="/images/like.png"></a>
+                            {{else}}
+                                <a href="/usuario/sesionarme" class="corazon-favoritos"><img src="/images/like.png" alt="Añadir a mis Favoritos"></a>
+                            {{/if_mod}}
+                        {{/if_mod}}
+                        <div class="tarjeta_container">
+                            <div class="img_container">
+                                <a href="/evento/{{this.url}}">
+                                    {{#if this.imagen_portada}}
+                                        <img src="{{this.imagen_portada.url}}" width="400" height="220" alt="image">
+                                    {{else}}
+                                        <img src="/images/sin_imagen.png" width="400" height="220" alt="image">
+                                    {{/if}}
+                                </a>       
+                            </div>
+                            <div class="tarjeta_title">
+                                <div>
+                                    <h3 class="texto"><strong>{{this.nombre}}</strong></h3>
+                                </div>
+                                
+                                <div class="acciones">
+                                   <div class="calif-entidades" data-calificacion={{this.promedio_calificaciones}}>
+                                    </div>
+                                    <div class="interaccion">
+                                        <div class="card__share">
+                                            <div class="card__social">
+                                                <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                                                <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                                                <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                                            </div>
+                                            <a id="share" class="share-toggle share-icon" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {{/each}}
+                <div class="text-right boton-mas">
+                    <!-- <a href="/busqueda/evento"><i class="fa fa-plus-circle " aria-hidden="true"></i></a> -->
+                    <a class="btn btn-primary btn-xs" href="/busqueda/evento">{{traduccion.VER_MAS}}</a>
+                </div>
+            </div>
+        {{/if}}
+    </div> 
+</main>
+{{#section 'js_libs'}}
+    <!-- <link rel="stylesheet" href="/vendors/starrr/dist/starrr.css">
+    <link rel="stylesheet" href="/css/style-hotelfinder.css"> -->
+{{/section}}

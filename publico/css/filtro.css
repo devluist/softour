@@ -1,0 +1,345 @@
+#filtros-busqueda .dropdown {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.dropdown button {
+    background: none;
+    border: none;
+    color: #55595c;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.2s linear 0.1s;
+}
+
+.dropdown button:hover,
+.dropdown button:active,
+.dropdown button:active:focus,
+.dropdown button:focus {
+    color: #29aafe;
+    background: none;
+}
+
+nav#filtros-busqueda {
+    margin: 0 auto;
+    width: 95%;
+}
+
+#cuadro-fechas .datepicker {
+    border: none !important;
+}
+
+div#cuadro-fechas {
+    padding: 25px;
+}
+
+#aplicar-fechas {
+    color: #4EB5E6;
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 32px;
+}
+
+
+.dropdown-menu {
+    margin-top: 15px;
+}
+
+#cuadro-huespedes {
+    width: 260px !important;
+    padding: 15px 20px !important;
+    z-index: 1;
+}
+
+#cuadro-huespedes h6 {
+    margin: 0;
+    color: #55595c;
+}
+
+#cuadro-huespedes div {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+#cuadro-huespedes button.btn.btn-default:first-child {
+    margin-top: -9px;
+}
+
+#cuadro-servicios,
+hr {
+    margin: 0 0 10px 0;
+    height: 2px;
+    background-color: #29aafe;
+    border: none;
+}
+
+span#texto-cantidad-huespedes {
+    font-size: 2em;
+    vertical-align: middle;
+    color: #000;
+}
+
+#cuadro-huespedes button.btn.btn-default {
+    background: none;
+    border: 0;
+    color: #000;
+    font-size: 3em;
+}
+
+#cuadro-tipo-alojamiento {
+    width: 300px !important;
+    padding: 15px 20px !important;
+    z-index: 1;
+}
+
+#cuadro-tipo-alojamiento hr {
+    margin: 0 0 10px 0;
+}
+
+#cuadro-tipo-alojamiento h6 {
+    margin: 0;
+    color: #55595c;
+}
+
+.radio label:before {
+    border: 1px solid #1ea6d4;
+}
+
+#cuadro-servicios {
+    width: 540px !important;
+    padding: 15px 20px !important;
+    z-index: 1;
+}
+
+#cuadro-precio {
+    width: 450px !important;
+    padding: 15px 20px !important;
+    z-index: 10;
+}
+
+#cuadro-duracion {
+    width: 540px !important;
+    padding: 15px 20px !important;
+    z-index: 1;
+}
+
+
+
+
+
+/*checkbox*/
+
+.serv {
+    list-style: none;
+}
+
+
+
+
+
+/*Checkboxes styles*/
+
+.serv input[type="checkbox"] {
+    display: none;
+}
+
+.serv input[type="checkbox"]+label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    color: #55595c;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.serv input[type="checkbox"]+label:last-child {
+    margin-bottom: 0;
+}
+
+.serv input[type="checkbox"]+label:before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #29aafe;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    opacity: .6;
+    -webkit-transition: all .12s, border-color .08s;
+    transition: all .12s, border-color .08s;
+}
+
+.serv input[type="checkbox"]:checked+label:before {
+    width: 10px;
+    top: 2px;
+    left: 5px;
+    border-radius: 0;
+    opacity: 1;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#dec-huespedes,
+#inc-huespedes {
+    width: 34px;
+    height: 34px;
+    padding: 0px 0;
+    background: white;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+#dec-huespedes {
+    margin-bottom: 12px;
+}
+
+#inc-huespedes {
+    margin-bottom: 18px;
+}
+
+#aplicar-huespedes {
+    background: none;
+    border: none;
+    color: #29aafe;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s linear 0.1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.btn-circle {
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  padding: 0px 0;
+  font-size: 20px;
+  line-height: 1.428571429;
+  border-radius: 35px;
+  font-family: arial;
+  background: white;
+}
+
+#cantidad {
+border: none;
+}
+
+.icon{
+  height: 30px;
+  right: 30px;
+  margin-top: 4px;
+  aligns-items:center;
+  cursor: pointer;
+}
+
+.esp_{
+  margin-left: 7em;
+}
+
+.input-group-addon{
+  padding: 0;
+}
+
+/*checkbox* /
+
+.boxes {
+  margin: auto;
+  padding: 50px;
+  background: #484848;
+  
+}
+
+/*Checkboxes styles* /
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+  color: #ddd;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #afdefa;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}*/

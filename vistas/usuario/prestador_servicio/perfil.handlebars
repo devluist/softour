@@ -1,0 +1,207 @@
+ {{#section 'head'}}
+<title>Perfíl Prestador de Servicio</title>
+{{/section}}
+<div role="main">
+    <div class="right_col" role="main">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h3>Bienvenido Prestador de Servicio</h3>
+                <div class="row tile_count">
+                    <div class="col-md-2 col-sm-3 col-xs-12 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i> Visitas totales</span>
+                        <div  class="count" id="visitas-totales">49</div>
+                        <span class="count_bottom"><i class="green"></i> Último mes</span>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12 tile_stats_count ">
+                        <span class="count_top"><i class="fa fa-user"></i> Consulta a Eventos</span>
+                        <div class="count" id="consultas-eventos">8</div>
+                        <span class="count_bottom"><i class="green"></i> Último mes</span>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i> Consulta a Experiencias</span>
+                        <div class="count" id="consultas_experiencias">22</div>
+                        <span class="count_bottom"><i class="green"></i> Último mes</span>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i> Consulta a Gatronomía</span>
+                        <div class="count green" id="consultas_gastronomias">3</div>
+                        <span class="count_bottom"><i class="green"></i> Último mes</span>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-12 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i>Consulta a Alojamiento</span>
+                        <div class="count" id="consultas_alojamientos">13</div>
+                        <span class="count_bottom"><i class="green"></i> Último mes</span>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-12 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-user"></i> Mis publicaciones</span>
+                        <div class="count" id="publicaciones_totales">11</div>
+                        <span class="count_bottom"><i class="green"></i> Último mes</span>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h3>Favoritos</h3>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content" id="dashboard-favoritos">
+                            <div class="col-xs-6">
+                                <table id="experiencias" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Experiencia</th>
+                                            <th>Cant. Favoritos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	{{#each datos.value.lista_experiencias}}
+	                                        <tr>
+	                                            <td>{{this.nombre}}</td>
+	                                            <td data-url="/experiencia/{{this.url}}"></td>
+	                                        </tr>
+	                                    {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-xs-6">
+                                <table id="eventos" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Evento</th>
+                                            <th>Cant. Favoritos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each datos.value.lista_eventos}}
+	                                        <tr>
+	                                            <td>{{this.nombre}}</td>
+	                                            <td data-url="/evento/{{this.url}}"></td>
+	                                        </tr>
+	                                    {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-xs-6">
+                                <table id="alojamientos" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Alojamiento</th>
+                                            <th>Cant. Favoritos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	{{#each datos.value.lista_alojamientos}}
+	                                        <tr>
+	                                            <td>{{this.nombre}}</td>
+	                                            <td data-url="/alojamiento/{{this.url}}"></td>
+	                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-xs-6">
+                                <table id="gastronomia" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Gastronomía</th>
+                                            <th>Cant. Favoritos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	{{#each datos.value.lista_gastronomia}}
+	                                        <tr>
+	                                            <td>{{this.nombre}}</td>
+	                                            <td data-url="/gastronomia/{{this.url}}"></td>
+	                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h3>Rendimiento con respecto al promedio</h3>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div style="height:40vh; width:100%">
+                                    <canvas id="grafico-publicaciones-mensuales"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h3>Publicaciones </h3>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div style="height:40vh; width:100%">
+                                    <canvas id="grafico-proporciones-publicaciones"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{#section "js_libs"}}
+<script>
+var ctx2 = document.getElementById("grafico-publicaciones-mensuales").getContext('2d');
+
+var publicaciones_mensuales = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: ["Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+        datasets: [{
+            label: "Publicaciones",
+            backgroundColor: 'rgb(52,152,219)',
+            data: [8, 12, 17, 15, 14, 3]
+        }, {
+            label: "Publicaciones promedio",
+            backgroundColor: 'rgb(38,185,154)',
+            data: [2, 1, 5, 7, 3, 1]
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+var ctx3 = document.getElementById("grafico-proporciones-publicaciones").getContext('2d');
+var myPieChart = new Chart(ctx3, {
+    type: 'pie',
+    data: {
+        datasets: [{
+            data: [286, 435, 107, 89],
+            backgroundColor: ['rgb(69, 92, 115)', 'rgb(155, 89, 182)',
+                'rgb(189, 195, 199)', 'rgb(38, 185, 154)'
+            ]
+        }],
+
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels: ['Eventos', 'Experiencias', 'Gastronomía', 'Alojamientos']
+    },
+    options: {
+        cutoutPercentage: 0
+    }
+});
+
+/*publicaciones_mensuales.style.height = '128px'; 
+ redes_sociales.canvas.parentNode.style.height = '100px'; */
+</script>
+</script>
+{{/section}}
