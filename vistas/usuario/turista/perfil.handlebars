@@ -7,6 +7,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-8">
+            {{#each data}}
+              {{@key}}: {{this}}
+            {{/each}}
                 <div class="col-xs-4 col-sm-4 col-md-3">
                     {{#if datos.value.persona.foto_perfil.url}}
                     <img id="foto_perfil" src="{{datos.value.persona.foto_perfil.url}}" alt="" width="128px" height="128px"> {{else}}

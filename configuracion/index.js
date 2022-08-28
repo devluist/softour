@@ -119,7 +119,7 @@ module.exports = class Configuracion {
             callbackURL: process.env.FACEBOOK_CALLBACK_URL
         };
 
-        this.puerto = 80;
+        this.puerto = 4000;
         this.RUTA_ARCHIVOS_PUBLICOS = "./publico";
         this.RUTA_ARCHIVOS_SUBIDOS = './publico/subidas';
 
@@ -262,8 +262,8 @@ module.exports = class Configuracion {
         Administrador.findOne({ "usuario": "deslt" }, (error, admin) => {
             if (error) return next(error);
 
-            if (!admin) {
-                new Administrador({ "nombre": "Luis Tena", "usuario": "deslt", "correo": "luistena@softour.com", "clave": "$2a$10$ONFIqAljnKvsb8USaQZnE.oHNiPYEIxDef74xEfCqSgNyZsKnSGBC" }).save((error)=>{
+            if (!admin) { // clave = secret
+                new Administrador({ "nombre": "Luis Tena", "usuario": "deslt", "correo": "luistena@softour.com", "clave": "$2a$10$V.PBnuHMLOjoYlTtlyE4wu9esjDdw.I/shYut7cPgdhlGnVLYgYs." }).save((error)=>{
                     if(error) console.log(error);
                 });
  

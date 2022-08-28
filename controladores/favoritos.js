@@ -121,6 +121,7 @@ module.exports = class ControladorFavoritos {
 							});
 						break;
 						case "lugar":
+							console.log("AQUIII ", entidad_buscada)
 							favs.lugares.push({
 								"_id": entidad_buscada._id,
 								"nombre": entidad_buscada.nombre,

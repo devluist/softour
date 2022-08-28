@@ -10,6 +10,8 @@ let path = require('path'),
 	Configuracion = require('./configuracion'),
 	ControladorPrincipal = require('./controladores/lib/ruta');
 
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')  // WARNING: This was added to run this old project
+
 const i18n=require("i18n-express");
 
 class Aplicacion {
@@ -31,7 +33,7 @@ class Aplicacion {
 
 		/* Manejo de las Vistas */
 		this.exp_handlebars = require('express-handlebars');
-		//this.Handlebars = require('handlebars');
+		this.Handlebars = require('handlebars');  // WARNING: This was added to run this old project
 
 		/* Manejo de Sesiones */
 		this.passport = require('passport');
@@ -83,6 +85,9 @@ class Aplicacion {
 
 		hbs = this.exp_handlebars.create({
 			defaultLayout: 'base',
+
+			handlebars: allowInsecurePrototypeAccess(this.Handlebars), // WARNING: This was added to run this old project
+
 			layoutsDir: this.app.get('views') + '/esqueleto',
 			partialsDir: [this.app.get('views') + '/fragmentos'],
 			//Handlebars: this.Handlebars,
